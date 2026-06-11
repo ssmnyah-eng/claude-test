@@ -996,7 +996,7 @@
     }
 
     @media (max-width: 700px) {
-      .stats-row { grid-template-columns: 1fr; border-bottom: none; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); border-bottom: none; }
       .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
       .stat-item:last-child { border-bottom: none; }
     }
@@ -1986,24 +1986,24 @@
       </div>
       <div class="stat-item reveal" style="transition-delay:0.1s">
         <div class="stat-num">
+          <span class="counter" data-target="4.5" data-suffix="M+" data-float="true">0</span>
+          <span class="suffix">M+</span>
+        </div>
+        <p class="stat-label">total views generated across all clients</p>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.2s">
+        <div class="stat-num">
           <span class="counter" data-target="6" data-suffix="">0</span>
           <span class="suffix"> yrs</span>
         </div>
         <p class="stat-label">agency experience</p>
       </div>
-      <div class="stat-item reveal" style="transition-delay:0.2s">
+      <div class="stat-item reveal" style="transition-delay:0.3s">
         <div class="stat-num">
           <span class="counter" data-target="100" data-suffix="%">0</span>
           <span class="suffix">%</span>
         </div>
         <p class="stat-label">done for you</p>
-      </div>
-      <div class="stat-item reveal" style="transition-delay:0.3s">
-        <div class="stat-num">
-          <span class="counter" data-target="1.8" data-suffix="M+" data-float="true">0</span>
-          <span class="suffix">M+</span>
-        </div>
-        <p class="stat-label">total views generated across all clients</p>
       </div>
     </div>
   </div>
