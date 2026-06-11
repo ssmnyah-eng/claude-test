@@ -27,7 +27,7 @@
       --font-cursive: 'Dancing Script', cursive;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; }
 
     body {
       font-family: var(--font-body);
@@ -60,33 +60,41 @@
       margin-bottom: 12px;
     }
 
-    /* fade-in scroll animations */
-    .reveal {
+    /* fade-in scroll animations
+       IMPORTANT: default state is VISIBLE so content never disappears.
+       JS adds .will-animate before observing, then .visible when in view. */
+    .reveal.will-animate {
       opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.72s ease, transform 0.72s ease;
+      transform: translateY(28px);
+    }
+    .reveal {
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
     .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .reveal-left.will-animate {
+      opacity: 0;
+      transform: translateX(-36px);
     }
     .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.72s ease, transform 0.72s ease;
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
     .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
+      opacity: 1 !important;
+      transform: translateX(0) !important;
+    }
+    .reveal-right.will-animate {
+      opacity: 0;
+      transform: translateX(36px);
     }
     .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.72s ease, transform 0.72s ease;
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
     .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
+      opacity: 1 !important;
+      transform: translateX(0) !important;
     }
 
     /* Buttons */
@@ -2545,8 +2553,34 @@
     mobileNav.classList.remove('open');
   }
 
-  /* ---------- Scroll reveal ---------- */
+  /* ---------- Smooth scroll for nav links ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const id = this.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ---------- Scroll reveal ----------
+     Content is VISIBLE by default. Only elements below the fold
+     get the animation treatment so nothing is ever hidden on load. */
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+  revealEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top > window.innerHeight + 60) {
+      el.classList.add('will-animate');
+    } else {
+      el.classList.add('visible');
+    }
+  });
+
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -2554,20 +2588,18 @@
         revealObserver.unobserve(e.target);
       }
     });
-  }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObserver.observe(el));
+  }, { threshold: 0.01 });
 
-  /* Trigger hero elements immediately */
-  document.querySelectorAll('#hero .reveal').forEach(el => {
-    setTimeout(() => el.classList.add('visible'), 100);
+  revealEls.forEach(el => {
+    if (el.classList.contains('will-animate')) revealObserver.observe(el);
   });
 
-  /* Hard fallback make ALL reveals visible after 2.5s no matter what */
+  /* Absolute safety net: force everything visible after 800ms */
   setTimeout(() => {
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
       el.classList.add('visible');
     });
-  }, 2500);
+  }, 800);
 
   /* ---------- Count-up animation ---------- */
   function animateCounter(el) {
