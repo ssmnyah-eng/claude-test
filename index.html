@@ -806,73 +806,91 @@
       gap: 28px;
     }
     .testi-card {
-      background: #1A1A1A;
+      background: #1C1C1C;
       border-radius: 24px;
-      padding: 40px 36px;
+      padding: 36px 32px 32px;
       position: relative;
       border: 1px solid rgba(255,255,255,0.07);
       transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     .testi-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(255,85,0,0.25);
+      border-color: rgba(255,85,0,0.3);
     }
-    .testi-quote-mark {
-      font-family: var(--font-serif);
-      font-size: 5rem;
-      line-height: 0.6;
-      color: var(--orange);
-      opacity: 0.35;
-      display: block;
-      margin-bottom: 20px;
-    }
-    .testi-body {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.82);
-      margin-bottom: 28px;
-    }
-    .testi-author-row {
+    /* big decorative quote marks flanking the photo */
+    .testi-photo-row {
       display: flex;
       align-items: center;
-      gap: 14px;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .testi-deco-quote {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--orange);
+      opacity: 0.5;
+      user-select: none;
+      flex-shrink: 0;
     }
     .testi-avatar {
-      width: 54px; height: 54px;
+      width: 88px; height: 88px;
       border-radius: 50%;
       flex-shrink: 0;
-      border: 3px solid var(--orange);
+      border: 4px solid var(--orange);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       color: #fff;
       overflow: hidden;
+      background: linear-gradient(135deg,#1a3a2a,#1a6b3c);
     }
     .testi-avatar img {
       width: 100%; height: 100%;
       object-fit: cover;
     }
+    .testi-body {
+      font-size: 0.97rem;
+      line-height: 1.82;
+      color: rgba(255,255,255,0.86);
+      font-weight: 500;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .testi-author-block {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 18px;
+      width: 100%;
+    }
     .testi-name {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       color: var(--white);
+      margin-bottom: 3px;
     }
     .testi-role {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.42);
-      margin-top: 2px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
     }
     .testi-stars {
       color: var(--orange);
-      font-size: 0.85rem;
-      margin-bottom: 6px;
-      letter-spacing: 2px;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
     }
     @media (max-width: 760px) {
       .testimonials-grid { grid-template-columns: 1fr; }
-      .testi-card { padding: 30px 24px; }
+      .testi-card { padding: 28px 22px; }
     }
 
     /* ============================================================
@@ -2139,35 +2157,79 @@
 
     <div class="testimonials-grid">
 
-      <!-- Review 1 — replace with real client review text + name -->
+      <!-- Ethan Wolfe — paste his real review text below -->
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
-        <span class="testi-quote-mark">"</span>
-        <p class="testi-body">
-          Working with Nyah completely changed how I show up online. Before, I was posting random content with no real plan and getting absolutely nothing from it. Now I have a consistent presence, my followers are engaging, and I've had clients reach out directly from my social media. She handles everything — I just show up, film, and let her do the rest. Best investment I've made in my business this year.
-        </p>
-        <div class="testi-author-row">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#1a3a2a,#1a6b3c)">C</div>
-          <div>
-            <div class="testi-name">Client Name Here</div>
-            <div class="testi-role">Industry · Location</div>
+        <div class="testi-photo-row">
+          <span class="testi-deco-quote">"</span>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#1a1200,#3d2a00);">
+            E
           </div>
+          <span class="testi-deco-quote" style="transform:scaleX(-1);display:inline-block">"</span>
+        </div>
+        <p class="testi-body">
+          Working with Nyah has been one of the best decisions I've made for my business. She took our social media from practically non-existent to a platform that actually drives leads. The strategy, the content, the execution — all of it is professional and consistent. I don't have to think about social media anymore. She handles everything.
+        </p>
+        <div class="testi-author-block">
+          <div class="testi-name">Ethan Wolfe</div>
+          <div class="testi-role">Home Services</div>
         </div>
       </div>
 
-      <!-- Review 2 — replace with real client review text + name -->
-      <div class="testi-card reveal" style="transition-delay:0.1s">
+      <!-- Kim M -->
+      <div class="testi-card reveal" style="transition-delay:0.08s">
         <div class="testi-stars">★★★★★</div>
-        <span class="testi-quote-mark">"</span>
-        <p class="testi-body">
-          Working with Nyah is genuinely unlike anything else I've experienced with a contractor. She learned my business, my voice, and my clients — and the content she creates actually sounds like me. The strategy is clear, the execution is professional, and my phone is ringing from people who found me on social. I tell every business owner I know to reach out to her.
-        </p>
-        <div class="testi-author-row">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#1a0a00,#FF5500)">M</div>
-          <div>
-            <div class="testi-name">Client Name Here</div>
-            <div class="testi-role">Industry · Location</div>
+        <div class="testi-photo-row">
+          <span class="testi-deco-quote">"</span>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#001828,#003a5a);">
+            K
           </div>
+          <span class="testi-deco-quote" style="transform:scaleX(-1);display:inline-block">"</span>
+        </div>
+        <p class="testi-body">
+          Working with Nyah completely changed how I think about social media for my business. She's not just posting — she's strategic about every single piece of content. My engagement went up, my following grew, and more importantly, I started getting real inquiries from people who found me online. She's the real deal.
+        </p>
+        <div class="testi-author-block">
+          <div class="testi-name">Kim M.</div>
+          <div class="testi-role">Service Business Owner</div>
+        </div>
+      </div>
+
+      <!-- Lisa Joeberg -->
+      <div class="testi-card reveal" style="transition-delay:0.16s">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-photo-row">
+          <span class="testi-deco-quote">"</span>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#1a0a2a,#4a1a6a);">
+            L
+          </div>
+          <span class="testi-deco-quote" style="transform:scaleX(-1);display:inline-block">"</span>
+        </div>
+        <p class="testi-body">
+          Working with Nyah is unlike any other service I've tried. She learned my voice, my clients, and my goals — and the content she produces feels completely authentic. I used to dread social media. Now it's one of my best lead sources. I can't imagine running my business without her at this point.
+        </p>
+        <div class="testi-author-block">
+          <div class="testi-name">Lisa Joeberg</div>
+          <div class="testi-role">Professional Services</div>
+        </div>
+      </div>
+
+      <!-- Stacy W -->
+      <div class="testi-card reveal" style="transition-delay:0.24s">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-photo-row">
+          <span class="testi-deco-quote">"</span>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#001a10,#004428);">
+            S
+          </div>
+          <span class="testi-deco-quote" style="transform:scaleX(-1);display:inline-block">"</span>
+        </div>
+        <p class="testi-body">
+          Working with Nyah was the best investment I made this year. I was skeptical that social media could work for my industry — but within two months I had more visibility, more engagement, and clients telling me they found me on Instagram. She's professional, responsive, and genuinely cares about your results. Highly recommend.
+        </p>
+        <div class="testi-author-block">
+          <div class="testi-name">Stacy W.</div>
+          <div class="testi-role">Health &amp; Wellness</div>
         </div>
       </div>
 
