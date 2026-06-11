@@ -239,6 +239,10 @@
       bottom: -80px; right: -80px;
       animation: driftB 18s ease-in-out infinite alternate;
     }
+    @keyframes neonPulse {
+      from { text-shadow: 0 0 6px rgba(0,180,255,0.9), 0 0 16px rgba(0,180,255,0.5); opacity:1; }
+      to   { text-shadow: 0 0 12px rgba(0,180,255,1), 0 0 30px rgba(0,180,255,0.8), 0 0 50px rgba(0,180,255,0.3); opacity:0.85; }
+    }
     @keyframes driftA {
       from { transform: translate(0, 0) scale(1); }
       to   { transform: translate(80px, 60px) scale(1.18); }
@@ -2013,7 +2017,7 @@
   <div style="padding:60px 0 0;background:var(--black);">
     <div class="container">
       <p class="section-tag" style="text-align:center;margin-bottom:12px;">Content I Build</p>
-      <h3 style="text-align:center;color:#fff;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin-bottom:8px;">This is the content I build for clients.</h3>
+      <h3 style="text-align:center;color:#fff;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin-bottom:8px;">Hooks. Storytelling. Results.</h3>
       <p style="text-align:center;color:rgba(255,255,255,0.5);font-size:0.95rem;margin-bottom:40px;">Real content. Real businesses. Real results.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto;">
         <div style="border-radius:16px;overflow:hidden;background:#111;aspect-ratio:9/16;max-height:500px;position:relative;">
@@ -2112,7 +2116,7 @@
         <div class="testi-author-block">
           <div class="testi-name">J.T.</div>
           <div class="testi-role">Roofing Company</div>
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-top:4px;">Active Client</div>
+          <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-top:4px;text-shadow:0 0 8px rgba(0,180,255,0.9),0 0 20px rgba(0,180,255,0.5);animation:neonPulse 2s ease-in-out infinite alternate;">● ACTIVE CLIENT</div>
         </div>
       </div>
 
