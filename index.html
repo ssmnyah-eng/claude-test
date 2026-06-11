@@ -2215,13 +2215,18 @@
   <div class="container">
     <div class="meet-inner">
       <div class="meet-photo-wrap reveal-left">
-        <div class="meet-photo-frame" style="padding:0;overflow:hidden;background:none;">
+        <div class="meet-photo-frame" id="meet-photo-frame" style="padding:0;overflow:hidden;">
           <img
             src="nyah.jpg"
             alt="Nyah Social Media Strategist"
+            id="nyah-photo"
             style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:20px;"
-            onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#f5f0eb,#ede5d8)';this.parentElement.innerHTML+='<div style=\'display:flex;flex-direction:column;align-items:center;gap:16px;justify-content:center;height:100%\'><div style=\'width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#FF5500,#ff8855);display:flex;align-items:center;justify-content:center;font-family:Dancing Script,cursive;font-size:3.5rem;color:#fff\'>N</div><p style=\'font-size:.82rem;color:#aaa;font-style:italic\'>Add nyah.jpg to show photo</p></div>'"
+            onerror="document.getElementById('nyah-photo').style.display='none';document.getElementById('nyah-fallback').style.display='flex';"
           />
+          <div id="nyah-fallback" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;height:100%;background:linear-gradient(145deg,#f5f0eb,#ede5d8);">
+            <div style="width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,#FF5500,#ff8855);display:flex;align-items:center;justify-content:center;font-family:'Dancing Script',cursive;font-size:4rem;color:#fff">N</div>
+            <p style="font-size:.85rem;color:#999;font-style:italic;text-align:center">Social Strategist Nyah</p>
+          </div>
         </div>
         <div class="meet-accent-box">
           <div class="num">NoVA</div>
