@@ -256,21 +256,43 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
+      overflow: hidden;
     }
-    .hero-shapes .shape {
+    .stat-float {
       position: absolute;
-      border-radius: 50%;
-      opacity: 0.06;
-      animation: floatShape linear infinite;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      animation: floatCard ease-in-out infinite alternate;
     }
-    .shape-1 { width: 280px; height: 280px; background: var(--orange); top: 15%; left: 5%; animation-duration: 22s; }
-    .shape-2 { width: 180px; height: 180px; background: var(--blue); top: 60%; left: 75%; animation-duration: 28s; animation-delay: -6s; }
-    .shape-3 { width: 120px; height: 120px; background: var(--green); top: 80%; left: 15%; animation-duration: 20s; animation-delay: -10s; }
-    .shape-4 { width: 60px; height: 60px; background: var(--orange); top: 30%; left: 85%; animation-duration: 16s; animation-delay: -3s; }
-    @keyframes floatShape {
-      0%   { transform: translateY(0px) rotate(0deg); }
-      50%  { transform: translateY(-30px) rotate(180deg); }
-      100% { transform: translateY(0px) rotate(360deg); }
+    .stat-float .sf-num {
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--orange);
+      letter-spacing: -0.02em;
+    }
+    .stat-float .sf-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: rgba(0,0,0,0.45);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .stat-float .sf-arrow { font-size: 0.8rem; color: var(--green); }
+    .sf-1 { top: 18%; left: 4%; animation-duration: 7s; animation-delay: 0s; }
+    .sf-2 { top: 55%; left: 2%; animation-duration: 9s; animation-delay: -3s; }
+    .sf-3 { top: 20%; right: 4%; animation-duration: 8s; animation-delay: -1.5s; }
+    .sf-4 { top: 62%; right: 3%; animation-duration: 10s; animation-delay: -4s; }
+    .sf-5 { top: 80%; left: 30%; animation-duration: 11s; animation-delay: -2s; }
+    @keyframes floatCard {
+      from { transform: translateY(0px); }
+      to   { transform: translateY(-18px); }
     }
 
     /* grid overlay */
@@ -1580,10 +1602,11 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-    <div class="shape shape-4"></div>
+    <div class="stat-float sf-1"><span class="sf-arrow">↑</span><span class="sf-num">32K</span><span class="sf-label">followers gained</span></div>
+    <div class="stat-float sf-2"><span class="sf-arrow">↑</span><span class="sf-num">4.5M</span><span class="sf-label">total views</span></div>
+    <div class="stat-float sf-3"><span class="sf-num">$200K</span><span class="sf-label">organic sales</span></div>
+    <div class="stat-float sf-4"><span class="sf-arrow">↑</span><span class="sf-num">16K</span><span class="sf-label">new followers</span></div>
+    <div class="stat-float sf-5"><span class="sf-num">9.3K</span><span class="sf-label">views · roofing</span></div>
   </div>
 
   <div class="hero-content">
