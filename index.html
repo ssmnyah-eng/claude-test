@@ -60,42 +60,8 @@
       margin-bottom: 12px;
     }
 
-    /* fade-in scroll animations
-       IMPORTANT: default state is VISIBLE so content never disappears.
-       JS adds .will-animate before observing, then .visible when in view. */
-    .reveal.will-animate {
-      opacity: 0;
-      transform: translateY(28px);
-    }
-    .reveal {
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal.visible {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-    .reveal-left.will-animate {
-      opacity: 0;
-      transform: translateX(-36px);
-    }
-    .reveal-left {
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal-left.visible {
-      opacity: 1 !important;
-      transform: translateX(0) !important;
-    }
-    .reveal-right.will-animate {
-      opacity: 0;
-      transform: translateX(36px);
-    }
-    .reveal-right {
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal-right.visible {
-      opacity: 1 !important;
-      transform: translateX(0) !important;
-    }
+    /* scroll animations removed — all content always visible */
+    .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
 
     /* Buttons */
     .btn {
@@ -2567,39 +2533,7 @@
     });
   });
 
-  /* ---------- Scroll reveal ----------
-     Content is VISIBLE by default. Only elements below the fold
-     get the animation treatment so nothing is ever hidden on load. */
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-  revealEls.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top > window.innerHeight + 60) {
-      el.classList.add('will-animate');
-    } else {
-      el.classList.add('visible');
-    }
-  });
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.01 });
-
-  revealEls.forEach(el => {
-    if (el.classList.contains('will-animate')) revealObserver.observe(el);
-  });
-
-  /* Absolute safety net: force everything visible after 800ms */
-  setTimeout(() => {
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-      el.classList.add('visible');
-    });
-  }, 800);
+  /* scroll animations removed — content always visible */
 
   /* ---------- Count-up animation ---------- */
   function animateCounter(el) {
