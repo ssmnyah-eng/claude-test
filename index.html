@@ -639,6 +639,228 @@
       .results-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
     }
 
+    /* --- client results grid (Britt-style) --- */
+    .analytics-section {
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .analytics-section h3 {
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--black);
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .analytics-section .sub { margin-bottom: 48px; }
+
+    .client-results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid #e8e8e8;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .cr-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 20px 28px;
+      border-right: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8;
+      background: var(--white);
+      transition: background 0.25s ease, transform 0.25s ease;
+      cursor: default;
+    }
+    .cr-card:nth-child(3n) { border-right: none; }
+    .cr-card:nth-last-child(-n+3) { border-bottom: none; }
+    /* last row adjust for 10 items (rows of 3: 9+1) */
+    .cr-card:nth-child(10) { border-right: none; }
+    .cr-card:hover { background: #fafafa; }
+
+    .cr-photo-wrap {
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .cr-circle {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      border: 3px solid rgba(255,85,0,0.18);
+      transition: border-color 0.3s, transform 0.3s;
+      overflow: hidden;
+    }
+    .cr-card:hover .cr-circle {
+      border-color: var(--orange);
+      transform: scale(1.05);
+    }
+    .cr-industry-pill {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .cr-stats {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    .cr-stat {
+      text-align: center;
+    }
+    .cr-stat-num {
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--black);
+      display: block;
+      line-height: 1.1;
+    }
+    .cr-stat-lbl {
+      font-size: 0.62rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .cr-stat-divider {
+      width: 1px;
+      height: 28px;
+      background: #e0e0e0;
+      flex-shrink: 0;
+    }
+    /* growth arrow badge */
+    .cr-growth-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,85,0,0.08);
+      color: var(--orange);
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-top: 10px;
+      letter-spacing: 0.06em;
+    }
+    @media (max-width: 860px) {
+      .client-results-grid { grid-template-columns: repeat(2, 1fr); }
+      .cr-card:nth-child(3n) { border-right: 1px solid #e8e8e8; }
+      .cr-card:nth-child(2n) { border-right: none; }
+      .cr-card:nth-last-child(-n+2) { border-bottom: none; }
+    }
+    @media (max-width: 520px) {
+      .client-results-grid { grid-template-columns: repeat(2, 1fr); }
+      .cr-circle { width: 76px; height: 76px; font-size: 1.8rem; }
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    #testimonials {
+      background: var(--black);
+      padding: 100px 0;
+    }
+    #testimonials h2 {
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    #testimonials .sub {
+      text-align: center;
+      color: var(--muted-white);
+      font-size: 1.05rem;
+      margin-bottom: 64px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .testi-card {
+      background: #1A1A1A;
+      border-radius: 24px;
+      padding: 40px 36px;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .testi-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,85,0,0.25);
+    }
+    .testi-quote-mark {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      line-height: 0.6;
+      color: var(--orange);
+      opacity: 0.35;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .testi-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 28px;
+    }
+    .testi-author-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testi-avatar {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 3px solid var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #fff;
+      overflow: hidden;
+    }
+    .testi-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .testi-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+    }
+    .testi-role {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.42);
+      margin-top: 2px;
+    }
+    .testi-stars {
+      color: var(--orange);
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+    @media (max-width: 760px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .testi-card { padding: 30px 24px; }
+    }
+
     /* ============================================================
        STATS
     ============================================================ */
@@ -1505,6 +1727,118 @@
       </div>
 
     </div>
+
+    <!-- ── MORE CLIENT RESULTS ── Britt-style profile grid ── -->
+    <div class="analytics-section">
+      <h3 class="reveal">More Client Results</h3>
+      <p class="sub reveal">Real accounts. Real numbers. Real businesses in the industries you know.</p>
+
+      <!-- 4 cards: 2×2 grid -->
+      <div class="client-results-grid" style="grid-template-columns:repeat(2,1fr);--cols:2">
+
+        <!-- 1 — Roofing & Construction -->
+        <div class="cr-card reveal">
+          <div class="cr-photo-wrap">
+            <div class="cr-circle" style="background:linear-gradient(145deg,#1a1a1a,#3a1500);">🏗️</div>
+          </div>
+          <span class="cr-industry-pill">Roofing &amp; Construction</span>
+          <div class="cr-stats">
+            <div class="cr-stat">
+              <span class="cr-stat-num">60+</span>
+              <span class="cr-stat-lbl">Posts</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">4,200+</span>
+              <span class="cr-stat-lbl">Followers</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">1.3M+</span>
+              <span class="cr-stat-lbl">Views</span>
+            </div>
+          </div>
+          <span class="cr-growth-badge">↑ 3,276 followers gained</span>
+        </div>
+
+        <!-- 2 — Home Services (replace with your real client data) -->
+        <div class="cr-card reveal" style="transition-delay:0.08s">
+          <div class="cr-photo-wrap">
+            <div class="cr-circle" style="background:linear-gradient(145deg,#1a1200,#3d2a00);">🔨</div>
+          </div>
+          <span class="cr-industry-pill">Home Services</span>
+          <div class="cr-stats">
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Posts</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Followers</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Views</span>
+            </div>
+          </div>
+          <span class="cr-growth-badge">↑ Your numbers here</span>
+        </div>
+
+        <!-- 3 — Therapy Practice (replace with your real client data) -->
+        <div class="cr-card reveal" style="transition-delay:0.16s">
+          <div class="cr-photo-wrap">
+            <div class="cr-circle" style="background:linear-gradient(145deg,#2a0a0a,#550a0a);">🧠</div>
+          </div>
+          <span class="cr-industry-pill">Therapy Practice</span>
+          <div class="cr-stats">
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Posts</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Followers</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Views</span>
+            </div>
+          </div>
+          <span class="cr-growth-badge">↑ Your numbers here</span>
+        </div>
+
+        <!-- 4 — Fitness & Wellness (replace with your real client data) -->
+        <div class="cr-card reveal" style="transition-delay:0.24s">
+          <div class="cr-photo-wrap">
+            <div class="cr-circle" style="background:linear-gradient(145deg,#001a10,#004428);">💪</div>
+          </div>
+          <span class="cr-industry-pill">Fitness &amp; Wellness</span>
+          <div class="cr-stats">
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Posts</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Followers</span>
+            </div>
+            <div class="cr-stat-divider"></div>
+            <div class="cr-stat">
+              <span class="cr-stat-num">—</span>
+              <span class="cr-stat-lbl">Views</span>
+            </div>
+          </div>
+          <span class="cr-growth-badge">↑ Your numbers here</span>
+        </div>
+
+      </div><!-- /client-results-grid -->
+    </div><!-- /analytics-section -->
+
   </div>
 </section>
 
@@ -1566,17 +1900,66 @@
 </section>
 
 <!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-tag reveal" style="text-align:center">Client Love</p>
+    <h2 class="reveal">What my clients are saying</h2>
+    <p class="sub reveal">Don't take my word for it — hear it from the business owners I've worked with.</p>
+
+    <div class="testimonials-grid">
+
+      <!-- Review 1 — replace with real client review -->
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <span class="testi-quote-mark">"</span>
+        <p class="testi-body">
+          Working with Nyah completely changed the way I show up online. Before, I was posting random content with no strategy and getting zero traction. Now I have a consistent presence, my followers are actually engaging, and I've had new clients reach out directly from my social media. She handles everything — I just show up, film, and let her do the rest. Best investment I've made in my business.
+        </p>
+        <div class="testi-author-row">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#1a3a2a,#1a6b3c)">C</div>
+          <div>
+            <div class="testi-name">Client Name Here</div>
+            <div class="testi-role">Industry — Location</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 — replace with real client review -->
+      <div class="testi-card reveal" style="transition-delay:0.1s">
+        <div class="testi-stars">★★★★★</div>
+        <span class="testi-quote-mark">"</span>
+        <p class="testi-body">
+          I was skeptical at first — I didn't think social media would work for my type of business. Nyah proved me completely wrong. She took the time to understand my brand, my clients, and what makes my business different. The content she creates actually sounds like me, and the strategy behind it is clear. I'm already seeing results after just a few months. Highly recommend.
+        </p>
+        <div class="testi-author-row">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#002244,#004488)">M</div>
+          <div>
+            <div class="testi-name">Client Name Here</div>
+            <div class="testi-role">Industry — Location</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      MEET NYAH
 ============================================================ -->
 <section id="meet">
   <div class="container">
     <div class="meet-inner">
       <div class="meet-photo-wrap reveal-left">
-        <div class="meet-photo-frame">
-          <div class="meet-photo-placeholder">
-            <div class="meet-avatar-circle">N</div>
-            <p>Your photo here</p>
-          </div>
+        <div class="meet-photo-frame" style="padding:0;overflow:hidden;background:none;">
+          <img
+            src="nyah.jpg"
+            alt="Nyah — Social Media Strategist"
+            style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:20px;"
+            onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#f5f0eb,#ede5d8)';this.parentElement.innerHTML+='<div style=\'display:flex;flex-direction:column;align-items:center;gap:16px;justify-content:center;height:100%\'><div style=\'width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#FF5500,#ff8855);display:flex;align-items:center;justify-content:center;font-family:Dancing Script,cursive;font-size:3.5rem;color:#fff\'>N</div><p style=\'font-size:.82rem;color:#aaa;font-style:italic\'>Add nyah.jpg to show photo</p></div>'"
+          />
         </div>
         <div class="meet-accent-box">
           <div class="num">NoVA</div>
