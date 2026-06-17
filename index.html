@@ -2291,6 +2291,100 @@
   </div>
 </section>
 
+
+<!-- ============================================================
+     HOW WE WORK TOGETHER
+============================================================ -->
+<section id="process">
+  <div class="container">
+    <p class="section-tag reveal" style="text-align:center">The Process</p>
+    <h2 class="reveal">How We Work Together</h2>
+    <p class="sub reveal">No guessing, no back and forth. Here's exactly what happens from first click to first post.</p>
+
+    <div class="process-grid">
+
+      <div class="flip-card reveal">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-step">01 /</div>
+            <div class="flip-title">Fill Out the Inquiry Form</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-title">Tell me about your brand, your goals, and what you're looking to get out of this. It helps me come to our first call already thinking about you.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" style="transition-delay:0.05s">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-step">02 /</div>
+            <div class="flip-title">Assessment Call</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-title">We hop on a call to go deeper into your vision, your current presence, and figure out if we're the right fit. No pressure, just a real conversation.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" style="transition-delay:0.1s">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-step">03 /</div>
+            <div class="flip-title">Brand Proposal</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-title">If we're aligned, you'll get a custom proposal with the strategy, scope, timeline, and investment — built specifically for your brand.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" style="transition-delay:0.15s">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-step">04 /</div>
+            <div class="flip-title">Agreement + Initial Deposit</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-title">Once you're ready, we lock in your start date with a signed agreement and initial deposit. That's when it gets real.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" style="transition-delay:0.2s">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-step">05 /</div>
+            <div class="flip-title">Strategy Development</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-title">I build your custom content strategy from scratch — rooted in your brand, your audience, and what actually moves the needle for your industry.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" style="transition-delay:0.25s">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-step">06 /</div>
+            <div class="flip-title">Ongoing Partnership</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-title">We execute, analyze, and keep refining. Every month builds on the last. This is a long-term investment in your brand, and we treat it that way.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="process-timeline reveal">
+      <strong>The Timeline</strong>
+      <p>Most clients start seeing real momentum within the first 90 days. The compounding effect takes over from there. We're not here for quick fixes — we're here to build something that actually lasts.</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- ============================================================
      FAQ
 ============================================================ -->
@@ -2308,7 +2402,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Honestly? We'll figure that out together on your free discovery call. But here's the quick version Strategy is for owners who want expert direction but handle posting themselves. Presence is for those who want consistent, professional content without overcomplicating it. Growth is for owners ready to hand off the whole thing and go all in. Not sure which fits? That's exactly what the initial call is for. We'll figure it out together.</p>
+          <p>Honestly? We'll figure that out together on your free discovery call. But here's the quick version Strategy is for owners who want expert direction but handle posting themselves. Presence is for those who want consistent, professional content without overcomplicating it. Growth is for owners ready to hand off the whole thing and go all in. Not sure which fits? That's exactly what the assessment call is for. We'll figure it out together.</p>
         </div>
       </div>
 
@@ -2384,7 +2478,7 @@
 
       <div class="faq-item reveal">
         <button class="faq-question">
-          What happens on the discovery call?
+          What happens on the assessment call?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
@@ -2502,6 +2596,12 @@
     hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open');
   });
+
+  // Flip cards — tap to toggle on touch devices
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  });
+
   function closeMobile() {
     hamburger.classList.remove('open');
     mobileNav.classList.remove('open');
