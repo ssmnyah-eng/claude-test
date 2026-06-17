@@ -429,9 +429,14 @@
       margin-bottom: 64px;
     }
     .industry-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 32px 24px;
+    }
+    .industry-item {
+      flex: 0 0 auto;
+      width: 140px;
     }
     .industry-item {
       display: flex;
