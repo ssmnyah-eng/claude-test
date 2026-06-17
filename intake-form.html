@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Intake Questionnaire — Social Strategist Nyah</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a0a0a;--navy-light:#141414;--gold:#ff5500;--gold-dim:rgba(255,85,0,0.12);
+  --gold-border:rgba(255,85,0,0.35);--white:#ffffff;--card:#111111;
+  --input-bg:#0a0a0a;--muted:#999999;--body:#cccccc;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--body);font-family:'Inter',sans-serif;font-size:15px;min-height:100vh}
+.q-header{background:var(--navy-light);border-bottom:1px solid var(--gold-border);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.q-logo{font-size:18px;color:var(--white);font-weight:600}
+.q-logo span{color:var(--gold)}
+.progress-wrap{display:flex;align-items:center;gap:12px}
+.progress-bar-outer{width:140px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden}
+.progress-bar-inner{height:100%;background:var(--gold);border-radius:2px;transition:width 0.4s ease;width:0%}
+.progress-label{font-size:12px;color:var(--muted);min-width:40px;text-align:right}
+.q-hero{text-align:center;padding:72px 24px 56px;background:linear-gradient(180deg,var(--navy-light),var(--navy))}
+.q-eyebrow{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.q-hero h1{font-size:36px;font-weight:700;color:var(--white);margin-bottom:16px}
+.q-hero h1 em{color:var(--gold);font-style:normal}
+.q-hero p{max-width:480px;margin:0 auto 16px;line-height:1.7;color:var(--body)}
+.q-time{display:inline-block;font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:6px 16px}
+.q-body{max-width:620px;margin:0 auto;padding:48px 24px 80px}
+.q-card{background:var(--card);border:1px solid rgba(255,85,0,0.1);border-radius:12px;padding:24px;margin-bottom:16px}
+.q-label{display:block;font-size:15px;font-weight:500;color:var(--white);margin-bottom:6px;line-height:1.5}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:11px;font-weight:700;border-radius:6px;margin-right:10px;vertical-align:middle}
+textarea,input[type=text],input[type=email]{width:100%;background:var(--input-bg);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:12px 14px;color:var(--white);font-family:'Inter',sans-serif;font-size:14px;margin-top:10px;resize:vertical;min-height:90px}
+input[type=text],input[type=email]{min-height:auto}
+input::placeholder,textarea::placeholder{color:#5a6275}
+input:focus,textarea:focus{outline:none;border-color:var(--gold-border)}
+.choices{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.choices.row{flex-direction:row;flex-wrap:wrap;gap:10px}
+.choice{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body);cursor:pointer;background:var(--input-bg);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 14px}
+.choice input{width:auto;margin:0}
+.divider{height:1px;background:rgba(255,85,0,0.1);margin:8px 0}
+.submit-wrap{text-align:center;padding-top:24px}
+.submit-note{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.7}
+.submit-btn{background:var(--gold) !important;color:#ffffff !important;border:none;border-radius:8px;padding:16px 48px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.04em;cursor:pointer;transition:opacity 0.2s,transform 0.15s}
+.submit-btn:hover{opacity:0.9;transform:translateY(-1px)}
+.success{display:none;text-align:center;padding:80px 24px}
+.success-icon{width:64px;height:64px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 24px;color:var(--gold)}
+.success h2{font-size:28px;font-weight:700;color:var(--white);margin-bottom:12px}
+.success p{color:var(--muted);max-width:400px;margin:0 auto}
+footer{border-top:1px solid rgba(255,85,0,0.12);padding:20px 32px;text-align:center;font-size:12px;color:var(--muted)}
+footer span{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="q-header">
+  <div class="q-logo">Social Strategist <span>Nyah</span></div>
+  <div class="progress-wrap">
+    <div class="progress-bar-outer"><div class="progress-bar-inner" id="progress-bar"></div></div>
+    <div class="progress-label" id="progress-label">0%</div>
+  </div>
+</div>
+
+<div class="q-hero">
+  <div class="q-eyebrow">Intake Questionnaire</div>
+  <h1>Tell Me About <em>Your Business</em></h1>
+  <p>Before our call, I want to know everything about you, your business, and where you want to go. Take your time and be as detailed as you can.</p>
+  <div class="q-time">Takes about 10 to 15 minutes</div>
+</div>
+
+<div class="q-body">
+<form id="intake-form" action="https://formspree.io/f/xjgddljg" method="POST">
+
+  <div class="q-card">
+    <label class="q-label">Your Name <span style="color:var(--gold)">*</span></label>
+    <input type="text" name="client_name" required placeholder="First and last name"/>
+  </div>
+  <div class="q-card">
+    <label class="q-label">Business Name <span style="color:var(--gold)">*</span></label>
+    <input type="text" name="business_name" required placeholder="Your business name"/>
+  </div>
+  <div class="q-card">
+    <label class="q-label">Email Address <span style="color:var(--gold)">*</span></label>
+    <input type="email" name="email" required placeholder="your@email.com"/>
+  </div>
+
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">01</span>What do you do and who do you serve, in your own words? <span style="color:var(--gold)">*</span></label>
+    <textarea name="what_you_do" required placeholder="Describe your business and your ideal customer..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">02</span>What makes you different from your competitors? <span style="color:var(--gold)">*</span></label>
+    <textarea name="differentiator" required placeholder="What sets you apart?"></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">03</span>What is your most popular product or service? <span style="color:var(--gold)">*</span></label>
+    <textarea name="popular_offer" required placeholder="What do people come to you for most?"></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">04</span>Who is your ideal customer? Age, lifestyle, what they care about. <span style="color:var(--gold)">*</span></label>
+    <textarea name="ideal_customer" required placeholder="Describe them in detail..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">05</span>How do you currently get most of your clients? <span style="color:var(--gold)">*</span></label>
+    <textarea name="client_acquisition" required placeholder="Referrals, social media, ads, word of mouth..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">06</span>What has been your biggest challenge with social media so far? <span style="color:var(--gold)">*</span></label>
+    <textarea name="biggest_challenge" required placeholder="What has been frustrating or not working?"></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">07</span>What have you tried on social media that flopped? <span style="color:var(--gold)">*</span></label>
+    <textarea name="what_flopped" required placeholder="A post, a strategy, a platform that did not work..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">08</span>What do you despise about social media? <span style="color:var(--gold)">*</span></label>
+    <textarea name="despise" required placeholder="Be honest. What do you hate seeing or doing?"></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">09</span>Are there brands or accounts you admire and want to feel similar to? <span style="color:var(--gold)">*</span></label>
+    <textarea name="admired_brands" required placeholder="Who do you look up to online?"></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">10</span>Are there things you never want associated with your brand? <span style="color:var(--gold)">*</span></label>
+    <textarea name="never_associate" required placeholder="Topics, styles, or tones that are completely off limits..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">11</span>What is your primary goal for social media right now? <span style="color:var(--gold)">*</span></label>
+    <textarea name="primary_goal" required placeholder="Leads, visibility, sales, brand awareness..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">12</span>If your social media was working exactly the way you want it to, what would that look like? <span style="color:var(--gold)">*</span></label>
+    <textarea name="success_vision" required placeholder="Paint the picture of success..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">13</span>Are you comfortable being the face of your brand on camera, or would you prefer to stay behind it? <span style="color:var(--gold)">*</span></label>
+    <div class="choices">
+      <label class="choice"><input type="radio" name="camera_comfort" value="Comfortable on camera" required> Comfortable on camera</label>
+      <label class="choice"><input type="radio" name="camera_comfort" value="Prefer to stay behind the brand"> Prefer to stay behind the brand</label>
+      <label class="choice"><input type="radio" name="camera_comfort" value="Open to both"> Open to both</label>
+    </div>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">14</span>Have you worked with a social media manager before? If so, what was that experience like? <span style="color:var(--gold)">*</span></label>
+    <textarea name="prior_smm_experience" required placeholder="Yes or no, and what that experience was like..."></textarea>
+  </div>
+  <div class="q-card">
+    <label class="q-label"><span class="q-num">15</span>What are you looking for in a social media manager? <span style="color:var(--gold)">*</span></label>
+    <textarea name="looking_for" required placeholder="What matters most to you in this relationship?"></textarea>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="submit-wrap">
+    <p class="submit-note">Thank you for taking the time to share all of this. I will review everything before our call so we can spend our time together focused on strategy, not the basics.</p>
+    <button type="submit" class="submit-btn">Submit My Answers</button>
+  </div>
+
+</form>
+
+<div class="success" id="success-msg">
+  <div class="success-icon">✦</div>
+  <h2>Got it. Thank you.</h2>
+  <p>I will review everything before our call so we come prepared. Talk soon — Nyah.</p>
+</div>
+</div>
+
+<footer>2026 <span>Social Strategist Nyah</span> · ssmnyah@gmail.com</footer>
+
+<script>
+const form=document.getElementById('intake-form');
+const success=document.getElementById('success-msg');
+const bar=document.getElementById('progress-bar');
+const label=document.getElementById('progress-label');
+function updateProgress(){
+  const required=form.querySelectorAll('[required]');
+  const unique=[...new Set([...required].map(el=>el.name))];
+  const filled=unique.filter(name=>{
+    const el=form.querySelector('[name="'+name+'"]');
+    if(!el)return false;
+    if(el.type==='radio'||el.type==='checkbox')return!!form.querySelector('[name="'+name+'"]:checked');
+    return el.value.trim().length>0;
+  });
+  const pct=Math.round((filled.length/unique.length)*100);
+  bar.style.width=pct+'%';
+  label.textContent=pct+'%';
+}
+form.addEventListener('input',updateProgress);
+form.addEventListener('change',updateProgress);
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  const data=new FormData(form);
+  try{
+    const res=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
+    if(res.ok){form.style.display='none';success.style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+    else{alert('Something went wrong. Please email ssmnyah@gmail.com directly.');}
+  }catch{alert('Something went wrong. Please email ssmnyah@gmail.com directly.');}
+});
+</script>
+</body>
+</html>
