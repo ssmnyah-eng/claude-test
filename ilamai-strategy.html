@@ -1,1117 +1,1294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iLamai Med Spa — Social Strategy &amp; Growth Proposal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8"/>
+<title>iLamai Med Spa &#8212; Social Strategy &amp; Growth Proposal</title>
+<style>
+@page { size: A4; margin: 0; }
 
-    :root {
-      --navy:        #1B2B4A;
-      --navy-mid:    #243553;
-      --navy-light:  #2E4268;
-      --gold:        #C4A052;
-      --gold-light:  #DEB96A;
-      --gold-pale:   #F3E8C8;
-      --gold-xpale:  #FAF3E0;
-      --cream:       #F5EFE0;
-      --cream-light: #FAF7F2;
-      --white:       #FFFFFF;
-      --text:        #1A1A1A;
-      --text-mid:    #4A4A4A;
-      --text-light:  #7A7A7A;
-      --border:      #DDD5C2;
-    }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; }
+:root {
+  --navy:       #1B2B4A;
+  --navy-mid:   #243553;
+  --gold:       #C4A052;
+  --gold-pale:  #F3E8C8;
+  --gold-xpale: #FAF3E0;
+  --cream:      #F5EFE0;
+  --cream-light:#FAF7F2;
+  --white:      #FFFFFF;
+  --text:       #1A1A1A;
+  --text-mid:   #4A4A4A;
+  --text-light: #7A7A7A;
+  --border:     #DDD5C2;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream-light);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
 
-    /* ── HERO ────────────────────────────────── */
-    .hero {
-      background: var(--navy);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -120px;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(196,160,82,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(196,160,82,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-nav {
-      padding: 28px 56px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(196,160,82,0.2);
-      position: relative;
-      z-index: 1;
-    }
-    .nav-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      color: var(--gold);
-      letter-spacing: 0.06em;
-    }
-    .nav-label {
-      font-size: 11px;
-      color: rgba(255,255,255,0.45);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-    .hero-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px 56px 40px;
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-    }
-    .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 20px;
-    }
-    .hero-headline {
-      font-family: 'Playfair Display', serif;
-      font-size: 54px;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 28px;
-    }
-    .hero-headline em {
-      color: var(--gold);
-      font-style: italic;
-    }
-    .hero-descriptor {
-      font-size: 17px;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.75;
-      max-width: 680px;
-      margin-bottom: 44px;
-    }
-    .hero-creds {
-      display: flex;
-      gap: 0;
-      border: 1px solid rgba(196,160,82,0.35);
-      border-radius: 10px;
-      overflow: hidden;
-      max-width: 680px;
-    }
-    .cred-item {
-      flex: 1;
-      padding: 18px 22px;
-      border-right: 1px solid rgba(196,160,82,0.2);
-    }
-    .cred-item:last-child { border-right: none; }
-    .cred-label {
-      font-size: 10px;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin-bottom: 5px;
-    }
-    .cred-value {
-      font-size: 13px;
-      color: var(--white);
-      font-weight: 500;
-      line-height: 1.4;
-    }
-    .hero-footer-strip {
-      padding: 20px 56px;
-      border-top: 1px solid rgba(196,160,82,0.15);
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      position: relative;
-      z-index: 1;
-    }
-    .scroll-hint {
-      font-size: 11px;
-      color: rgba(255,255,255,0.35);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-    .scroll-arrow {
-      color: var(--gold);
-      font-size: 18px;
-      animation: bounce 1.8s ease-in-out infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(5px); }
-    }
+.sans { font-family: Arial, Helvetica, sans-serif; }
+.page-break { page-break-before: always; }
+.no-break   { page-break-inside: avoid; }
 
-    /* ── PAGE BODY ───────────────────────────── */
-    .page-body {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 40px 80px;
-    }
+/* ── PAGE WRAPPER ─────────────────── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  overflow: hidden;
+  position: relative;
+}
 
-    /* ── SECTION WRAPPER ─────────────────────── */
-    .section {
-      padding: 72px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .section:last-child { border-bottom: none; }
+/* ── COVER PAGE ─────────────────────────────────────── */
+.cover {
+  width: 210mm;
+  height: 297mm;
+  background-color: var(--navy);
+  overflow: hidden;
+  position: relative;
+}
 
-    .section-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-    .section-title em { font-style: italic; color: var(--gold); }
-    .section-intro {
-      font-size: 15px;
-      color: var(--text-mid);
-      line-height: 1.8;
-      max-width: 680px;
-      margin-bottom: 44px;
-    }
+.cover-top-bar {
+  background: var(--gold);
+  height: 6px;
+  width: 100%;
+}
 
-    /* ── BEFORE / AFTER ──────────────────────── */
-    .before-after {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 48px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    }
-    .ba-panel {
-      padding: 36px 36px 32px;
-    }
-    .ba-panel.before { background: #2A2A2A; }
-    .ba-panel.after  { background: var(--navy); }
-    .ba-label {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 14px;
-    }
-    .ba-panel.before .ba-label { color: rgba(255,255,255,0.4); }
-    .ba-panel.after  .ba-label { color: var(--gold); }
-    .ba-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-    .ba-panel.before .ba-title { color: rgba(255,255,255,0.6); font-style: italic; }
-    .ba-panel.after  .ba-title { color: var(--white); }
-    .ba-items { display: flex; flex-direction: column; gap: 10px; }
-    .ba-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 13px;
-    }
-    .ba-panel.before .ba-item { color: rgba(255,255,255,0.55); }
-    .ba-panel.after  .ba-item { color: rgba(255,255,255,0.85); }
-    .ba-item-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      margin-top: 6px;
-      flex-shrink: 0;
-    }
-    .before .ba-item-dot { background: rgba(255,255,255,0.25); }
-    .after  .ba-item-dot { background: var(--gold); }
+.cover-body {
+  padding: 60px 52px 0 52px;
+}
 
-    /* ── WHAT IT LOOKS LIKE ──────────────────── */
-    .vision-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 44px;
-    }
-    .vision-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .vision-card-img {
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-    }
-    .vision-card-img.ig  { background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%); }
-    .vision-card-img.fb  { background: #1877F2; }
-    .vision-card-img.yt  { background: #FF0000; }
-    .vision-card-body { padding: 18px 20px; }
-    .vision-card-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .vision-card-text {
-      font-size: 12.5px;
-      color: var(--text-mid);
-      line-height: 1.65;
-    }
-    .vision-card-tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 3px 9px;
-      border-radius: 20px;
-      margin-top: 12px;
-    }
-    .tag-ig  { background: #F3E8F8; color: #833ab4; }
-    .tag-fb  { background: #E8F0FE; color: #1877F2; }
-    .tag-yt  { background: #FEEAEA; color: #FF0000; }
+.cover-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
 
-    /* ── CONVERSATIONS ───────────────────────── */
-    .conversations {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .conv-item {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: 28px;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--border);
-      align-items: start;
-    }
-    .conv-item:last-child { border-bottom: none; }
-    .conv-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      opacity: 0.6;
-    }
-    .conv-content { }
-    .conv-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      color: var(--navy);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-    .conv-body {
-      font-size: 14px;
-      color: var(--text-mid);
-      line-height: 1.8;
-      max-width: 700px;
-      margin-bottom: 12px;
-    }
-    .conv-formats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .format-pill {
-      font-size: 10.5px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      color: var(--text-light);
-      background: var(--cream);
-    }
+.cover-spa-name {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  font-weight: bold;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
 
-    /* ── WHAT THE BRAND BECOMES ──────────────── */
-    .brand-becomes {
-      background: var(--navy);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 48px;
-    }
-    .brand-becomes-header {
-      padding: 36px 44px 28px;
-      border-bottom: 1px solid rgba(196,160,82,0.2);
-    }
-    .brand-becomes-header h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: var(--white);
-    }
-    .brand-becomes-header h3 em { color: var(--gold); font-style: italic; }
-    .brand-becomes-header p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      margin-top: 8px;
-    }
-    .brand-pillar-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-    }
-    .brand-pillar {
-      padding: 32px 36px;
-      border-right: 1px solid rgba(196,160,82,0.12);
-    }
-    .brand-pillar:last-child { border-right: none; }
-    .pillar-icon {
-      font-size: 28px;
-      margin-bottom: 14px;
-    }
-    .pillar-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .pillar-text {
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.7;
-    }
+.cover-spa-sub {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 40px;
+}
 
-    /* ── SAMPLE POST MOCKUPS ─────────────────── */
-    .mockup-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 44px;
-    }
-    .post-mockup {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .post-visual {
-      height: 160px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 16px;
-      position: relative;
-    }
-    .post-visual-1 { background: linear-gradient(145deg, var(--navy) 0%, #3A5080 60%, #4A6090 100%); }
-    .post-visual-2 { background: linear-gradient(145deg, #2A3828 0%, #3A5040 60%, #4A6850 100%); }
-    .post-visual-3 { background: linear-gradient(145deg, #3A2A1A 0%, #5A4030 60%, #7A5840 100%); }
-    .post-overlay-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      color: var(--white);
-      font-weight: 600;
-      line-height: 1.3;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    }
-    .post-overlay-sub {
-      font-size: 10px;
-      color: rgba(255,255,255,0.7);
-      margin-top: 3px;
-    }
-    .post-meta-row {
-      padding: 12px 14px 6px;
-      display: flex;
-      gap: 10px;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .post-avatar-sm {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy), var(--gold));
-      flex-shrink: 0;
-    }
-    .post-handle { font-size: 11px; font-weight: 700; }
-    .post-time   { font-size: 10px; color: var(--text-light); }
-    .post-caption-area { padding: 10px 14px 14px; }
-    .post-hook {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.4;
-      margin-bottom: 5px;
-    }
-    .post-body-text {
-      font-size: 11px;
-      color: var(--text-mid);
-      line-height: 1.5;
-    }
-    .post-cta-label {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 10.5px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-    }
-    .post-annotation {
-      background: var(--gold-xpale);
-      border-top: 1px solid var(--gold-pale);
-      padding: 8px 14px;
-      font-size: 10.5px;
-      color: var(--text-mid);
-    }
-    .post-annotation strong { color: var(--navy); }
+.cover-divider {
+  border: none;
+  border-top: 1px solid rgba(196,160,82,0.4);
+  margin-bottom: 40px;
+}
 
-    /* ── LEAD PATH ───────────────────────────── */
-    .lead-path {
-      display: flex;
-      align-items: stretch;
-      gap: 0;
-      margin-bottom: 48px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .lead-step {
-      flex: 1;
-      padding: 28px 24px;
-      border-right: 1px solid var(--border);
-      position: relative;
-    }
-    .lead-step:last-child { border-right: none; }
-    .lead-step::after {
-      content: '→';
-      position: absolute;
-      right: -12px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 18px;
-      color: var(--gold);
-      z-index: 1;
-      background: var(--white);
-      line-height: 1;
-    }
-    .lead-step:last-child::after { display: none; }
-    .lead-step-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: var(--gold-pale);
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .lead-step h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-    .lead-step p {
-      font-size: 11.5px;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-    .lead-step:nth-child(5) {
-      background: var(--navy);
-    }
-    .lead-step:nth-child(5) .lead-step-num { color: rgba(196,160,82,0.3); }
-    .lead-step:nth-child(5) h4  { color: var(--gold); }
-    .lead-step:nth-child(5) p   { color: rgba(255,255,255,0.6); }
+.cover-title {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: bold;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
 
-    /* ── METRICS PROJECTION ──────────────────── */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-    .metric-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px 20px;
-      text-align: center;
-    }
-    .metric-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .metric-num span { font-size: 20px; color: var(--gold); }
-    .metric-label {
-      font-size: 11px;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 6px;
-    }
-    .metric-note {
-      font-size: 11px;
-      color: var(--text-light);
-      font-style: italic;
-      line-height: 1.4;
-    }
+.cover-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: rgba(245,239,224,0.75);
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 52px;
+}
 
-    /* ── CLOSING CTA ─────────────────────────── */
-    .closing-cta {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      border-radius: 16px;
-      padding: 56px 56px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .closing-cta::before {
-      content: '';
-      position: absolute;
-      top: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 400px; height: 200px;
-      background: radial-gradient(ellipse, rgba(196,160,82,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .closing-cta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 34px;
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 14px;
-      position: relative;
-    }
-    .closing-cta h2 em { color: var(--gold); font-style: italic; }
-    .closing-cta p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.75;
-      max-width: 580px;
-      margin: 0 auto 32px;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 14px 38px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-bottom: 16px;
-    }
-    .cta-sub {
-      font-size: 12px;
-      color: rgba(255,255,255,0.35);
-      position: relative;
-    }
+/* Decorative box on cover */
+.cover-vision-box {
+  background: rgba(196,160,82,0.12);
+  border-left: 3px solid var(--gold);
+  padding: 22px 26px;
+  margin-bottom: 52px;
+}
 
-    /* ── FOOTER ──────────────────────────────── */
-    .doc-footer {
-      padding: 28px 0 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--border);
-      margin-top: 48px;
-    }
-    .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 14px;
-      color: var(--navy);
-    }
-    .footer-note {
-      font-size: 11px;
-      color: var(--text-light);
-      font-style: italic;
-    }
+.cover-vision-quote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--cream);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
 
-    /* ── GOLD DIVIDER ────────────────────────── */
-    .gold-divider {
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold) 0%, rgba(196,160,82,0.2) 60%, transparent 100%);
-      margin: 8px 0;
-    }
+.cover-vision-attr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
 
-    /* ── HIGHLIGHT QUOTE ─────────────────────── */
-    .pull-quote {
-      background: var(--gold-xpale);
-      border-left: 4px solid var(--gold);
-      border-radius: 0 8px 8px 0;
-      padding: 22px 28px;
-      margin: 28px 0;
-    }
-    .pull-quote p {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      color: var(--navy);
-      font-style: italic;
-      line-height: 1.6;
-    }
+/* Stat row on cover */
+.cover-stats-tbl { display: table; width: 100%; }
+.cover-stat-cell {
+  display: table-cell;
+  width: 33.33%;
+  text-align: center;
+  border-right: 1px solid rgba(196,160,82,0.3);
+  padding: 0 12px;
+}
+.cover-stat-cell:last-child { border-right: none; }
+.cover-stat-num {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: var(--gold);
+  font-weight: bold;
+  display: block;
+}
+.cover-stat-lbl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(245,239,224,0.6);
+}
 
-    /* ── RESPONSIVE ──────────────────────────── */
-    @media (max-width: 900px) {
-      .hero-headline { font-size: 36px; }
-      .hero-body { padding: 40px 28px 30px; }
-      .hero-nav { padding: 20px 28px; }
-      .hero-footer-strip { padding: 16px 28px; }
-      .hero-creds { flex-direction: column; }
-      .page-body { padding: 0 24px 60px; }
-      .vision-grid { grid-template-columns: 1fr; }
-      .mockup-strip { grid-template-columns: 1fr; }
-      .brand-pillar-grid { grid-template-columns: 1fr; }
-      .metrics-grid { grid-template-columns: repeat(2,1fr); }
-      .lead-path { flex-direction: column; }
-      .lead-step::after { display: none; }
-      .before-after { grid-template-columns: 1fr; }
-      .closing-cta { padding: 36px 24px; }
-    }
-  </style>
+.cover-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.25);
+  padding: 16px 52px;
+  display: table;
+  width: 100%;
+}
+.cover-footer-left  { display: table-cell; vertical-align: middle; }
+.cover-footer-right { display: table-cell; vertical-align: middle; text-align: right; }
+.cover-footer-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: rgba(245,239,224,0.55);
+}
+.cover-footer-date {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: var(--gold);
+}
+
+/* ── SECTION HEADER ────────────────── */
+.section-header {
+  background: var(--navy);
+  padding: 18px 36px;
+  margin-bottom: 0;
+  display: table;
+  width: 100%;
+}
+.sh-left  { display: table-cell; vertical-align: middle; }
+.sh-right { display: table-cell; vertical-align: middle; text-align: right; }
+.sh-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+.sh-title {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: var(--white);
+  font-weight: bold;
+}
+.sh-num {
+  font-family: Georgia, serif;
+  font-size: 48px;
+  color: rgba(196,160,82,0.2);
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* ── INNER CONTENT PADDING ─────────── */
+.content { padding: 28px 36px 36px 36px; }
+
+/* ── INTRO TEXT ─────────────────────── */
+.intro-box {
+  background: var(--gold-xpale);
+  border-left: 4px solid var(--gold);
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+.intro-box p {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--navy);
+}
+
+/* ── TWO-COL TABLE ──────────────────── */
+.two-col { display: table; width: 100%; border-spacing: 0; }
+.col-left  {
+  display: table-cell;
+  vertical-align: top;
+  width: 48%;
+  padding-right: 14px;
+}
+.col-right {
+  display: table-cell;
+  vertical-align: top;
+  width: 52%;
+  padding-left: 14px;
+}
+
+/* ── BRAND CARD ─────────────────────── */
+.brand-card {
+  background: var(--navy);
+  padding: 22px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.brand-card-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.brand-headline {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: var(--white);
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.brand-body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: rgba(245,239,224,0.8);
+  line-height: 1.65;
+}
+
+/* ── POSITIONING TABLE ──────────────── */
+.pos-tbl { display: table; width: 100%; margin-bottom: 16px; }
+.pos-row { display: table-row; }
+.pos-icon { display: table-cell; width: 32px; vertical-align: top; padding-top: 2px; }
+.pos-icon-circle {
+  width: 24px; height: 24px;
+  background: var(--gold);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: var(--navy);
+  font-weight: bold;
+}
+.pos-text { display: table-cell; vertical-align: top; padding-left: 4px; }
+.pos-text strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: var(--navy);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 2px;
+}
+.pos-text p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+/* ── AUDIENCE CARDS ─────────────────── */
+.audience-tbl { display: table; width: 100%; margin-bottom: 20px; }
+.aud-cell {
+  display: table-cell;
+  vertical-align: top;
+  width: 50%;
+  padding-right: 8px;
+}
+.aud-cell:last-child { padding-right: 0; padding-left: 8px; }
+.aud-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 14px;
+}
+.aud-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.aud-desc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ── CONTENT PILLARS ─────────────────── */
+.pillars-tbl { display: table; width: 100%; margin-bottom: 20px; }
+.pillar-cell {
+  display: table-cell;
+  vertical-align: top;
+  width: 25%;
+  padding-right: 10px;
+}
+.pillar-cell:last-child { padding-right: 0; }
+.pillar-card {
+  background: var(--navy);
+  padding: 16px 14px;
+  color: var(--white);
+  min-height: 130px;
+}
+.pillar-num {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  color: rgba(196,160,82,0.4);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.pillar-name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.pillar-desc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: rgba(245,239,224,0.75);
+  line-height: 1.5;
+}
+
+/* ── PHASE TIMELINE ─────────────────── */
+.phase-tbl { display: table; width: 100%; margin-bottom: 20px; }
+.phase-row { display: table-row; }
+.phase-num-cell {
+  display: table-cell;
+  width: 52px;
+  vertical-align: top;
+  padding-right: 12px;
+}
+.phase-badge {
+  background: var(--gold);
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 6px 0;
+  text-align: center;
+  width: 48px;
+}
+.phase-connector {
+  width: 2px;
+  background: var(--gold-pale);
+  margin: 0 auto;
+  height: 100%;
+  min-height: 10px;
+}
+.phase-content-cell {
+  display: table-cell;
+  vertical-align: top;
+  padding-bottom: 18px;
+  border-left: 2px solid var(--gold-pale);
+  padding-left: 16px;
+}
+.phase-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 2px;
+}
+.phase-title {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: var(--navy);
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.phase-items {
+  list-style: none;
+  padding: 0;
+}
+.phase-items li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: var(--text-mid);
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.phase-items li:before {
+  content: "&#8594;";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* ── DELIVERABLES GRID ───────────────── */
+.deliver-tbl { display: table; width: 100%; margin-bottom: 20px; }
+.deliver-row-a { display: table-row; }
+.deliver-cell {
+  display: table-cell;
+  vertical-align: top;
+  width: 33.33%;
+  padding: 0 6px 12px 6px;
+}
+.deliver-card {
+  background: var(--cream-light);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  padding: 14px;
+}
+.deliver-icon {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.deliver-name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.deliver-desc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* ── RESULTS/METRICS ─────────────────── */
+.metrics-tbl { display: table; width: 100%; margin-bottom: 20px; }
+.metric-cell {
+  display: table-cell;
+  vertical-align: top;
+  width: 25%;
+  padding-right: 10px;
+  text-align: center;
+}
+.metric-cell:last-child { padding-right: 0; }
+.metric-card {
+  background: var(--gold-xpale);
+  border: 1px solid var(--gold-pale);
+  padding: 16px 10px;
+}
+.metric-num {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  color: var(--navy);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.metric-lbl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: var(--text-mid);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── SAMPLE CONTENT PREVIEW ──────────── */
+.content-preview-tbl { display: table; width: 100%; margin-bottom: 20px; }
+.cp-cell {
+  display: table-cell;
+  vertical-align: top;
+  width: 33.33%;
+  padding-right: 10px;
+}
+.cp-cell:last-child { padding-right: 0; }
+.content-card {
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.content-card-header {
+  background: var(--navy);
+  padding: 10px 12px;
+}
+.content-card-type {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+.content-card-title {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  color: var(--white);
+  font-weight: bold;
+  line-height: 1.3;
+}
+.content-card-body {
+  background: var(--cream-light);
+  padding: 10px 12px;
+}
+.content-card-desc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: var(--text-mid);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.content-card-tag {
+  display: inline-block;
+  background: var(--gold-pale);
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  padding: 2px 7px;
+  margin-right: 4px;
+  margin-bottom: 2px;
+}
+
+/* ── CTA / INVESTMENT BOX ────────────── */
+.cta-box {
+  background: var(--navy);
+  padding: 30px 36px;
+  margin-bottom: 0;
+}
+.cta-inner-tbl { display: table; width: 100%; }
+.cta-left  { display: table-cell; vertical-align: middle; width: 65%; padding-right: 24px; }
+.cta-right { display: table-cell; vertical-align: middle; width: 35%; text-align: right; }
+.cta-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.cta-heading {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: var(--white);
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.cta-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: rgba(245,239,224,0.75);
+  line-height: 1.65;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 14px 28px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.cta-contact {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: rgba(245,239,224,0.5);
+}
+
+/* ── TESTIMONIAL / PHILOSOPHY ─────────── */
+.philo-box {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.philo-quote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--navy);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.philo-attr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: var(--text-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── SECTION TITLES ─────────────────── */
+.section-title {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  color: var(--navy);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.section-rule {
+  border: none;
+  border-top: 2px solid var(--gold);
+  margin-bottom: 18px;
+  width: 48px;
+}
+.body-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+/* ── PAGE FOOTER ─────────────────────── */
+.page-footer {
+  background: var(--navy);
+  padding: 10px 36px;
+  display: table;
+  width: 100%;
+}
+.pf-left  { display: table-cell; vertical-align: middle; }
+.pf-right { display: table-cell; vertical-align: middle; text-align: right; }
+.pf-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  color: rgba(245,239,224,0.45);
+  letter-spacing: 1px;
+}
+.pf-gold {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+/* ── CHECK / BULLET ITEMS ──────────── */
+.check-list { list-style: none; padding: 0; margin-bottom: 14px; }
+.check-list li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: var(--text-mid);
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+.check-list li:before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+/* ── GOLD ACCENT BAR ─────────────────── */
+.gold-bar {
+  height: 4px;
+  background: var(--gold);
+  width: 100%;
+}
+
+</style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════ HERO -->
-<section class="hero">
-  <nav class="hero-nav">
-    <div class="nav-brand">iLamai Med Spa</div>
-    <div class="nav-label">Social Strategy &amp; Growth Proposal · June 2026</div>
-  </nav>
+<!-- ══════════════════════════════════════════════════════
+     PAGE 1 — COVER
+══════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-top-bar"></div>
+  <div class="cover-body">
+    <div class="cover-label">Social Media Strategy Proposal</div>
+    <div class="cover-spa-name">iLamai Med Spa</div>
+    <div class="cover-spa-sub">by Dr. Uma Rangarajan</div>
+    <hr class="cover-divider"/>
 
-  <div class="hero-body">
-    <div class="hero-eyebrow">A Proposal for Dr. Uma Rangarajan, MD</div>
-    <h1 class="hero-headline">
-      Fredericksburg has a world-class<br>
-      med spa. Now let's make sure<br>
-      <em>the right people know it.</em>
-    </h1>
-    <p class="hero-descriptor">
-      iLamai Med Spa is run by a triple board-certified physician with a service menu that competes with practices in major metro markets — and a reputation already at 4.9 stars. The gap is not quality. It's visibility, and the way that visibility converts into booked patients. This is the plan to close that gap.
-    </p>
-    <div class="hero-creds">
-      <div class="cred-item">
-        <div class="cred-label">Physician</div>
-        <div class="cred-value">Dr. Uma Rangarajan, MD</div>
+    <div class="cover-title">
+      Transform Your Digital Presence<br/>
+      Into a Lead Generation Machine
+    </div>
+    <div class="cover-subtitle">
+      A comprehensive social media strategy designed to position iLamai Med Spa
+      as the premier luxury aesthetic destination in the region &#8212; attracting
+      high-value clients who are ready to invest in their confidence.
+    </div>
+
+    <div class="cover-vision-box">
+      <div class="cover-vision-quote">
+        &#8220;Dr. Uma Rangarajan has built a med spa that blends clinical excellence
+        with genuine warmth. The world deserves to see it. This strategy makes that happen.&#8221;
       </div>
-      <div class="cred-item">
-        <div class="cred-label">Certifications</div>
-        <div class="cred-value">Aesthetic Medicine · Functional Medicine · Anesthesiology</div>
+      <div class="cover-vision-attr">&#8212; Growth &amp; Social Strategy Proposal, June 2025</div>
+    </div>
+
+    <div class="cover-stats-tbl">
+      <div class="cover-stat-cell">
+        <span class="cover-stat-num">3&#215;</span>
+        <span class="cover-stat-lbl">Engagement<br/>Growth Target</span>
       </div>
-      <div class="cred-item">
-        <div class="cred-label">Location</div>
-        <div class="cred-value">Fredericksburg, VA</div>
+      <div class="cover-stat-cell">
+        <span class="cover-stat-num">90</span>
+        <span class="cover-stat-lbl">Days to<br/>First Results</span>
       </div>
-      <div class="cred-item">
-        <div class="cred-label">Reputation</div>
-        <div class="cred-value">4.9★ · Whole-body, non-judgmental approach</div>
+      <div class="cover-stat-cell">
+        <span class="cover-stat-num">5K+</span>
+        <span class="cover-stat-lbl">New Follower<br/>Goal (6 Months)</span>
       </div>
     </div>
   </div>
 
-  <div class="hero-footer-strip">
-    <span class="scroll-hint">Scroll to explore the strategy</span>
-    <span class="scroll-arrow">↓</span>
+  <div class="cover-footer">
+    <div class="cover-footer-left">
+      <div class="cover-footer-text">CONFIDENTIAL &#183; PREPARED FOR DR. UMA RANGARAJAN &#183; ILAMAI MED SPA</div>
+    </div>
+    <div class="cover-footer-right">
+      <div class="cover-footer-date">June 2025</div>
+    </div>
   </div>
-</section>
-
-<!-- ══════════════════════════════════════════ PAGE BODY -->
-<div class="page-body">
-
-  <!-- ══ SECTION 1: CURRENT REALITY -->
-  <section class="section">
-    <div class="section-label">Section 01 — Current Reality</div>
-    <h2 class="section-title">Where iLamai stands right now,<br><em>and why it matters.</em></h2>
-    <p class="section-intro">
-      The clinic is exceptional. The credentials are uncommon. The care is personal and holistic in a way most med spas in this market can't claim. What isn't yet working is the translation — the process of turning that excellence into the kind of digital presence that makes a stranger in Fredericksburg trust iLamai before they've ever walked through the door.
-    </p>
-
-    <div class="before-after">
-      <div class="ba-panel before">
-        <div class="ba-label">How iLamai reads online today</div>
-        <div class="ba-title">A medspa with lots of posts and nowhere to go next.</div>
-        <div class="ba-items">
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>1,030 Instagram followers — growing slowly, converting rarely</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Facebook page with 73 followers, content mirrored from Instagram</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>YouTube channel with one indexed video — enormous potential, completely untapped</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Captions that describe services rather than speak to the person who needs them</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Dr. Uma's expertise buried inside a content calendar that looks like everyone else's</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>No clear content strategy turning casual viewers into consultation bookings</span>
-          </div>
-        </div>
-      </div>
-      <div class="ba-panel after">
-        <div class="ba-label">What it becomes with the right strategy</div>
-        <div class="ba-title">The most trusted med spa voice in the Fredericksburg market.</div>
-        <div class="ba-items">
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Instagram built around trust content — Dr. Uma's voice front and center, fear addressed directly, CTAs that move followers into DMs</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Facebook rebuilt with native content, Lead Ads, and local community engagement that Instagram can't replicate</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>"Tea Time with Dr. Uma" YouTube series built to rank for high-intent local searches — content that converts and compounds over time</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Every post engineered with a hook, a value proposition, and a clear next step</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Dr. Uma positioned as the go-to physician voice in Fredericksburg for aesthetics, weight loss, hormone health, and whole-body wellness</span>
-          </div>
-          <div class="ba-item">
-            <div class="ba-item-dot"></div>
-            <span>Measurable pipeline: social → DMs → consultations → booked patients</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SECTION 2: WHAT THE BRAND BECOMES -->
-  <section class="section">
-    <div class="section-label">Section 02 — Brand Positioning</div>
-    <h2 class="section-title">This is what iLamai Med Spa<br><em>is built to be.</em></h2>
-    <p class="section-intro">
-      There are med spas in every market. What makes patients choose one and stay loyal to it has nothing to do with the equipment list — it's the provider they trust. The strategy below is built around a specific position: iLamai is the only practice in Fredericksburg where you get a triple board-certified physician who sees you as a whole person, not a treatment menu.
-    </p>
-
-    <div class="brand-becomes">
-      <div class="brand-becomes-header">
-        <h3>iLamai is not a medspa. It's the closest thing Fredericksburg has to a <em>physician who actually listens.</em></h3>
-        <p>That's the story the content tells — at scale, consistently, across every platform.</p>
-      </div>
-      <div class="brand-pillar-grid">
-        <div class="brand-pillar">
-          <div class="pillar-icon">🎓</div>
-          <div class="pillar-title">The Authority Pillar</div>
-          <div class="pillar-text">Dr. Uma's triple board certification is a differentiator no local competitor can claim. Every piece of educational content — YouTube, Instagram, Facebook — positions her as the expert who explains what others only sell.</div>
-        </div>
-        <div class="brand-pillar">
-          <div class="pillar-icon">🤝</div>
-          <div class="pillar-title">The Trust Pillar</div>
-          <div class="pillar-text">"Not a one size fits all practice." "We go into the root cause." These aren't taglines — they're the reason patients who've been burned by other practices finally show up. The content makes these promises visible and felt, not just listed on an About page.</div>
-        </div>
-        <div class="brand-pillar">
-          <div class="pillar-icon">🔑</div>
-          <div class="pillar-title">The Access Pillar</div>
-          <div class="pillar-text">The patients most likely to book at iLamai have been quietly thinking about it for years. They don't respond to "book now" buttons — they respond to content that makes them feel seen before they've spent a dollar. Every post creates a door they can walk through at their own pace.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pull-quote">
-      <p>"Where wellness meets aesthetic renewal" — that's the line already on the site. The content strategy's job is to make every post prove that sentence true for someone who's never heard of iLamai before."</p>
-    </div>
-  </section>
-
-  <!-- ══ SECTION 3: WHAT THIS LOOKS LIKE PER PLATFORM -->
-  <section class="section">
-    <div class="section-label">Section 03 — Platform Strategy</div>
-    <h2 class="section-title">What the strategy looks like<br><em>in practice, per platform.</em></h2>
-    <p class="section-intro">
-      Each platform has a different job. Instagram builds the relationship. Facebook creates community and captures leads at scale. YouTube builds the long-term authority that compounds. Running all three with one strategy, on one posting schedule, is the reason most med spas stay invisible.
-    </p>
-
-    <div class="vision-grid">
-      <div class="vision-card">
-        <div class="vision-card-img ig">📸</div>
-        <div class="vision-card-body">
-          <div class="vision-card-title">Instagram — Relationship &amp; Conversion</div>
-          <div class="vision-card-text">
-            Daily content engineered around the moment someone is almost ready to book — not the moment they already have. Every caption opens with a scroll-stopping hook and closes with a frictionless next step. Dr. Uma's voice is front and center: warm, honest, specific. Reels prioritized for organic reach.
-          </div>
-          <span class="vision-card-tag tag-ig">@ilamai_medspa</span>
-        </div>
-      </div>
-      <div class="vision-card">
-        <div class="vision-card-img fb">📘</div>
-        <div class="vision-card-body">
-          <div class="vision-card-title">Facebook — Community &amp; Lead Generation</div>
-          <div class="vision-card-text">
-            Facebook-native content — longer, conversational, community-forward. Local group engagement in Fredericksburg health and women's wellness communities. Facebook Lead Ads targeting high-intent local audiences (Medical Weight Loss, BHRT, Botox). Duplicate page issue resolved first.
-          </div>
-          <span class="vision-card-tag tag-fb">Native First</span>
-        </div>
-      </div>
-      <div class="vision-card">
-        <div class="vision-card-img yt">▶</div>
-        <div class="vision-card-body">
-          <div class="vision-card-title">YouTube — Authority &amp; Long-Term Discovery</div>
-          <div class="vision-card-text">
-            "Tea Time with Dr. Uma" built out with SEO-targeted episodes on the topics patients are already searching: Medical Weight Loss, BHRT after the FDA label change, Morpheus8, Emsculpt Neo. Each video titles and described for local YouTube search. Content that converts viewers into consultations — and stays relevant for years.
-          </div>
-          <span class="vision-card-tag tag-yt">Tea Time with Dr. Uma</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sample post mockups -->
-    <div style="margin-bottom:12px;">
-      <div class="section-label" style="margin-bottom:6px;">What posts actually look like — before &amp; after</div>
-    </div>
-    <div class="mockup-strip">
-      <div class="post-mockup">
-        <div class="post-visual post-visual-1">
-          <div class="post-overlay-text">"You've been thinking<br>about this for years."</div>
-          <div class="post-overlay-sub">iLamai Med Spa · Morpheus8</div>
-        </div>
-        <div class="post-meta-row">
-          <div class="post-avatar-sm"></div>
-          <div>
-            <div class="post-handle">ilamai_medspa</div>
-            <div class="post-time">Instagram · Today</div>
-          </div>
-        </div>
-        <div class="post-caption-area">
-          <div class="post-hook">You've been thinking about it for a while. Most people have.</div>
-          <div class="post-body-text">There's no moment where it suddenly feels like the "right time." That's not how it works. The people who finally come in aren't the ones who found the perfect moment — they're the ones who found a practice that made them feel safe enough to ask. That's what we're here for.</div>
-          <span class="post-cta-label">→ DM "READY" and we'll send you what to expect at a first visit.</span>
-        </div>
-        <div class="post-annotation"><strong>Hook:</strong> Speaks to the hesitant patient, not the already-decided one.</div>
-      </div>
-      <div class="post-mockup">
-        <div class="post-visual post-visual-2">
-          <div class="post-overlay-text">"Weight loss shouldn't<br>feel like a confession."</div>
-          <div class="post-overlay-sub">iLamai Med Spa · Medical Weight Loss</div>
-        </div>
-        <div class="post-meta-row">
-          <div class="post-avatar-sm"></div>
-          <div>
-            <div class="post-handle">ilamai_medspa</div>
-            <div class="post-time">Instagram · Today</div>
-          </div>
-        </div>
-        <div class="post-caption-area">
-          <div class="post-hook">Weight loss shouldn't feel like something you have to apologize for wanting.</div>
-          <div class="post-body-text">At iLamai, Dr. Uma approaches Medical Weight Loss the way she approaches everything — by understanding the whole picture. Hormones, metabolism, history, lifestyle. Not a protocol. Not a program. A conversation that starts with you.</div>
-          <span class="post-cta-label">→ Link in bio to schedule a private consultation.</span>
-        </div>
-        <div class="post-annotation"><strong>Hook:</strong> Addresses the shame/embarrassment barrier directly.</div>
-      </div>
-      <div class="post-mockup">
-        <div class="post-visual post-visual-3">
-          <div class="post-overlay-text">"The FDA changed<br>everything this year."</div>
-          <div class="post-overlay-sub">iLamai Med Spa · BHRT &amp; Hormone Therapy</div>
-        </div>
-        <div class="post-meta-row">
-          <div class="post-avatar-sm"></div>
-          <div>
-            <div class="post-handle">ilamai_medspa</div>
-            <div class="post-time">Instagram · Today</div>
-          </div>
-        </div>
-        <div class="post-caption-area">
-          <div class="post-hook">The FDA just updated hormone therapy guidelines for the first time in decades. Here's what that actually means for you.</div>
-          <div class="post-body-text">Twenty years of fear kept a lot of women away from treatment that would have helped them. Dr. Uma has been explaining this one-on-one for years. Now it's time to say it publicly: bioidentical hormone therapy is not what you were told to be afraid of.</div>
-          <span class="post-cta-label">→ Save this. Share it with someone who needs to hear it.</span>
-        </div>
-        <div class="post-annotation"><strong>Hook:</strong> News angle + physician credibility = maximum save/share rate.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SECTION 4: CONVERSATIONS -->
-  <section class="section">
-    <div class="section-label">Section 04 — Content Direction</div>
-    <h2 class="section-title">Five conversations iLamai needs to be<br><em>having with its audience right now.</em></h2>
-    <p class="section-intro">
-      These aren't content ideas. They're the specific conversations already happening in your patients' heads — on drives home, in bathroom mirrors, in late-night searches — that iLamai can be the first practice in this market to meet.
-    </p>
-
-    <div class="conversations">
-      <div class="conv-item">
-        <div class="conv-num">01</div>
-        <div class="conv-content">
-          <div class="conv-title">Why people wait years before they ever book</div>
-          <div class="conv-body">Most people who end up walking through your door spent years quietly thinking about it first. They were never going to find you through an ad. They find you the moment something you post makes them feel safe enough to finally stop waiting. Every day that fear goes unaddressed in your content is a day someone scrolls past you and books with whoever speaks to it first.</div>
-          <div class="conv-formats">
-            <span class="format-pill">Instagram Carousel</span>
-            <span class="format-pill">Instagram Reel</span>
-            <span class="format-pill">YouTube: "What to Expect at Your First Visit"</span>
-          </div>
-        </div>
-      </div>
-      <div class="conv-item">
-        <div class="conv-num">02</div>
-        <div class="conv-content">
-          <div class="conv-title">The fear of looking "fake" — the real reason people hesitate</div>
-          <div class="conv-body">This is the single biggest reason people who want treatment never become your patient. Not price. Not the needle. They're scared of becoming a worse version of themselves in public. The practices winning right now aren't the ones with the prettiest before-and-afters — they're the ones who say the quiet part out loud first. Whoever addresses that fear directly is the one who gets the DM, not the booking page.</div>
-          <div class="conv-formats">
-            <span class="format-pill">Instagram Reel — Dr. Uma on camera</span>
-            <span class="format-pill">Facebook post: "What 'natural' actually means"</span>
-            <span class="format-pill">YouTube: Before/after with patient story</span>
-          </div>
-        </div>
-      </div>
-      <div class="conv-item">
-        <div class="conv-num">03</div>
-        <div class="conv-content">
-          <div class="conv-title">The weight loss conversation nobody local is having correctly</div>
-          <div class="conv-body">This is your highest-intent, most underserved audience in Fredericksburg right now. These patients are already actively looking — they're just too embarrassed to ask anyone in their actual life. The provider who makes it feel private and judgment-free instead of clinical wins that patient before a competitor even gets the chance to.</div>
-          <div class="conv-formats">
-            <span class="format-pill">Instagram: "It's not about willpower"</span>
-            <span class="format-pill">Facebook Lead Ad: Weight Loss Consultation</span>
-            <span class="format-pill">YouTube: Medical Weight Loss explained plainly</span>
-          </div>
-        </div>
-      </div>
-      <div class="conv-item">
-        <div class="conv-num">04</div>
-        <div class="conv-content">
-          <div class="conv-title">The hormone therapy window that's open right now</div>
-          <div class="conv-body">This is a ticking clock. The FDA just changed the warning labels this year after twenty years of fear keeping women away from treatment that actually helps them. Whoever in this market explains that first becomes the name people remember when they're finally ready to ask their doctor about it. Right now nobody local owns that conversation. It's open.</div>
-          <div class="conv-formats">
-            <span class="format-pill">Instagram: FDA news explainer</span>
-            <span class="format-pill">YouTube: "What changed and why it matters"</span>
-            <span class="format-pill">Facebook community post with invitation to ask questions</span>
-          </div>
-        </div>
-      </div>
-      <div class="conv-item">
-        <div class="conv-num">05</div>
-        <div class="conv-content">
-          <div class="conv-title">The "no judgment, customized" environment Dr. Uma already has</div>
-          <div class="conv-body">This isn't just a nice line on your website — it's the actual reason people choose one med spa over another with the same equipment and the same treatments. Right now that's buried in your About page where almost nobody reads it. It needs to be the thing people see and feel in every single post, because that's what turns a follower into a booked patient.</div>
-          <div class="conv-formats">
-            <span class="format-pill">Embedded in every post's voice</span>
-            <span class="format-pill">Explicit Instagram series: "At iLamai, you don't have to..."</span>
-            <span class="format-pill">Patient story content (with permission)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SECTION 5: LEAD PATH -->
-  <section class="section">
-    <div class="section-label">Section 05 — How This Converts to Patients</div>
-    <h2 class="section-title">The path from a stranger<br><em>to a booked consultation.</em></h2>
-    <p class="section-intro">
-      Social media doesn't book patients — trust does. Social media accelerates the trust timeline. Here's the specific journey a new patient takes from discovery to consultation under this strategy.
-    </p>
-
-    <div class="lead-path">
-      <div class="lead-step">
-        <div class="lead-step-num">01</div>
-        <h4>Discovery</h4>
-        <p>A Fredericksburg resident sees a Reel, YouTube Short, or Facebook post that speaks directly to something they've been privately thinking about — weight, hormones, feeling older than they want to feel.</p>
-      </div>
-      <div class="lead-step">
-        <div class="lead-step-num">02</div>
-        <h4>Recognition</h4>
-        <p>They click to the profile. The grid, the bio, the highlights all reinforce the same message: this is a real physician, this is a real practice, this is a place that gets it.</p>
-      </div>
-      <div class="lead-step">
-        <div class="lead-step-num">03</div>
-        <h4>Trust</h4>
-        <p>They watch a Tea Time with Dr. Uma video. Or read a caption that says the thing nobody else says. Or see a before-and-after that looks real instead of filtered. The hesitation starts to soften.</p>
-      </div>
-      <div class="lead-step">
-        <div class="lead-step-num">04</div>
-        <h4>Action</h4>
-        <p>A CTA in a post — "DM us READY" or "link in bio for consultations" — gives them a frictionless next step. They don't have to be 100% sure. They just have to be curious enough to send one message.</p>
-      </div>
-      <div class="lead-step">
-        <div class="lead-step-num">05</div>
-        <h4>Booked Patient</h4>
-        <p>That DM or link click becomes a consultation. That consultation becomes a patient. And that patient, treated the way iLamai treats people, becomes a referral source for the next patient.</p>
-      </div>
-    </div>
-
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-num">3<span>×</span></div>
-        <div class="metric-label">Instagram Reach</div>
-        <div class="metric-note">Expected reach increase within 60 days of implementing hook + CTA structure and Reels cadence</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-num">5<span>×</span></div>
-        <div class="metric-label">Facebook Organic Reach</div>
-        <div class="metric-note">Native Facebook content vs. cross-posted Instagram content, per platform algorithm data</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-num">90<span>d</span></div>
-        <div class="metric-label">YouTube Ranking</div>
-        <div class="metric-note">Average time for a well-optimized YouTube video to rank for a local search term in a mid-size market</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-num">4.9<span>★</span></div>
-        <div class="metric-label">Already There</div>
-        <div class="metric-note">iLamai's existing review rating. The strategy surfaces this reputation where it matters most — before the first click.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ CLOSING CTA -->
-  <div class="closing-cta">
-    <h2>iLamai deserves a social presence<br>as exceptional as <em>what happens inside.</em></h2>
-    <p>
-      Dr. Uma has built something rare in this market. The triple certification, the holistic philosophy, the warmth — none of that is common. The strategy above is built to make sure the right patients find it. This is a sample of direction, not the full strategy.
-    </p>
-    <div class="cta-sub">This document was prepared specifically for Dr. Uma Rangarajan · iLamai Med Spa · Fredericksburg, VA</div>
-  </div>
-
-  <!-- ══ FOOTER -->
-  <div class="doc-footer">
-    <div class="footer-brand">iLamai Med Spa — Social Strategy Proposal · June 2026</div>
-    <div class="footer-note">Prepared for Dr. Uma Rangarajan, MD · Confidential · This is a sample of direction, not the full strategy.</div>
-  </div>
-
 </div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 2 — BRAND POSITIONING
+══════════════════════════════════════════════════════ -->
+<div class="page page-break no-break">
+  <div class="gold-bar"></div>
+  <div class="section-header">
+    <div class="sh-left">
+      <div class="sh-label">Section 01</div>
+      <div class="sh-title">Brand Positioning &amp; Identity</div>
+    </div>
+    <div class="sh-right">
+      <div class="sh-num">01</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="intro-box">
+      <p>
+        iLamai Med Spa is not just a medical spa &#8212; it is a <strong>luxury wellness experience</strong>
+        led by a board-certified physician with a reputation built on trust, precision, and results.
+        Your social media must reflect that reality at every scroll. Right now, your online presence
+        does not match the caliber of what you deliver in person. We fix that.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="col-left">
+        <div class="brand-card no-break">
+          <div class="brand-card-title">How iLamai Will Be Positioned</div>
+          <div class="brand-headline">The High-End Med Spa Led by a<br/>Physician You Can Trust</div>
+          <div class="brand-body">
+            Dr. Uma Rangarajan is a medically trained aesthetic specialist whose name is
+            synonymous with safety, artistry, and results. iLamai is where discerning clients
+            come when they want more than beauty &#8212; they want transformation backed by science.
+          </div>
+        </div>
+
+        <div class="philo-box no-break">
+          <div class="philo-quote">
+            &#8220;Luxury is not just what you offer &#8212; it&#8217;s how you make people feel
+            before they ever walk through the door. That feeling begins on social media.&#8221;
+          </div>
+          <div class="philo-attr">&#8212; Strategy Philosophy</div>
+        </div>
+      </div>
+
+      <div class="col-right">
+        <div class="section-title">Brand Voice Pillars</div>
+        <hr class="section-rule"/>
+
+        <div class="pos-tbl">
+          <div class="pos-row">
+            <div class="pos-icon"><div class="pos-icon-circle">1</div></div>
+            <div class="pos-text">
+              <strong>Authoritative &amp; Educated</strong>
+              <p>Dr. Uma speaks as an expert, not a salesperson. Every post educates and builds credibility before it sells. Clients follow experts they trust &#8212; then they book.</p>
+            </div>
+          </div>
+          <div class="pos-row">
+            <div class="pos-icon"><div class="pos-icon-circle">2</div></div>
+            <div class="pos-text">
+              <strong>Warm &amp; Approachable</strong>
+              <p>Luxury doesn&#8217;t mean cold or distant. Dr. Uma&#8217;s genuine personality and warmth are a competitive advantage. We showcase the human behind the clinic.</p>
+            </div>
+          </div>
+          <div class="pos-row">
+            <div class="pos-icon"><div class="pos-icon-circle">3</div></div>
+            <div class="pos-text">
+              <strong>Aspirational &amp; Results-Driven</strong>
+              <p>Every piece of content answers: &#8220;What transformation does this offer me?&#8221; We lead with outcomes &#8212; confidence restored, youth reclaimed, skin renewed.</p>
+            </div>
+          </div>
+          <div class="pos-row">
+            <div class="pos-icon"><div class="pos-icon-circle">4</div></div>
+            <div class="pos-text">
+              <strong>Consistent &amp; Premium</strong>
+              <p>Color palette, typography, photography style, and caption tone lock together across every platform to signal a brand that takes itself seriously.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Target Audience -->
+    <div class="section-title">Target Audience</div>
+    <hr class="section-rule"/>
+    <div class="audience-tbl no-break">
+      <div class="aud-cell">
+        <div class="aud-card">
+          <div class="aud-title">Primary &#8212; Aesthetic Investors</div>
+          <div class="aud-desc">
+            Women 32&#8211;55, household income $80K+, interested in skincare, wellness, and self-improvement.
+            They research thoroughly before booking and choose providers based on perceived expertise and visual proof.
+            They are on Instagram, YouTube, and Facebook Groups.
+          </div>
+        </div>
+      </div>
+      <div class="aud-cell">
+        <div class="aud-card">
+          <div class="aud-title">Secondary &#8212; Referral Activators</div>
+          <div class="aud-desc">
+            Existing loyal patients who love Dr. Uma but have never been prompted to share.
+            They represent untapped word-of-mouth. A small nudge &#8212; a reel, a share request,
+            a referral incentive &#8212; turns them into your most powerful marketing channel.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-left"><div class="pf-text">ILAMAI MED SPA &#183; SOCIAL STRATEGY PROPOSAL</div></div>
+    <div class="pf-right"><div class="pf-gold">02</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 3 — CONTENT STRATEGY
+══════════════════════════════════════════════════════ -->
+<div class="page page-break no-break">
+  <div class="gold-bar"></div>
+  <div class="section-header">
+    <div class="sh-left">
+      <div class="sh-label">Section 02</div>
+      <div class="sh-title">Content Strategy &amp; Pillars</div>
+    </div>
+    <div class="sh-right">
+      <div class="sh-num">02</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <p class="body-text">
+      Content without a system is noise. Our strategy organizes every post, reel, and story
+      into four core pillars that work together to educate, inspire, prove results, and convert
+      followers into paying clients.
+    </p>
+
+    <!-- 4 Pillars -->
+    <div class="section-title">The 4 Content Pillars</div>
+    <hr class="section-rule"/>
+    <div class="pillars-tbl no-break">
+      <div class="pillar-cell">
+        <div class="pillar-card">
+          <div class="pillar-num">01</div>
+          <div class="pillar-name">Educate &amp; Build Trust</div>
+          <div class="pillar-desc">
+            Treatment explainers, myth-busting, &#8220;Ask Dr. Uma&#8221; series, procedure walkthroughs.
+            Positions Dr. Uma as the go-to expert.
+          </div>
+        </div>
+      </div>
+      <div class="pillar-cell">
+        <div class="pillar-card">
+          <div class="pillar-num">02</div>
+          <div class="pillar-name">Showcase Results</div>
+          <div class="pillar-desc">
+            Before &amp; after content, client testimonials, transformation reels. Visual proof
+            is the #1 driver of new bookings in aesthetics.
+          </div>
+        </div>
+      </div>
+      <div class="pillar-cell">
+        <div class="pillar-card">
+          <div class="pillar-num">03</div>
+          <div class="pillar-name">Behind the Scenes</div>
+          <div class="pillar-desc">
+            Day-in-the-life, clinic tours, Dr. Uma&#8217;s personality moments, team spotlights.
+            Builds emotional connection and trust before the first call.
+          </div>
+        </div>
+      </div>
+      <div class="pillar-cell">
+        <div class="pillar-card">
+          <div class="pillar-num">04</div>
+          <div class="pillar-name">Convert &amp; Promote</div>
+          <div class="pillar-desc">
+            Special offers, seasonal campaigns, direct booking CTAs, limited availability posts.
+            Turns followers into bookings without feeling pushy.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample Content -->
+    <div class="section-title">Sample Content Concepts</div>
+    <hr class="section-rule"/>
+    <div class="content-preview-tbl no-break">
+      <div class="cp-cell">
+        <div class="content-card">
+          <div class="content-card-header">
+            <div class="content-card-type">Instagram Reel</div>
+            <div class="content-card-title">&#8220;3 Signs You&#8217;re Ready for Botox (According to a Doctor)&#8221;</div>
+          </div>
+          <div class="content-card-body">
+            <div class="content-card-desc">
+              Dr. Uma speaks directly to camera, breaking down the 3 signs &#8212; no filters,
+              no script &#8212; ending with a swipe-up to book a consultation.
+            </div>
+            <span class="content-card-tag">#Education</span>
+            <span class="content-card-tag">#TrustBuilder</span>
+          </div>
+        </div>
+      </div>
+      <div class="cp-cell">
+        <div class="content-card">
+          <div class="content-card-header">
+            <div class="content-card-type">Facebook + Instagram</div>
+            <div class="content-card-title">Before &amp; After: &#8220;Sarah&#8217;s 90-Day Skin Journey&#8221;</div>
+          </div>
+          <div class="content-card-body">
+            <div class="content-card-desc">
+              Client story-driven carousel with 6 slides: diagnosis, treatment plan,
+              progress photos, and final reveal &#8212; with Dr. Uma&#8217;s commentary.
+            </div>
+            <span class="content-card-tag">#Results</span>
+            <span class="content-card-tag">#SocialProof</span>
+          </div>
+        </div>
+      </div>
+      <div class="cp-cell">
+        <div class="content-card">
+          <div class="content-card-header">
+            <div class="content-card-type">YouTube Short + IG Story</div>
+            <div class="content-card-title">&#8220;What Happens in a Filler Consultation?&#8221;</div>
+          </div>
+          <div class="content-card-body">
+            <div class="content-card-desc">
+              60-second behind-the-scenes of an actual consultation (with consent).
+              Removes fear &amp; mystery &#8212; the #1 barrier to booking.
+            </div>
+            <span class="content-card-tag">#BTS</span>
+            <span class="content-card-tag">#BookNow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Posting Cadence -->
+    <div class="section-title">Weekly Posting Cadence</div>
+    <hr class="section-rule"/>
+    <div class="two-col no-break">
+      <div class="col-left">
+        <ul class="check-list">
+          <li><strong>Instagram:</strong> 4&#8211;5 posts/week (2 Reels, 2 carousels/static, 1 Story series)</li>
+          <li><strong>Facebook:</strong> 3 posts/week (mirrored content + 1 community-focused post)</li>
+          <li><strong>YouTube:</strong> 1 video/week (long-form) + 2&#8211;3 Shorts repurposed from Reels</li>
+          <li>All content batched in 2-day monthly shoot sessions to minimize disruption to clinic</li>
+        </ul>
+      </div>
+      <div class="col-right">
+        <ul class="check-list">
+          <li>Story highlights updated weekly to keep profile fresh for new visitors</li>
+          <li>Every post scheduled 3 days in advance &#8212; no last-minute scramble</li>
+          <li>Monthly content calendar delivered by the 25th of each prior month</li>
+          <li>Real-time community management: comments &amp; DMs responded to within 4 hours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-left"><div class="pf-text">ILAMAI MED SPA &#183; SOCIAL STRATEGY PROPOSAL</div></div>
+    <div class="pf-right"><div class="pf-gold">03</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 4 — GROWTH ROADMAP
+══════════════════════════════════════════════════════ -->
+<div class="page page-break no-break">
+  <div class="gold-bar"></div>
+  <div class="section-header">
+    <div class="sh-left">
+      <div class="sh-label">Section 03</div>
+      <div class="sh-title">90-Day Growth Roadmap</div>
+    </div>
+    <div class="sh-right">
+      <div class="sh-num">03</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <p class="body-text">
+      Results don&#8217;t happen by accident. This phased roadmap ensures that every action in
+      the first 90 days builds on the last &#8212; establishing your brand, growing your audience,
+      and converting that audience into booked appointments.
+    </p>
+
+    <!-- Phase Timeline -->
+    <div class="section-title">The Three Phases</div>
+    <hr class="section-rule"/>
+
+    <div class="phase-tbl">
+      <!-- Phase 1 -->
+      <div class="phase-row">
+        <div class="phase-num-cell">
+          <div class="phase-badge">PHASE<br/>1</div>
+        </div>
+        <div class="phase-content-cell">
+          <div class="phase-label">Days 1&#8211;30</div>
+          <div class="phase-title">Foundation &amp; Brand Overhaul</div>
+          <ul class="phase-items">
+            <li>Full audit and redesign of Instagram, Facebook, and YouTube profiles</li>
+            <li>New branded profile photos, cover images, and highlight covers</li>
+            <li>Optimized bios with clear value propositions and booking links</li>
+            <li>Creation of 12 cornerstone content pieces that anchor your brand</li>
+            <li>Establish content calendar and approval workflow with Dr. Uma</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Phase 2 -->
+      <div class="phase-row">
+        <div class="phase-num-cell">
+          <div class="phase-badge">PHASE<br/>2</div>
+        </div>
+        <div class="phase-content-cell">
+          <div class="phase-label">Days 31&#8211;60</div>
+          <div class="phase-title">Audience Growth &amp; Engagement</div>
+          <ul class="phase-items">
+            <li>Launch targeted hashtag and geo-strategy to reach local ideal clients</li>
+            <li>Begin &#8220;Ask Dr. Uma&#8221; weekly Q&amp;A series on Stories and YouTube</li>
+            <li>Partner with 2&#8211;3 aligned local businesses for cross-promotion</li>
+            <li>Launch first client testimonial campaign (3 featured stories)</li>
+            <li>Instagram Reels optimization for Explore page placement</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Phase 3 -->
+      <div class="phase-row">
+        <div class="phase-num-cell">
+          <div class="phase-badge">PHASE<br/>3</div>
+        </div>
+        <div class="phase-content-cell">
+          <div class="phase-label">Days 61&#8211;90</div>
+          <div class="phase-title">Conversion &amp; Lead Generation</div>
+          <ul class="phase-items">
+            <li>Launch first lead-gen campaign: &#8220;Free Consultation&#8221; offer via social</li>
+            <li>Facebook and Instagram paid ads targeting local women 30&#8211;55 (optional budget)</li>
+            <li>Implement DM automation for consultation requests</li>
+            <li>30/60/90-day performance report with data-backed strategy adjustments</li>
+            <li>Referral program launch: incentivize existing patients to tag and share</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expected Results -->
+    <div class="section-title">Expected Results at 90 Days</div>
+    <hr class="section-rule"/>
+    <div class="metrics-tbl no-break">
+      <div class="metric-cell">
+        <div class="metric-card">
+          <div class="metric-num">+400</div>
+          <div class="metric-lbl">New Instagram<br/>Followers</div>
+        </div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-card">
+          <div class="metric-num">3&#215;</div>
+          <div class="metric-lbl">Engagement<br/>Rate Increase</div>
+        </div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-card">
+          <div class="metric-num">10+</div>
+          <div class="metric-lbl">Monthly Leads<br/>from Social</div>
+        </div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-card">
+          <div class="metric-num">50%</div>
+          <div class="metric-lbl">Profile Visit<br/>Increase</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-left"><div class="pf-text">ILAMAI MED SPA &#183; SOCIAL STRATEGY PROPOSAL</div></div>
+    <div class="pf-right"><div class="pf-gold">04</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 5 — DELIVERABLES & CTA
+══════════════════════════════════════════════════════ -->
+<div class="page page-break no-break">
+  <div class="gold-bar"></div>
+  <div class="section-header">
+    <div class="sh-left">
+      <div class="sh-label">Section 04</div>
+      <div class="sh-title">What You Get &amp; Next Steps</div>
+    </div>
+    <div class="sh-right">
+      <div class="sh-num">04</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-title">Everything Included in This Partnership</div>
+    <hr class="section-rule"/>
+    <div class="deliver-tbl no-break">
+      <div class="deliver-row-a">
+        <div class="deliver-cell">
+          <div class="deliver-card">
+            <div class="deliver-icon">&#9998;</div>
+            <div class="deliver-name">Monthly Content Calendar</div>
+            <div class="deliver-desc">
+              30 days of planned posts, captions, and hashtag sets delivered in advance.
+              You review and approve before anything goes live.
+            </div>
+          </div>
+        </div>
+        <div class="deliver-cell">
+          <div class="deliver-card">
+            <div class="deliver-icon">&#9654;</div>
+            <div class="deliver-name">Reels &amp; Video Production</div>
+            <div class="deliver-desc">
+              Scripted, filmed (with your team), and edited short-form videos optimized
+              for Instagram Reels and YouTube Shorts.
+            </div>
+          </div>
+        </div>
+        <div class="deliver-cell">
+          <div class="deliver-card">
+            <div class="deliver-icon">&#9733;</div>
+            <div class="deliver-name">Brand &amp; Design Assets</div>
+            <div class="deliver-desc">
+              All graphics, templates, highlight covers, and story designs created
+              in iLamai&#8217;s exact brand colors and aesthetic.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deliver-row-a">
+        <div class="deliver-cell">
+          <div class="deliver-card">
+            <div class="deliver-icon">&#8593;</div>
+            <div class="deliver-name">Community Management</div>
+            <div class="deliver-desc">
+              Daily monitoring and response to comments, DMs, and reviews across
+              all platforms &#8212; never leaving a potential client unanswered.
+            </div>
+          </div>
+        </div>
+        <div class="deliver-cell">
+          <div class="deliver-card">
+            <div class="deliver-icon">&#9998;</div>
+            <div class="deliver-name">Monthly Performance Reports</div>
+            <div class="deliver-desc">
+              Clear, jargon-free analytics showing what&#8217;s working, what changed,
+              and the adjusted plan for the coming month.
+            </div>
+          </div>
+        </div>
+        <div class="deliver-cell">
+          <div class="deliver-card">
+            <div class="deliver-icon">&#9679;</div>
+            <div class="deliver-name">Strategy Calls</div>
+            <div class="deliver-desc">
+              Bi-weekly 30-minute check-ins to align on upcoming promotions,
+              seasonal campaigns, and new service launches.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Me Section -->
+    <div class="section-title" style="margin-top:6px;">Why This Strategy Will Work for iLamai</div>
+    <hr class="section-rule"/>
+    <div class="two-col no-break">
+      <div class="col-left">
+        <ul class="check-list">
+          <li>Deep understanding of the luxury med spa client mindset and buyer journey</li>
+          <li>Strategy built specifically around your unique asset: Dr. Uma&#8217;s credibility</li>
+          <li>Content that educates first and sells second &#8212; the approach that builds lasting trust</li>
+          <li>Proven framework adapted from high-performing health &amp; wellness brands</li>
+        </ul>
+      </div>
+      <div class="col-right">
+        <ul class="check-list">
+          <li>No cookie-cutter content &#8212; everything is created specifically for iLamai</li>
+          <li>Platform-native approach: what works on Instagram differs from YouTube</li>
+          <li>Results tracked weekly so strategy pivots are fast, not slow</li>
+          <li>Full transparency &#8212; you always know exactly what&#8217;s being posted and why</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Box -->
+  <div class="cta-box">
+    <div class="cta-inner-tbl">
+      <div class="cta-left">
+        <div class="cta-label">Ready to Get Started?</div>
+        <div class="cta-heading">Let&#8217;s Build Something<br/>Beautiful Together</div>
+        <div class="cta-text">
+          iLamai Med Spa deserves a social media presence as exceptional as the results
+          Dr. Uma delivers every day. Let&#8217;s have a 30-minute strategy call &#8212; no obligation,
+          no pressure &#8212; and I&#8217;ll show you exactly what&#8217;s possible.
+        </div>
+      </div>
+      <div class="cta-right">
+        <div class="cta-btn">Book a Free Call</div>
+        <div class="cta-contact" style="color:rgba(245,239,224,0.55); font-family:Arial,sans-serif; font-size:10px; margin-top:10px;">
+          ssmnyah@gmail.com<br/>
+          &#64;socialstreetstrategist
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="pf-left"><div class="pf-text">ILAMAI MED SPA &#183; SOCIAL STRATEGY PROPOSAL</div></div>
+    <div class="pf-right"><div class="pf-gold">05</div></div>
+  </div>
+</div>
+
 </body>
 </html>
