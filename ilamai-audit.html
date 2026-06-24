@@ -2,816 +2,690 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<title>iLamai Med Spa — Social Media Platform Audit</title>
+<title>iLamai Med Spa &#8212; Social Media Platform Audit</title>
 <style>
 @page { size: A4; margin: 0; }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:       #1B2B4A;
-  --navy-mid:   #243553;
-  --gold:       #C4A052;
-  --gold-pale:  #F3E8C8;
-  --gold-xpale: #FAF3E0;
-  --cream:      #F5EFE0;
-  --cream-light:#FAF7F2;
-  --white:      #FFFFFF;
-  --text:       #1A1A1A;
-  --text-mid:   #4A4A4A;
-  --text-light: #7A7A7A;
-  --green:      #2D7A50;
-  --green-bg:   #E6F5EE;
-  --red:        #BF3025;
-  --red-bg:     #FCECEA;
-  --amber:      #C07820;
-  --amber-bg:   #FEF3E6;
-  --border:     #DDD5C2;
+  --navy:      #1B2B4A;
+  --gold:      #C4A052;
+  --gold-pale: #F3E8C8;
+  --gold-xp:   #FAF3E0;
+  --cream:     #F5EFE0;
+  --clight:    #FAF7F2;
+  --white:     #FFFFFF;
+  --text:      #1A1A1A;
+  --tmid:      #4A4A4A;
+  --tlight:    #7A7A7A;
+  --green:     #2D7A50;
+  --gbg:       #E6F5EE;
+  --red:       #BF3025;
+  --rbg:       #FCECEA;
+  --amber:     #C07820;
+  --abg:       #FEF3E6;
+  --border:    #DDD5C2;
 }
 
 body {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.55;
   color: var(--text);
   background: var(--white);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
 
-/* ── UTILITIES ───────────────────── */
-.sans { font-family: Arial, Helvetica, sans-serif; }
+/* ── PAGE SHELLS ── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  overflow: hidden;
+  position: relative;
+}
 .page-break { page-break-before: always; }
-.no-break   { page-break-inside: avoid; }
-.gold  { color: var(--gold); }
-.navy  { color: var(--navy); }
-.green { color: var(--green); }
-.red   { color: var(--red); }
 
-/* ── TABLE LAYOUT HELPER ─────────── */
-.tbl        { display: table; width: 100%; border-collapse: collapse; }
-.tbl-row    { display: table-row; }
-.tbl-cell   { display: table-cell; vertical-align: top; }
-
-/* ── FULL-BLEED HEADER ───────────── */
-.doc-header {
+/* ── PAGE 1: COVER ── */
+.cover-page {
+  width: 210mm;
+  height: 297mm;
   background: var(--navy);
-  padding: 28px 48px 0;
-  page-break-after: avoid;
+  overflow: hidden;
+  position: relative;
 }
-.header-top-row {
-  display: table;
-  width: 100%;
-}
-.header-brand { display: table-cell; vertical-align: middle; }
-.header-meta  { display: table-cell; vertical-align: middle; text-align: right; }
-
-.brand-name {
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--gold);
-  letter-spacing: 0.04em;
-  font-family: Georgia, serif;
-}
-.brand-tag {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-top: 3px;
-}
-.meta-label {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: bold;
-}
-.meta-date {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  color: rgba(255,255,255,0.45);
-  margin-top: 3px;
-}
-.gold-line {
-  height: 2px;
-  background: var(--gold);
-  margin: 18px 0 0;
-}
-.header-hero {
-  padding: 32px 48px 36px;
-}
-.hero-eyebrow {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  margin-bottom: 10px;
-}
-.hero-title {
-  font-size: 34px;
-  font-weight: bold;
-  color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 14px;
-}
-.hero-title em { color: var(--gold); font-style: italic; }
-.hero-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,0.68);
-  max-width: 560px;
-  line-height: 1.7;
-}
-
-/* ── BODY WRAPPER ────────────────── */
-.body-wrap { padding: 40px 48px 48px; background: var(--cream-light); }
-
-/* ── EXEC SUMMARY ────────────────── */
-.exec-box {
-  background: var(--navy);
-  border-left: 5px solid var(--gold);
-  border-radius: 8px;
-  padding: 28px 32px;
-  margin-bottom: 36px;
-}
-.exec-box h2 {
-  font-size: 16px;
-  color: var(--gold);
-  margin-bottom: 10px;
-  font-family: Georgia, serif;
-}
-.exec-box p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.75;
-}
-
-/* ── SCORECARD ───────────────────── */
-.scorecard {
-  display: table;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 12px 0;
-  margin: 0 -12px 36px;
-}
-.score-card {
-  display: table-cell;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 20px 18px 16px;
-  vertical-align: top;
-  width: 33%;
-}
-.score-top-bar {
-  height: 4px;
-  border-radius: 2px 2px 0 0;
-  margin: -20px -18px 14px;
-}
-.bar-ig  { background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045); }
-.bar-fb  { background: #1877F2; }
-.bar-yt  { background: #FF0000; }
-.score-platform {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--text-light);
-  margin-bottom: 4px;
-}
-.score-handle {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  color: var(--text-mid);
-  margin-bottom: 12px;
-}
-.score-stats-row { display: table; width: 100%; }
-.score-stat { display: table-cell; text-align: center; }
-.stat-num {
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--navy);
-  font-family: Georgia, serif;
-  line-height: 1;
-  display: block;
-}
-.stat-lbl {
+.cover-gold-top { height: 5px; background: var(--gold); }
+.cover-body { padding: 48px 52px 0; }
+.cover-eyebrow {
   font-family: Arial, sans-serif;
   font-size: 9px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-light);
-  margin-top: 2px;
-  display: block;
+  color: var(--gold);
+  margin-bottom: 6px;
 }
-.score-verdict {
-  margin-top: 12px;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
+.cover-brand {
+  font-family: Georgia, serif;
+  font-size: 38px;
   font-weight: bold;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.cover-brand-sub {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 36px;
+}
+.cover-divider { border: none; border-top: 1px solid rgba(196,160,82,0.35); margin-bottom: 36px; }
+.cover-report-label {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(245,239,224,0.5);
+  margin-bottom: 8px;
+}
+.cover-headline {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.cover-headline em { color: var(--gold); font-style: italic; }
+.cover-sub {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: rgba(245,239,224,0.65);
+  line-height: 1.65;
+  max-width: 440px;
+  margin-bottom: 44px;
+}
+/* Summary box */
+.cover-summary {
+  background: rgba(196,160,82,0.1);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  margin-bottom: 44px;
+}
+.cover-summary p {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: rgba(245,239,224,0.8);
+  line-height: 1.7;
+}
+/* Platform scorecards */
+.cover-cards { display: table; width: 100%; }
+.cover-card {
+  display: table-cell;
+  width: 33.33%;
+  vertical-align: top;
+  padding-right: 12px;
+}
+.cover-card:last-child { padding-right: 0; }
+.ccard-inner {
+  border: 1px solid rgba(196,160,82,0.25);
+  padding: 14px 16px;
+}
+.ccard-platform {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.ccard-num {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: var(--white);
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.ccard-stat {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  color: rgba(245,239,224,0.5);
+  margin-bottom: 8px;
+}
+.ccard-verdict {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: rgba(245,239,224,0.65);
   line-height: 1.4;
 }
-.v-warn { background: var(--amber-bg); color: var(--amber); }
-.v-bad  { background: var(--red-bg);   color: var(--red); }
 
-/* ── SECTION HEADER ──────────────── */
-.sec-header {
+.cover-footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.2);
+  padding: 12px 52px;
   display: table;
   width: 100%;
-  margin-bottom: 24px;
-  padding-bottom: 14px;
-  border-bottom: 2px solid var(--border);
 }
-.sec-icon {
-  display: table-cell;
-  width: 48px;
-  vertical-align: middle;
+.cf-left  { display: table-cell; vertical-align: middle; }
+.cf-right { display: table-cell; vertical-align: middle; text-align: right; }
+.cf-text  { font-family: Arial, sans-serif; font-size: 9px; color: rgba(245,239,224,0.4); }
+.cf-gold  { font-family: Arial, sans-serif; font-size: 9px; color: var(--gold); }
+
+/* ── INNER PAGES ── */
+.inner-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--clight);
+  overflow: hidden;
 }
-.sec-icon-inner {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+
+/* Page top bar */
+.page-topbar {
+  background: var(--navy);
+  padding: 14px 36px 0;
+}
+.ptb-row { display: table; width: 100%; }
+.ptb-left { display: table-cell; vertical-align: middle; }
+.ptb-right { display: table-cell; vertical-align: middle; text-align: right; }
+.ptb-brand { font-family: Georgia, serif; font-size: 13px; font-weight: bold; color: var(--gold); }
+.ptb-tag   { font-family: Arial, sans-serif; font-size: 8px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
+.ptb-label { font-family: Arial, sans-serif; font-size: 9px; color: rgba(255,255,255,0.45); }
+.ptb-gold-line { height: 2px; background: var(--gold); margin-top: 14px; }
+
+/* Platform section header */
+.plat-header {
+  padding: 14px 36px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: table;
+  width: 100%;
+}
+.ph-icon-cell { display: table-cell; width: 44px; vertical-align: middle; }
+.ph-icon {
+  width: 38px; height: 38px;
+  border-radius: 8px;
   text-align: center;
-  line-height: 44px;
-  font-size: 20px;
+  line-height: 38px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
   font-weight: bold;
   color: white;
 }
 .icon-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
 .icon-fb { background: #1877F2; }
 .icon-yt { background: #FF0000; }
-.sec-title-wrap { display: table-cell; vertical-align: middle; padding-left: 14px; }
-.sec-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--navy);
-  font-family: Georgia, serif;
-}
-.sec-sub {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  color: var(--text-light);
-  margin-top: 3px;
-}
+.ph-text-cell { display: table-cell; vertical-align: middle; padding-left: 10px; }
+.ph-title { font-family: Georgia, serif; font-size: 18px; font-weight: bold; color: var(--navy); }
+.ph-sub   { font-family: Arial, sans-serif; font-size: 10px; color: var(--tlight); margin-top: 2px; }
+.ph-stat-cell { display: table-cell; vertical-align: middle; text-align: right; }
+.ph-stat-num { font-family: Georgia, serif; font-size: 20px; font-weight: bold; color: var(--navy); }
+.ph-stat-lbl { font-family: Arial, sans-serif; font-size: 9px; color: var(--tlight); text-transform: uppercase; letter-spacing: 1px; }
 
-/* ── PLATFORM SECTION ────────────── */
-.platform-section { margin-bottom: 48px; }
+/* Page body padding */
+.pbody { padding: 14px 36px; }
 
-/* ── TWO-COL MOCKUP ──────────────── */
-.mockup-table { display: table; width: 100%; border-collapse: collapse; }
-.mockup-left  { display: table-cell; width: 248px; vertical-align: top; padding-right: 28px; }
-.mockup-right { display: table-cell; vertical-align: top; }
+/* ── TWO COLUMN LAYOUT ── */
+.two-col { display: table; width: 100%; border-collapse: collapse; }
+.col-l   { display: table-cell; vertical-align: top; width: 192px; padding-right: 16px; }
+.col-r   { display: table-cell; vertical-align: top; }
 
-/* ── PHONE FRAME ─────────────────── */
+/* ── PHONE MOCKUP (compact) ── */
 .phone-outer {
   background: #111;
-  border-radius: 28px;
-  padding: 10px;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.35);
-  width: 220px;
+  border-radius: 22px;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  width: 172px;
 }
-.phone-screen {
-  background: var(--white);
-  border-radius: 20px;
-  overflow: hidden;
-}
+.phone-screen { background: #fff; border-radius: 16px; overflow: hidden; }
 .ig-topbar {
-  display: table;
-  width: 100%;
-  padding: 8px 10px 5px;
+  display: table; width: 100%;
+  padding: 6px 8px 4px;
   border-bottom: 1px solid #f0f0f0;
 }
-.ig-topbar-left  { display: table-cell; font-size: 11px; font-weight: bold; font-family: Arial, sans-serif; }
-.ig-topbar-right { display: table-cell; text-align: right; font-size: 14px; }
-.ig-profile-pad { padding: 10px 10px 6px; }
-.ig-profile-row { display: table; width: 100%; margin-bottom: 8px; }
-.ig-avatar-cell { display: table-cell; width: 60px; vertical-align: middle; }
-.ig-avatar {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
+.ig-tl { display: table-cell; font-size: 9px; font-weight: bold; font-family: Arial; }
+.ig-tr { display: table-cell; text-align: right; font-size: 11px; }
+.ig-pp { padding: 8px 8px 4px; }
+.ig-prof-row { display: table; width: 100%; margin-bottom: 6px; }
+.ig-av-cell { display: table-cell; width: 48px; vertical-align: middle; }
+.ig-av {
+  width: 42px; height: 42px; border-radius: 50%;
   background: linear-gradient(135deg, var(--navy), var(--gold));
-  border: 2.5px solid transparent;
-  position: relative;
-  text-align: center;
-  line-height: 54px;
-  font-size: 20px;
+  text-align: center; line-height: 42px; color: #fff; font-size: 16px;
 }
-.ig-stats-cell { display: table-cell; vertical-align: middle; }
-.ig-stats-inner { display: table; width: 100%; }
-.ig-stat-item { display: table-cell; text-align: center; }
-.ig-stat-n { font-size: 12px; font-weight: bold; font-family: Arial, sans-serif; display: block; }
-.ig-stat-l { font-size: 9px; color: #666; font-family: Arial, sans-serif; display: block; }
-.ig-dname { font-size: 11px; font-weight: bold; font-family: Arial, sans-serif; margin-bottom: 3px; }
-.ig-bio {
-  font-size: 9.5px;
-  font-family: Arial, sans-serif;
-  line-height: 1.4;
-  color: #000;
-}
+.ig-st-cell { display: table-cell; vertical-align: middle; }
+.ig-sti { display: table; width: 100%; }
+.ig-s  { display: table-cell; text-align: center; }
+.ig-sn { font-size: 10px; font-weight: bold; font-family: Arial; display: block; }
+.ig-sl { font-size: 7.5px; color: #666; font-family: Arial; display: block; }
+.ig-dn { font-size: 9px; font-weight: bold; font-family: Arial; margin-bottom: 2px; }
+.ig-bio { font-size: 7.5px; font-family: Arial; line-height: 1.35; }
 .ig-bio .loc { color: #1877F2; }
-.ig-follow-btn {
-  display: block;
-  background: #0095F6;
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 5px;
-  margin: 7px 0 5px;
+.ig-follow {
+  display: block; background: #0095F6; color: #fff;
+  font-family: Arial; font-size: 9px; font-weight: bold;
+  text-align: center; padding: 4px 0; border-radius: 4px; margin: 5px 0 4px;
 }
-.ig-highlights {
-  display: table;
-  width: 100%;
-  padding: 6px 10px 8px;
-}
-.ig-hl { display: table-cell; text-align: center; }
-.ig-hl-ring {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+.ig-hl { display: table; width: 100%; padding: 4px 8px 6px; }
+.ig-h  { display: table-cell; text-align: center; }
+.ig-hr {
+  width: 34px; height: 34px; border-radius: 50%;
   margin: 0 auto 2px;
   background: linear-gradient(135deg, #e0d0b8, #c8b090);
-  border: 1.5px solid #ddd;
-}
-.ig-hl-lbl { font-size: 8px; font-family: Arial, sans-serif; }
-.ig-tab-bar {
-  display: table;
-  width: 100%;
-  text-align: center;
-  padding: 5px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-.ig-tab { display: table-cell; font-size: 14px; }
-.ig-grid { display: table; width: 100%; border-collapse: collapse; }
-.ig-grid-row { display: table-row; }
-.ig-grid-cell {
-  display: table-cell;
-  width: 33.33%;
-  height: 55px;
-  padding: 1px;
-}
-.ig-post-1 { background: linear-gradient(135deg, #e8dfd0, #d4c8b0); }
-.ig-post-2 { background: linear-gradient(135deg, #c8d8e0, #b0c4cc); }
-.ig-post-3 { background: linear-gradient(135deg, #e0d8c8, #c8bca4); }
-.ig-post-4 { background: linear-gradient(135deg, #d8e0d4, #c0ccb8); }
-.ig-post-5 { background: linear-gradient(135deg, #ecdcd0, #d4c0b0); }
-.ig-post-6 { background: linear-gradient(135deg, #d4d0e0, #b8b4cc); }
-.ig-post-7 { background: linear-gradient(135deg, #e4dcc8, #ccbea8); }
-.ig-post-8 { background: linear-gradient(135deg, #c8dce0, #b0c8cc); }
-.ig-post-9 { background: linear-gradient(135deg, #dcd4c4, #c4bca8); }
-.phone-note {
-  font-family: Arial, sans-serif;
-  font-size: 9px;
-  color: var(--text-light);
-  text-align: center;
-  margin-top: 7px;
-  font-style: italic;
-}
-
-/* ── BROWSER FRAME ───────────────── */
-.browser-outer {
-  background: #1C1C1E;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-.browser-bar {
-  background: #2C2C2E;
-  padding: 7px 10px;
-  display: table;
-  width: 100%;
-}
-.browser-dots-cell { display: table-cell; width: 52px; vertical-align: middle; }
-.browser-dots { display: inline-block; }
-.bdot {
-  display: inline-block;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  margin-right: 4px;
-}
-.br { background: #FF5F57; }
-.by { background: #FEBC2E; }
-.bg { background: #28C840; }
-.browser-url-cell { display: table-cell; vertical-align: middle; }
-.browser-url {
-  background: #3A3A3C;
-  border-radius: 4px;
-  padding: 3px 8px;
-  font-family: Arial, sans-serif;
-  font-size: 9px;
-  color: rgba(255,255,255,0.45);
-}
-.fb-screen { background: #F0F2F5; }
-.fb-nav {
-  background: #fff;
-  padding: 6px 10px;
-  border-bottom: 1px solid #ddd;
-}
-.fb-logo { font-size: 20px; font-weight: 900; color: #1877F2; font-family: Arial, sans-serif; }
-.fb-cover {
-  height: 90px;
-  background: linear-gradient(135deg, var(--navy) 0%, #2E4268 60%, var(--gold) 100%);
-}
-.fb-page-info { background: #fff; padding: 8px 12px 10px; border-bottom: 1px solid #ddd; }
-.fb-avatar-row { display: table; margin-bottom: 6px; }
-.fb-avatar-cell { display: table-cell; width: 52px; vertical-align: bottom; }
-.fb-avatar-name { display: table-cell; vertical-align: bottom; padding-left: 8px; }
-.fb-avatar-img {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy), var(--gold));
-  border: 2px solid #fff;
-  margin-top: -22px;
-}
-.fb-pname { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
-.fb-pcat  { font-family: Arial, sans-serif; font-size: 9px; color: #65676B; }
-.fb-stats-row { font-family: Arial, sans-serif; font-size: 10px; color: #65676B; margin: 4px 0 7px; }
-.fb-stats-row strong { color: #000; }
-.fb-buttons { font-family: Arial, sans-serif; font-size: 10px; }
-.fb-btn-like  { background: #1877F2; color: #fff; padding: 4px 8px; border-radius: 3px; margin-right: 4px; font-weight: bold; }
-.fb-btn-plain { background: #E4E6EB; color: #000; padding: 4px 8px; border-radius: 3px; margin-right: 4px; }
-.fb-posts { padding: 8px; }
-.fb-post {
-  background: #fff;
-  border-radius: 6px;
-  padding: 8px 10px;
-  margin-bottom: 7px;
   border: 1px solid #ddd;
 }
-.fb-post-meta { display: table; margin-bottom: 5px; }
-.fb-post-av-cell { display: table-cell; width: 26px; vertical-align: middle; }
-.fb-post-av {
-  width: 22px; height: 22px;
-  border-radius: 50%;
+.ig-hl-l { font-size: 6.5px; font-family: Arial; }
+.ig-tabs {
+  display: table; width: 100%; text-align: center;
+  padding: 4px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+}
+.ig-tab { display: table-cell; font-size: 11px; }
+.ig-grid { display: table; width: 100%; }
+.ig-gr   { display: table-row; }
+.ig-gc   { display: table-cell; width: 33.33%; height: 44px; padding: 1px; }
+.p1 { background: linear-gradient(135deg,#e8dfd0,#d4c8b0); }
+.p2 { background: linear-gradient(135deg,#c8d8e0,#b0c4cc); }
+.p3 { background: linear-gradient(135deg,#e0d8c8,#c8bca4); }
+.p4 { background: linear-gradient(135deg,#d8e0d4,#c0ccb8); }
+.p5 { background: linear-gradient(135deg,#ecdcd0,#d4c0b0); }
+.p6 { background: linear-gradient(135deg,#d4d0e0,#b8b4cc); }
+.p7 { background: linear-gradient(135deg,#e4dcc8,#ccbea8); }
+.p8 { background: linear-gradient(135deg,#c8dce0,#b0c8cc); }
+.p9 { background: linear-gradient(135deg,#dcd4c4,#c4bca8); }
+.phone-note {
+  font-family: Arial; font-size: 7.5px; color: var(--tlight);
+  text-align: center; margin-top: 5px; font-style: italic;
+}
+
+/* ── BROWSER MOCKUP (compact) ── */
+.browser-outer { background: #1C1C1E; border-radius: 6px; overflow: hidden; }
+.browser-bar { background: #2C2C2E; padding: 5px 8px; display: table; width: 100%; }
+.br-dots { display: table-cell; width: 44px; vertical-align: middle; }
+.bdot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; }
+.br { background: #FF5F57; } .by { background: #FEBC2E; } .bg { background: #28C840; }
+.br-url { display: table-cell; vertical-align: middle; }
+.br-url-txt {
+  background: #3A3A3C; border-radius: 3px; padding: 2px 6px;
+  font-family: Arial; font-size: 7.5px; color: rgba(255,255,255,0.4);
+}
+.fb-scr { background: #F0F2F5; }
+.fb-nav { background: #fff; padding: 5px 8px; border-bottom: 1px solid #ddd; }
+.fb-logo { font-size: 16px; font-weight: 900; color: #1877F2; font-family: Arial; }
+.fb-cover {
+  height: 72px;
+  background: linear-gradient(135deg, var(--navy) 0%, #2E4268 60%, var(--gold) 100%);
+}
+.fb-info { background: #fff; padding: 6px 10px 8px; border-bottom: 1px solid #ddd; }
+.fb-av-row { display: table; margin-bottom: 5px; }
+.fb-av-c  { display: table-cell; width: 44px; vertical-align: bottom; }
+.fb-av-n  { display: table-cell; vertical-align: bottom; padding-left: 6px; }
+.fb-av-img {
+  width: 40px; height: 40px; border-radius: 50%;
   background: linear-gradient(135deg, var(--navy), var(--gold));
+  border: 2px solid #fff; margin-top: -18px;
 }
-.fb-post-author-cell { display: table-cell; vertical-align: middle; padding-left: 6px; }
-.fb-post-author { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; }
-.fb-post-time   { font-family: Arial, sans-serif; font-size: 9px; color: #65676B; }
-.fb-post-text   { font-family: Arial, sans-serif; font-size: 9.5px; line-height: 1.4; }
-.fb-post-img    { height: 52px; background: linear-gradient(135deg, #e8dfd0, #d4c8b0); border-radius: 3px; margin-top: 6px; }
-.fb-post-react  { font-family: Arial, sans-serif; font-size: 9px; color: #65676B; margin-top: 4px; }
+.fb-pn  { font-family: Arial; font-size: 10px; font-weight: bold; }
+.fb-pc  { font-family: Arial; font-size: 7.5px; color: #65676B; }
+.fb-sts { font-family: Arial; font-size: 8px; color: #65676B; margin: 3px 0 5px; }
+.fb-sts strong { color: #000; }
+.fb-btns { font-family: Arial; font-size: 8px; }
+.fb-bl { background: #1877F2; color: #fff; padding: 3px 6px; border-radius: 3px; margin-right: 3px; font-weight: bold; }
+.fb-bp { background: #E4E6EB; color: #000; padding: 3px 6px; border-radius: 3px; margin-right: 3px; }
+.fb-posts { padding: 5px; }
+.fb-post {
+  background: #fff; border-radius: 4px; padding: 6px 8px;
+  margin-bottom: 5px; border: 1px solid #ddd;
+}
+.fb-pm  { display: table; margin-bottom: 4px; }
+.fb-pav { display: table-cell; width: 20px; vertical-align: middle; }
+.fb-pav-img { width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--gold)); }
+.fb-pan { display: table-cell; vertical-align: middle; padding-left: 5px; }
+.fb-pa  { font-family: Arial; font-size: 8px; font-weight: bold; }
+.fb-pt  { font-family: Arial; font-size: 7.5px; color: #65676B; }
+.fb-ptx { font-family: Arial; font-size: 8px; line-height: 1.35; }
+.fb-pim { height: 40px; background: linear-gradient(135deg,#e8dfd0,#d4c8b0); border-radius: 2px; margin-top: 4px; }
+.fb-pr  { font-family: Arial; font-size: 7.5px; color: #65676B; margin-top: 3px; }
 
-/* ── ALERT BOX ───────────────────── */
-.alert-crit {
-  background: var(--red-bg);
-  border: 1.5px solid #F0A8A0;
-  border-left: 5px solid var(--red);
-  border-radius: 7px;
-  padding: 16px 20px;
-  margin-bottom: 18px;
-}
-.alert-title {
+/* ── ANALYSIS TEXT ── */
+.analysis-intro {
   font-family: Arial, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--red);
-  margin-bottom: 6px;
+  font-size: 11.5px;
+  color: var(--tmid);
+  line-height: 1.65;
+  margin-bottom: 12px;
 }
-.alert-crit p { font-size: 12.5px; line-height: 1.65; color: var(--text); }
 
-/* ── ANALYSIS TEXT ───────────────── */
-.analysis-intro { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 18px; }
-
-/* ── AUDIT PANELS ────────────────── */
-.audit-panels { display: table; width: 100%; border-collapse: separate; border-spacing: 12px 0; margin: 0 -12px 20px; }
+/* ── AUDIT PANELS ── */
+.audit-panels { display: table; width: 100%; border-spacing: 10px 0; margin: 0 -10px 12px; }
 .audit-panel  { display: table-cell; width: 50%; vertical-align: top; }
 .panel-box {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 18px 20px;
-  height: 100%;
+  border-radius: 6px;
+  padding: 12px 14px;
 }
 .panel-title {
-  font-family: Arial, sans-serif;
-  font-size: 10.5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 14px;
+  font-family: Arial, sans-serif; font-size: 9.5px; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  padding-bottom: 8px; border-bottom: 1px solid var(--border); margin-bottom: 10px;
 }
 .panel-title.ok  { color: var(--green); }
 .panel-title.bad { color: var(--red); }
-
-.audit-item { display: table; width: 100%; margin-bottom: 12px; }
-.ai-icon-cell { display: table-cell; width: 26px; vertical-align: top; }
-.ai-icon {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 20px;
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  margin-top: 1px;
+.audit-item { display: table; width: 100%; margin-bottom: 9px; }
+.ai-ic { display: table-cell; width: 22px; vertical-align: top; }
+.ai-dot {
+  width: 17px; height: 17px; border-radius: 50%;
+  text-align: center; line-height: 17px;
+  font-family: Arial; font-size: 9px; font-weight: bold; margin-top: 1px;
 }
-.ai-ok  { background: var(--green-bg); color: var(--green); }
-.ai-bad { background: var(--red-bg);   color: var(--red); }
-.ai-text-cell { display: table-cell; vertical-align: top; }
-.ai-title { font-size: 12.5px; font-weight: bold; color: var(--navy); font-family: Arial, sans-serif; }
-.ai-sub   { font-size: 11px; color: var(--text-light); margin-top: 2px; line-height: 1.5; }
+.ai-ok  { background: var(--gbg); color: var(--green); }
+.ai-bad { background: var(--rbg); color: var(--red); }
+.ai-tx { display: table-cell; vertical-align: top; }
+.ai-title { font-family: Arial; font-size: 11px; font-weight: bold; color: var(--navy); line-height: 1.3; }
+.ai-sub   { font-family: Arial; font-size: 10px; color: var(--tlight); margin-top: 1px; line-height: 1.45; }
 
-/* ── CAPTION SPECIMEN ────────────── */
+/* ── ALERT BOX ── */
+.alert-crit {
+  background: var(--rbg);
+  border: 1.5px solid #F0A8A0;
+  border-left: 4px solid var(--red);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+.alert-title {
+  font-family: Arial; font-size: 10px; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--red); margin-bottom: 5px;
+}
+.alert-crit p { font-size: 11px; line-height: 1.6; color: var(--text); }
+.alert-crit strong { font-weight: bold; }
+
+/* ── CAPTION SPECIMEN ── */
 .caption-spec {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin-bottom: 18px;
-}
-.cap-label {
-  font-family: Arial, sans-serif;
-  font-size: 9.5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-light);
-  margin-bottom: 9px;
-}
-.cap-quote {
-  font-size: 12px;
-  font-style: italic;
-  color: var(--text);
-  line-height: 1.65;
-  border-left: 3px solid var(--border);
-  padding-left: 11px;
+  border-radius: 6px;
+  padding: 12px 16px;
   margin-bottom: 12px;
 }
-.cap-note {
-  display: table;
-  width: 100%;
-  margin-bottom: 5px;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
+.cap-label {
+  font-family: Arial; font-size: 8.5px; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--tlight); margin-bottom: 7px;
 }
-.cap-mark { display: table-cell; width: 20px; font-weight: bold; }
-.cap-text { display: table-cell; color: var(--text-mid); }
+.cap-quote {
+  font-size: 11px; font-style: italic; color: var(--text);
+  line-height: 1.6; border-left: 3px solid var(--border);
+  padding-left: 9px; margin-bottom: 8px;
+}
+.cap-note { display: table; width: 100%; margin-bottom: 4px; font-family: Arial; font-size: 10.5px; }
+.cap-mark { display: table-cell; width: 16px; font-weight: bold; }
+.cap-text { display: table-cell; color: var(--tmid); }
 .cap-bad  .cap-mark { color: var(--red); }
 .cap-warn .cap-mark { color: var(--amber); }
 .cap-ok   .cap-mark { color: var(--green); }
 
-/* ── LEAD GAP BOX ────────────────── */
+/* ── LEAD GAP BOX ── */
 .lead-gap {
-  background: var(--gold-pale);
+  background: var(--gold-xp);
   border: 1.5px solid var(--gold);
-  border-radius: 8px;
-  padding: 20px 24px;
-  margin-bottom: 20px;
-}
-.lead-gap h3 { font-size: 15px; color: var(--navy); margin-bottom: 8px; font-family: Georgia, serif; }
-.lead-gap p  { font-size: 12.5px; color: var(--text-mid); line-height: 1.7; }
-
-/* ── YOUTUBE TABLE ───────────────── */
-.yt-table { display: table; width: 100%; border-collapse: separate; border-spacing: 12px 0; margin: 0 -12px 20px; }
-.yt-cell  { display: table-cell; vertical-align: top; width: 50%; }
-
-.video-card {
-  background: var(--navy);
-  border-radius: 8px;
-  padding: 16px 18px;
+  border-radius: 6px;
+  padding: 14px 18px;
   margin-bottom: 12px;
 }
-.vc-label {
-  font-family: Arial, sans-serif;
-  font-size: 9.5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.vc-title { font-size: 12px; font-weight: bold; color: var(--white); line-height: 1.4; margin-bottom: 5px; }
-.vc-sub   { font-family: Arial, sans-serif; font-size: 10.5px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+.lead-gap h3 { font-size: 13px; color: var(--navy); margin-bottom: 6px; font-family: Georgia; }
+.lead-gap p  { font-size: 11px; color: var(--tmid); line-height: 1.65; font-family: Arial; }
 
-/* ── PRIORITY SECTION ────────────── */
-.priority-section {
+/* ── YOUTUBE PANELS ── */
+.yt-panels { display: table; width: 100%; border-spacing: 10px 0; margin: 0 -10px 12px; }
+.yt-cell   { display: table-cell; vertical-align: top; width: 50%; }
+
+/* ── VIDEO CARDS ── */
+.vid-cards { display: table; width: 100%; border-spacing: 10px 0; margin: 0 -10px 12px; }
+.vid-cell  { display: table-cell; vertical-align: top; width: 33.33%; }
+.video-card {
   background: var(--navy);
-  border-radius: 10px;
-  padding: 32px 36px;
-  margin-bottom: 36px;
+  border-radius: 6px;
+  padding: 14px;
 }
-.priority-section h2 { font-size: 22px; color: var(--gold); margin-bottom: 6px; }
-.priority-intro { font-family: Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 22px; }
+.vc-label { font-family: Arial; font-size: 8.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 5px; }
+.vc-title { font-size: 11px; font-weight: bold; color: var(--white); line-height: 1.4; margin-bottom: 5px; font-family: Georgia; }
+.vc-sub   { font-family: Arial; font-size: 9.5px; color: rgba(255,255,255,0.5); line-height: 1.45; }
 
-.priority-item {
-  display: table;
-  width: 100%;
-  background: rgba(255,255,255,0.06);
-  border-radius: 7px;
-  border-left: 4px solid var(--gold);
-  margin-bottom: 14px;
+/* ── WHY YOUTUBE BOX ── */
+.yt-why {
+  background: var(--gold-xp);
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
   padding: 14px 18px;
+  margin-bottom: 12px;
 }
-.pi-num-cell  { display: table-cell; width: 40px; vertical-align: top; }
-.pi-num {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--gold);
-  font-family: Georgia, serif;
-  line-height: 1;
-  opacity: 0.7;
+.yt-why h3 { font-size: 13px; color: var(--navy); margin-bottom: 6px; font-family: Georgia; }
+.yt-why p  { font-size: 11px; color: var(--tmid); line-height: 1.65; font-family: Arial; }
+
+/* ── PRIORITY SECTION ── */
+.priority-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--navy);
+  overflow: hidden;
 }
-.pi-content { display: table-cell; vertical-align: top; padding-left: 10px; }
-.pi-title { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; color: var(--white); margin-bottom: 4px; }
-.pi-body  { font-family: Arial, sans-serif; font-size: 11.5px; color: rgba(255,255,255,0.62); line-height: 1.6; }
-
-/* ── FOOTER ──────────────────────── */
-.doc-footer {
-  border-top: 1px solid var(--border);
-  padding: 20px 0 0;
-  display: table;
-  width: 100%;
+.prio-gold-top { height: 5px; background: var(--gold); }
+.prio-body { padding: 44px 48px; }
+.prio-eyebrow {
+  font-family: Arial; font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
 }
-.footer-left  { display: table-cell; font-size: 12px; color: var(--navy); font-weight: bold; }
-.footer-right { display: table-cell; text-align: right; font-size: 10.5px; color: var(--text-light); font-style: italic; }
+.prio-title { font-family: Georgia; font-size: 28px; color: var(--white); font-weight: bold; margin-bottom: 8px; }
+.prio-intro { font-family: Arial; font-size: 11.5px; color: rgba(245,239,224,0.6); margin-bottom: 30px; line-height: 1.6; }
+.prio-item {
+  display: table; width: 100%;
+  background: rgba(255,255,255,0.07);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.pi-nc { display: table-cell; width: 44px; vertical-align: top; }
+.pi-num { font-family: Georgia; font-size: 30px; font-weight: bold; color: var(--gold); opacity: 0.6; line-height: 1; }
+.pi-c  { display: table-cell; vertical-align: top; padding-left: 8px; }
+.pi-title { font-family: Arial; font-size: 12.5px; font-weight: bold; color: var(--white); margin-bottom: 4px; }
+.pi-body  { font-family: Arial; font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.55; }
+.prio-footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(196,160,82,0.25);
+  display: table; width: 100%;
+}
+.pf-l { display: table-cell; font-family: Georgia; font-size: 13px; color: var(--gold); font-weight: bold; vertical-align: middle; }
+.pf-r { display: table-cell; text-align: right; font-family: Arial; font-size: 10px; color: rgba(245,239,224,0.4); vertical-align: middle; }
 
-.spacer-sm { height: 16px; }
-.spacer-md { height: 28px; }
-.spacer-lg { height: 40px; }
-
+/* ── SECTION LABEL ── */
+.sec-label {
+  font-family: Arial; font-size: 8.5px; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--tlight); margin-bottom: 10px;
+}
 </style>
 </head>
 <body>
 
-<!-- ══ HEADER -->
-<div class="doc-header">
-  <div class="header-top-row">
-    <div class="header-brand">
-      <div class="brand-name">iLamai Med Spa</div>
-      <div class="brand-tag">Where wellness meets aesthetic renewal &middot; Fredericksburg, VA</div>
+<!-- ═══════════════════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════════════════ -->
+<div class="cover-page">
+  <div class="cover-gold-top"></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">Social Media Platform Audit &mdash; Confidential</div>
+    <div class="cover-brand">iLamai Med Spa</div>
+    <div class="cover-brand-sub">by Dr. Uma Rangarajan, MD</div>
+    <hr class="cover-divider"/>
+
+    <div class="cover-report-label">Platform Intelligence Report</div>
+    <div class="cover-headline">Your platforms have<br/>the ingredients.<br/><em>Here&rsquo;s what&rsquo;s missing.</em></div>
+    <div class="cover-sub">
+      An honest, platform-by-platform look at what iLamai Med Spa&rsquo;s
+      social presence is doing well, where patient leads are being lost,
+      and exactly what it takes to fix it.
     </div>
-    <div class="header-meta">
-      <div class="meta-label">Social Media Audit</div>
-      <div class="meta-date">Prepared June 2026 &middot; Dr. Uma Rangarajan, MD</div>
+
+    <div class="cover-summary">
+      <p>
+        iLamai has a genuine head start most local practices don&rsquo;t: 520 consistent Instagram posts,
+        a physician-led brand voice, and a service menu that covers everything Fredericksburg patients
+        are actively searching for. The problem is not content volume &mdash; it&rsquo;s conversion.
+        The Facebook presence is doing active harm. YouTube is a wide-open opportunity no local
+        competitor is using. This report tells you exactly what to fix, in what order.
+      </p>
+    </div>
+
+    <div class="cover-cards">
+      <div class="cover-card">
+        <div class="ccard-inner">
+          <div class="ccard-platform">Instagram</div>
+          <div class="ccard-num">1,030</div>
+          <div class="ccard-stat">followers &middot; 520 posts</div>
+          <div class="ccard-verdict">Active but not converting visitors to patients</div>
+        </div>
+      </div>
+      <div class="cover-card">
+        <div class="ccard-inner">
+          <div class="ccard-platform">Facebook</div>
+          <div class="ccard-num">73</div>
+          <div class="ccard-stat">followers &middot; 2 pages exist</div>
+          <div class="ccard-verdict">Duplicate pages splitting growth &mdash; critical fix needed</div>
+        </div>
+      </div>
+      <div class="cover-card">
+        <div class="ccard-inner">
+          <div class="ccard-platform">YouTube</div>
+          <div class="ccard-num">~0</div>
+          <div class="ccard-stat">indexed videos &middot; High potential</div>
+          <div class="ccard-verdict">Largest untapped opportunity in the market</div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="gold-line"></div>
-  <div class="header-hero">
-    <div class="hero-eyebrow">Platform Intelligence Report</div>
-    <div class="hero-title">Your platforms have the ingredients.<br><em>Here&rsquo;s what&rsquo;s missing.</em></div>
-    <div class="hero-sub">An honest, platform-by-platform look at what iLamai Med Spa&rsquo;s social presence is doing well, where patient leads are being lost, and what it takes to fix it.</div>
+
+  <div class="cover-footer">
+    <div class="cf-left"><div class="cf-text">PREPARED FOR DR. UMA RANGARAJAN &middot; ILAMAI MED SPA &middot; FREDERICKSBURG, VA</div></div>
+    <div class="cf-right"><div class="cf-gold">June 2025 &middot; Confidential</div></div>
   </div>
 </div>
 
-<!-- ══ BODY -->
-<div class="body-wrap">
-
-  <!-- Exec Summary -->
-  <div class="exec-box no-break">
-    <h2>At a Glance</h2>
-    <p>iLamai Med Spa has a genuine head start that most practices in this market don&rsquo;t: 520 posts on Instagram, a recognizable physician-led brand voice, and a service menu that covers more of what Fredericksburg patients are searching for than nearly anyone locally. The problem is not content volume &mdash; it&rsquo;s conversion. Posts go out consistently but they don&rsquo;t close the loop. There&rsquo;s no hook to stop the scroll, no call to action to create a next step, and the Facebook presence (73 followers, two conflicting pages) is doing active harm to discoverability. YouTube is an untapped asset for the highest-converting content type in aesthetics. The gap between where iLamai is and where it should be is not large &mdash; but it is specific, and it&rsquo;s costing patient bookings every week.</p>
+<!-- ═══════════════════════════════════════════════
+     PAGE 2 — INSTAGRAM
+═══════════════════════════════════════════════ -->
+<div class="inner-page page-break">
+  <div class="page-topbar">
+    <div class="ptb-row">
+      <div class="ptb-left">
+        <div class="ptb-brand">iLamai Med Spa</div>
+        <div class="ptb-tag">Social Media Audit</div>
+      </div>
+      <div class="ptb-right"><div class="ptb-label">Page 2 of 5</div></div>
+    </div>
+    <div class="ptb-gold-line"></div>
   </div>
 
-  <!-- Scorecard -->
-  <div class="scorecard no-break">
-    <div class="score-card">
-      <div class="score-top-bar bar-ig"></div>
-      <div class="score-platform">Instagram</div>
-      <div class="score-handle">@ilamai_medspa</div>
-      <div class="score-stats-row">
-        <div class="score-stat"><span class="stat-num">1,030</span><span class="stat-lbl">Followers</span></div>
-        <div class="score-stat"><span class="stat-num">520</span><span class="stat-lbl">Posts</span></div>
-        <div class="score-stat"><span class="stat-num">1,010</span><span class="stat-lbl">Following</span></div>
-      </div>
-      <div class="score-verdict v-warn">&#9651; Active but conversion is broken</div>
+  <div class="plat-header">
+    <div class="ph-icon-cell"><div class="ph-icon icon-ig">IG</div></div>
+    <div class="ph-text-cell">
+      <div class="ph-title">Instagram Audit &mdash; @ilamai_medspa</div>
+      <div class="ph-sub">1,030 followers &middot; 520 posts &middot; Account age: ~2+ years</div>
     </div>
-    <div class="score-card">
-      <div class="score-top-bar bar-fb"></div>
-      <div class="score-platform">Facebook</div>
-      <div class="score-handle">ILamai Medical Spa &amp; Wellness</div>
-      <div class="score-stats-row">
-        <div class="score-stat"><span class="stat-num">73</span><span class="stat-lbl">Followers</span></div>
-        <div class="score-stat"><span class="stat-num">57</span><span class="stat-lbl">Page Likes</span></div>
-        <div class="score-stat"><span class="stat-num">2</span><span class="stat-lbl">Pages Exist</span></div>
-      </div>
-      <div class="score-verdict v-bad">&#10007; Critical &mdash; nearly invisible + duplicate page</div>
-    </div>
-    <div class="score-card">
-      <div class="score-top-bar bar-yt"></div>
-      <div class="score-platform">YouTube</div>
-      <div class="score-handle">&ldquo;Tea Time with Dr. Uma&rdquo; &middot; iLamai</div>
-      <div class="score-stats-row">
-        <div class="score-stat"><span class="stat-num">~0</span><span class="stat-lbl">Indexed Videos</span></div>
-        <div class="score-stat"><span class="stat-num">High</span><span class="stat-lbl">Potential</span></div>
-      </div>
-      <div class="score-verdict v-bad">&#10007; Almost no presence &mdash; largest missed opportunity</div>
+    <div class="ph-stat-cell">
+      <div class="ph-stat-num" style="color:var(--amber);">&#9651; Needs Fix</div>
+      <div class="ph-stat-lbl">Conversion Gap</div>
     </div>
   </div>
 
-  <!-- ══════════ INSTAGRAM SECTION -->
-  <div class="page-break"></div>
-
-  <div class="platform-section">
-    <div class="sec-header no-break">
-      <div class="sec-icon"><div class="sec-icon-inner icon-ig">IG</div></div>
-      <div class="sec-title-wrap">
-        <div class="sec-title">Instagram Audit &mdash; @ilamai_medspa</div>
-        <div class="sec-sub">1,030 followers &middot; 520 posts &middot; Est. account age: ~2+ years</div>
-      </div>
-    </div>
-
-    <div class="mockup-table">
-      <!-- Phone mockup -->
-      <div class="mockup-left">
+  <div class="pbody">
+    <div class="two-col">
+      <!-- Left: Phone mockup -->
+      <div class="col-l">
         <div class="phone-outer">
           <div class="phone-screen">
             <div class="ig-topbar">
-              <div class="ig-topbar-left">ilamai_medspa &#9660;</div>
-              <div class="ig-topbar-right">+ &#9776;</div>
+              <div class="ig-tl">ilamai_medspa &#9660;</div>
+              <div class="ig-tr">+ &#9776;</div>
             </div>
-            <div class="ig-profile-pad">
-              <div class="ig-profile-row">
-                <div class="ig-avatar-cell">
-                  <div class="ig-avatar" style="font-size:18px; line-height:54px; color:white;">+</div>
-                </div>
-                <div class="ig-stats-cell">
-                  <div class="ig-stats-inner">
-                    <div class="ig-stat-item"><span class="ig-stat-n">520</span><span class="ig-stat-l">posts</span></div>
-                    <div class="ig-stat-item"><span class="ig-stat-n">1,030</span><span class="ig-stat-l">followers</span></div>
-                    <div class="ig-stat-item"><span class="ig-stat-n">1,010</span><span class="ig-stat-l">following</span></div>
+            <div class="ig-pp">
+              <div class="ig-prof-row">
+                <div class="ig-av-cell"><div class="ig-av">+</div></div>
+                <div class="ig-st-cell">
+                  <div class="ig-sti">
+                    <div class="ig-s"><span class="ig-sn">520</span><span class="ig-sl">posts</span></div>
+                    <div class="ig-s"><span class="ig-sn">1,030</span><span class="ig-sl">followers</span></div>
+                    <div class="ig-s"><span class="ig-sn">1,010</span><span class="ig-sl">following</span></div>
                   </div>
                 </div>
               </div>
-              <div class="ig-dname">iLamai Medspa &amp; Wellness | FXBG</div>
+              <div class="ig-dn">iLamai Medspa &amp; Wellness | FXBG</div>
               <div class="ig-bio">
-                📍 <span class="loc">Fredericksburg, VA</span><br>
-                Dr. Uma Rangarajan MD<br>
+                <span class="loc">Fredericksburg, VA</span><br/>
+                Dr. Uma Rangarajan MD<br/>
                 HydraFacial | Weight Loss | Morpheus8 | Botox | Peels | Filler | Moxi | BBL | AgnesRF | ScarletRF | EmsculptNeo | IV
               </div>
-              <div class="ig-follow-btn">Follow</div>
+              <div class="ig-follow">Follow</div>
             </div>
-            <div class="ig-highlights">
-              <div class="ig-hl"><div class="ig-hl-ring"></div><div class="ig-hl-lbl">Services</div></div>
-              <div class="ig-hl"><div class="ig-hl-ring" style="background:linear-gradient(135deg,#c8d8e0,#a8bcc8)"></div><div class="ig-hl-lbl">Results</div></div>
-              <div class="ig-hl"><div class="ig-hl-ring" style="background:linear-gradient(135deg,#dcd4c4,#c4bcaa)"></div><div class="ig-hl-lbl">Dr. Uma</div></div>
-              <div class="ig-hl"><div class="ig-hl-ring" style="background:linear-gradient(135deg,#d4e0d4,#b8ccb8)"></div><div class="ig-hl-lbl">Wellness</div></div>
+            <div class="ig-hl">
+              <div class="ig-h"><div class="ig-hr"></div><div class="ig-hl-l">Services</div></div>
+              <div class="ig-h"><div class="ig-hr" style="background:linear-gradient(135deg,#c8d8e0,#a8bcc8)"></div><div class="ig-hl-l">Results</div></div>
+              <div class="ig-h"><div class="ig-hr" style="background:linear-gradient(135deg,#dcd4c4,#c4bcaa)"></div><div class="ig-hl-l">Dr. Uma</div></div>
+              <div class="ig-h"><div class="ig-hr" style="background:linear-gradient(135deg,#d4e0d4,#b8ccb8)"></div><div class="ig-hl-l">Wellness</div></div>
             </div>
-            <div class="ig-tab-bar">
+            <div class="ig-tabs">
               <div class="ig-tab">&#9645;</div>
               <div class="ig-tab">&#9671;</div>
               <div class="ig-tab">&#9633;</div>
             </div>
             <div class="ig-grid">
-              <div class="ig-grid-row">
-                <div class="ig-grid-cell ig-post-1"></div>
-                <div class="ig-grid-cell ig-post-2"></div>
-                <div class="ig-grid-cell ig-post-3"></div>
+              <div class="ig-gr">
+                <div class="ig-gc p1"></div><div class="ig-gc p2"></div><div class="ig-gc p3"></div>
               </div>
-              <div class="ig-grid-row">
-                <div class="ig-grid-cell ig-post-4"></div>
-                <div class="ig-grid-cell ig-post-5"></div>
-                <div class="ig-grid-cell ig-post-6"></div>
+              <div class="ig-gr">
+                <div class="ig-gc p4"></div><div class="ig-gc p5"></div><div class="ig-gc p6"></div>
               </div>
-              <div class="ig-grid-row">
-                <div class="ig-grid-cell ig-post-7"></div>
-                <div class="ig-grid-cell ig-post-8"></div>
-                <div class="ig-grid-cell ig-post-9"></div>
+              <div class="ig-gr">
+                <div class="ig-gc p7"></div><div class="ig-gc p8"></div><div class="ig-gc p9"></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="phone-note">Profile reconstructed from live public data &middot; @ilamai_medspa</div>
+        <div class="phone-note">Reconstructed from live public data &middot; @ilamai_medspa</div>
       </div>
 
-      <!-- Analysis -->
-      <div class="mockup-right">
-        <p class="analysis-intro">The profile itself is set up correctly. The bio is clear, services are listed, and the location is pinned. At 520 posts over an estimated two-plus years, the posting cadence is real and consistent. This is the foundation most local competitors don&rsquo;t have. But the content is functioning as a portfolio, not as a patient acquisition tool &mdash; and there&rsquo;s a meaningful difference between the two.</p>
+      <!-- Right: Analysis -->
+      <div class="col-r">
+        <p class="analysis-intro">
+          The profile is set up correctly: bio is clear, services listed, location pinned.
+          At 520 posts over two-plus years, the cadence is real &mdash; a foundation most local
+          competitors lack. But the content functions as a <em>portfolio</em>, not a patient
+          acquisition tool. That distinction is costing bookings every week.
+        </p>
 
-        <div class="audit-panels no-break">
+        <div class="audit-panels">
           <div class="audit-panel">
             <div class="panel-box">
               <div class="panel-title ok">&#10003; What&rsquo;s Working</div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Consistent posting history.</div><div class="ai-sub">520 posts signals to Instagram&rsquo;s algorithm this is an active account. Most local competitors post sporadically.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+                <div class="ai-tx"><div class="ai-title">Consistent posting history</div><div class="ai-sub">520 posts signals an active account. Most local competitors post sporadically.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Physician-led brand voice.</div><div class="ai-sub">&ldquo;Dr. Uma wanted to share&hellip;&rdquo; posts create authentic trust signals a standard medspa content account can&rsquo;t replicate.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+                <div class="ai-tx"><div class="ai-title">Physician-led brand voice</div><div class="ai-sub">&ldquo;Dr. Uma wanted to share&hellip;&rdquo; creates authentic trust signals no standard content account can replicate.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Service breadth visible in bio.</div><div class="ai-sub">Every major service listed upfront. A new visitor immediately understands the scope of what&rsquo;s offered.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+                <div class="ai-tx"><div class="ai-title">Full service breadth in bio</div><div class="ai-sub">Every major service upfront. A new visitor immediately knows the scope.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Warm, non-clinical tone.</div><div class="ai-sub">The personal warmth distinguishes iLamai from the cold, clinical tone most med spas default to.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+                <div class="ai-tx"><div class="ai-title">Warm, non-clinical tone</div><div class="ai-sub">The personal warmth distinguishes iLamai from the cold tone most med spas default to.</div></div>
               </div>
             </div>
           </div>
@@ -819,119 +693,128 @@ body {
             <div class="panel-box">
               <div class="panel-title bad">&#10007; What&rsquo;s Costing Leads</div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">No hook in the first line.</div><div class="ai-sub">Instagram shows only the first line before &ldquo;more.&rdquo; If that line doesn&rsquo;t stop the scroll, no one reads the rest.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">No hook in the first line</div><div class="ai-sub">Instagram shows only the first line before &ldquo;more.&rdquo; If that line doesn&rsquo;t stop the scroll, no one reads the rest.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Missing CTA on most posts.</div><div class="ai-sub">Without a clear instruction &mdash; &ldquo;DM us to book,&rdquo; &ldquo;link in bio&rdquo; &mdash; followers have nowhere to go next.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">Missing CTA on most posts</div><div class="ai-sub">No &ldquo;DM us to book&rdquo; or &ldquo;link in bio&rdquo; means followers have nowhere to go next.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Following nearly equals followers (1:1).</div><div class="ai-sub">A 1:1 ratio signals a follow-back strategy rather than earned organic growth. The algorithm deprioritizes this.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">Following nearly equals followers</div><div class="ai-sub">A 1:1 ratio signals a follow-back strategy. The algorithm deprioritizes these accounts.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Content skews promotional, not trust-building.</div><div class="ai-sub">Before/afters and service posts have their place, but they don&rsquo;t convert someone who&rsquo;s still on the fence.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">Content skews promotional</div><div class="ai-sub">Before/afters don&rsquo;t convert someone still on the fence. Trust-building content is missing.</div></div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="caption-spec">
+          <div class="cap-label">How a caption typically reads vs. how it should</div>
+          <div class="cap-quote">&ldquo;HydraFacial at iLamai Med Spa! Our HydraFacial treatment delivers instant glow and deep hydration. Book your appointment today! Fredericksburg VA #hydrafacial #medspa #glowup #fredericksburgva #skincare&rdquo;</div>
+          <div class="cap-note cap-bad"><span class="cap-mark">&#10007;</span><span class="cap-text">First line is the service name &mdash; doesn&rsquo;t stop a scroll.</span></div>
+          <div class="cap-note cap-bad"><span class="cap-mark">&#10007;</span><span class="cap-text">&ldquo;Book today&rdquo; without a DM instruction is a dead end.</span></div>
+          <div class="cap-note cap-warn"><span class="cap-mark">&#8594;</span><span class="cap-text">Should open: <em>&ldquo;You don&rsquo;t need a special occasion. You just need 45 minutes.&rdquo;</em></span></div>
+          <div class="cap-note cap-ok"><span class="cap-mark">&#10003;</span><span class="cap-text">Should close: <em>&ldquo;DM us &lsquo;HYDRA&rsquo; and we&rsquo;ll send you availability this week.&rdquo;</em></span></div>
+        </div>
+
+        <div class="lead-gap">
+          <h3>The Lead Generation Gap</h3>
+          <p>1,030 followers is a viable local audience &mdash; but only if they know what to do next. Right now, an interested visitor has no frictionless path to becoming a patient. No DM prompt, no story booking link, no &ldquo;reply with your question&rdquo; invitation. Conversion has to be engineered into every post. That&rsquo;s the gap. It&rsquo;s not a content volume problem &mdash; it&rsquo;s a content structure problem.</p>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Caption specimen -->
-    <div class="caption-spec no-break">
-      <div class="cap-label">How a caption typically reads vs. how it should</div>
-      <div class="cap-quote">&ldquo;&#10024; HydraFacial at iLamai Med Spa! Our HydraFacial treatment delivers instant glow and deep hydration. Book your appointment today! 📍 Fredericksburg VA #hydrafacial #medspa #glowup #fredericksburgva #skincare&rdquo;</div>
-      <div class="cap-note cap-bad"><span class="cap-mark">&#10007;</span><span class="cap-text">First line is the service name &mdash; doesn&rsquo;t stop a scroll.</span></div>
-      <div class="cap-note cap-bad"><span class="cap-mark">&#10007;</span><span class="cap-text">&ldquo;Book today&rdquo; without a link or DM instruction is a dead end.</span></div>
-      <div class="cap-note cap-bad"><span class="cap-mark">&#10007;</span><span class="cap-text">Generic hashtags (#glowup, #skincare) reach people who&rsquo;ll never be in Fredericksburg.</span></div>
-      <div class="cap-note cap-warn"><span class="cap-mark">&#8594;</span><span class="cap-text">Should open: <em>&ldquo;You don&rsquo;t need a special occasion. You just need 45 minutes.&rdquo;</em></span></div>
-      <div class="cap-note cap-ok"><span class="cap-mark">&#10003;</span><span class="cap-text">Should close: <em>&ldquo;DM us &lsquo;HYDRA&rsquo; and we&rsquo;ll send you availability this week.&rdquo;</em></span></div>
+<!-- ═══════════════════════════════════════════════
+     PAGE 3 — FACEBOOK
+═══════════════════════════════════════════════ -->
+<div class="inner-page page-break">
+  <div class="page-topbar">
+    <div class="ptb-row">
+      <div class="ptb-left">
+        <div class="ptb-brand">iLamai Med Spa</div>
+        <div class="ptb-tag">Social Media Audit</div>
+      </div>
+      <div class="ptb-right"><div class="ptb-label">Page 3 of 5</div></div>
     </div>
+    <div class="ptb-gold-line"></div>
+  </div>
 
-    <div class="lead-gap no-break">
-      <h3>The Lead Generation Gap on Instagram</h3>
-      <p>1,030 followers is a viable audience for a local practice &mdash; but only if those followers know what to do next. Right now, someone who sees an iLamai post and is interested in Morpheus8 or Medical Weight Loss has no frictionless path to becoming a patient. No DM prompt, no booking link in a story, no &ldquo;reply with your question&rdquo; invitation. The conversion from viewer to patient has to be engineered into every post. That&rsquo;s the gap. It&rsquo;s not a content volume problem &mdash; it&rsquo;s a content structure problem.</p>
+  <div class="plat-header">
+    <div class="ph-icon-cell"><div class="ph-icon icon-fb" style="font-size:18px; font-weight:900; font-family:Arial;">f</div></div>
+    <div class="ph-text-cell">
+      <div class="ph-title">Facebook Audit &mdash; ILamai Medical Spa &amp; Wellness</div>
+      <div class="ph-sub">73 followers &middot; 57 page likes &middot; Two separate pages in existence</div>
+    </div>
+    <div class="ph-stat-cell">
+      <div class="ph-stat-num" style="color:var(--red);">&#10007; Critical</div>
+      <div class="ph-stat-lbl">Duplicate Pages</div>
     </div>
   </div>
 
-  <!-- ══════════ FACEBOOK SECTION -->
-  <div class="page-break"></div>
-
-  <div class="platform-section">
-    <div class="sec-header no-break">
-      <div class="sec-icon"><div class="sec-icon-inner icon-fb" style="font-size:18px; font-weight:900; font-family:Arial;">f</div></div>
-      <div class="sec-title-wrap">
-        <div class="sec-title">Facebook Audit &mdash; ILamai Medical Spa &amp; Wellness</div>
-        <div class="sec-sub">73 followers &middot; 57 page likes &middot; Two separate pages in existence</div>
-      </div>
-    </div>
-
-    <div class="alert-crit no-break">
+  <div class="pbody">
+    <div class="alert-crit">
       <div class="alert-title">&#9651; Critical Finding: Two Separate Facebook Pages Exist</div>
-      <p>A search for iLamai Med Spa on Facebook returns two distinct pages: <strong>facebook.com/p/ILamai-Medical-Spa-Wellness-Center-61566798147499/</strong> (primary, 73 followers) and <strong>facebook.com/iLamaiMedspa/</strong> (second page, unclear follower count). This splits your audience, confuses the algorithm, and means any follower growth on one page is lost to the other. Facebook will not consolidate organic reach across duplicate pages. One of these needs to be merged or deleted before any other Facebook strategy is worth running.</p>
+      <p>A search for iLamai Med Spa returns two distinct pages: <strong>facebook.com/p/ILamai-Medical-Spa-Wellness-Center-61566798147499/</strong> (primary, 73 followers) and <strong>facebook.com/iLamaiMedspa/</strong> (second page, unclear follower count). This splits your audience, confuses the algorithm, and means follower growth on one page is permanently lost to the other. One of these must be merged or deleted before any other Facebook strategy is worth running.</p>
     </div>
 
-    <div class="mockup-table">
-      <!-- Browser mockup -->
-      <div class="mockup-left">
+    <div class="two-col">
+      <!-- Left: Browser mockup -->
+      <div class="col-l">
         <div class="browser-outer">
           <div class="browser-bar">
-            <div class="browser-dots-cell">
-              <div class="browser-dots">
-                <span class="bdot br"></span>
-                <span class="bdot by"></span>
-                <span class="bdot bg"></span>
-              </div>
+            <div class="br-dots">
+              <span class="bdot br"></span><span class="bdot by"></span><span class="bdot bg"></span>
             </div>
-            <div class="browser-url-cell">
-              <div class="browser-url">facebook.com/p/ILamai-Medical-Spa...</div>
-            </div>
+            <div class="br-url"><div class="br-url-txt">facebook.com/p/ILamai-Medical-Spa...</div></div>
           </div>
-          <div class="fb-screen">
+          <div class="fb-scr">
             <div class="fb-nav"><span class="fb-logo">f</span></div>
             <div class="fb-cover"></div>
-            <div class="fb-page-info">
-              <div class="fb-avatar-row">
-                <div class="fb-avatar-cell"><div class="fb-avatar-img"></div></div>
-                <div class="fb-avatar-name">
-                  <div class="fb-pname">ILamai Medical Spa &amp; Wellness Center</div>
-                  <div class="fb-pcat">Medical Spa &middot; Fredericksburg, VA</div>
+            <div class="fb-info">
+              <div class="fb-av-row">
+                <div class="fb-av-c"><div class="fb-av-img"></div></div>
+                <div class="fb-av-n">
+                  <div class="fb-pn">ILamai Medical Spa &amp; Wellness Center</div>
+                  <div class="fb-pc">Medical Spa &middot; Fredericksburg, VA</div>
                 </div>
               </div>
-              <div class="fb-stats-row"><strong>57</strong> likes &nbsp;&middot;&nbsp; <strong>73</strong> followers</div>
-              <div class="fb-buttons">
-                <span class="fb-btn-like">&#128077; Like</span>
-                <span class="fb-btn-plain">Follow</span>
-                <span class="fb-btn-plain">Share</span>
+              <div class="fb-sts"><strong>57</strong> likes &nbsp;&middot;&nbsp; <strong>73</strong> followers</div>
+              <div class="fb-btns">
+                <span class="fb-bl">&#128077; Like</span>
+                <span class="fb-bp">Follow</span>
+                <span class="fb-bp">Share</span>
               </div>
             </div>
             <div class="fb-posts">
               <div class="fb-post">
-                <div class="fb-post-meta">
-                  <div class="fb-post-av-cell"><div class="fb-post-av"></div></div>
-                  <div class="fb-post-author-cell">
-                    <div class="fb-post-author">ILamai Medical Spa &amp; Wellness Center</div>
-                    <div class="fb-post-time">Shared from Instagram &middot; 3 days ago</div>
+                <div class="fb-pm">
+                  <div class="fb-pav"><div class="fb-pav-img"></div></div>
+                  <div class="fb-pan">
+                    <div class="fb-pa">ILamai Medical Spa &amp; Wellness Center</div>
+                    <div class="fb-pt">Shared from Instagram &middot; 3 days ago</div>
                   </div>
                 </div>
-                <div class="fb-post-text">&#10024; HydraFacial at iLamai Med Spa! Treat yourself to the ultimate skin refresh. Book now! 📍 Fredericksburg VA #hydrafacial #medspa</div>
-                <div class="fb-post-img"></div>
-                <div class="fb-post-react">&#128077; 2 &middot; &#128172; 0 &middot; Share</div>
+                <div class="fb-ptx">HydraFacial at iLamai Med Spa! Treat yourself to the ultimate skin refresh. Book now! Fredericksburg VA #hydrafacial #medspa</div>
+                <div class="fb-pim"></div>
+                <div class="fb-pr">&#128077; 2 &middot; &#128172; 0 &middot; Share</div>
               </div>
               <div class="fb-post">
-                <div class="fb-post-meta">
-                  <div class="fb-post-av-cell"><div class="fb-post-av"></div></div>
-                  <div class="fb-post-author-cell">
-                    <div class="fb-post-author">ILamai Medical Spa &amp; Wellness Center</div>
-                    <div class="fb-post-time">Shared from Instagram &middot; 1 week ago</div>
+                <div class="fb-pm">
+                  <div class="fb-pav"><div class="fb-pav-img"></div></div>
+                  <div class="fb-pan">
+                    <div class="fb-pa">ILamai Medical Spa &amp; Wellness Center</div>
+                    <div class="fb-pt">Shared from Instagram &middot; 1 week ago</div>
                   </div>
                 </div>
-                <div class="fb-post-text">Dr. Uma wanted to share this with you &#10024; Morpheus8 transforms skin from the inside out. #morpheus8 #skincare</div>
-                <div class="fb-post-img" style="background:linear-gradient(135deg,#c8d8e0,#a8bcc8)"></div>
-                <div class="fb-post-react">&#128077; 1 &middot; &#128172; 0 &middot; Share</div>
+                <div class="fb-ptx">Dr. Uma wanted to share this with you. Morpheus8 transforms skin from the inside out. #morpheus8 #skincare</div>
+                <div class="fb-pim" style="background:linear-gradient(135deg,#c8d8e0,#a8bcc8)"></div>
+                <div class="fb-pr">&#128077; 1 &middot; &#128172; 0 &middot; Share</div>
               </div>
             </div>
           </div>
@@ -939,25 +822,30 @@ body {
         <div class="phone-note">Page reconstructed from public data &middot; 73 followers, 57 likes</div>
       </div>
 
-      <!-- Analysis -->
-      <div class="mockup-right">
-        <p class="analysis-intro">The Facebook page is essentially non-functional as a lead generation tool. With 73 followers, posts receive near-zero organic reach. The content being posted is mirrored directly from Instagram &mdash; which Facebook&rsquo;s algorithm specifically penalizes, because cross-posted Instagram content includes Instagram-native links and formatting that Facebook doesn&rsquo;t reward.</p>
+      <!-- Right: Analysis -->
+      <div class="col-r">
+        <p class="analysis-intro">
+          The Facebook page is essentially non-functional as a lead generation tool. With 73 followers,
+          posts receive near-zero organic reach. Content is mirrored directly from Instagram &mdash; which
+          Facebook&rsquo;s algorithm penalizes, because cross-posted Instagram content includes
+          Instagram-native links that Facebook doesn&rsquo;t reward.
+        </p>
 
-        <div class="audit-panels no-break">
+        <div class="audit-panels">
           <div class="audit-panel">
             <div class="panel-box">
               <div class="panel-title ok">&#10003; What&rsquo;s There</div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Page exists and is active.</div><div class="ai-sub">Posts are being published, which means the page isn&rsquo;t abandoned. The base infrastructure is there.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+                <div class="ai-tx"><div class="ai-title">Page exists and is active</div><div class="ai-sub">Posts are being published. Base infrastructure is there.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Business category and location correct.</div><div class="ai-sub">Medical spa category and Fredericksburg address are listed &mdash; matters for local search within Facebook.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+                <div class="ai-tx"><div class="ai-title">Business category correct</div><div class="ai-sub">Medical spa category and Fredericksburg address listed &mdash; matters for local search.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">External 4.9&#9733; reviews exist.</div><div class="ai-sub">That reputation needs to be actively pulled onto the Facebook page. Right now it&rsquo;s not being leveraged.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+                <div class="ai-tx"><div class="ai-title">External 4.9&#9733; reviews exist</div><div class="ai-sub">That reputation needs to be pulled onto the Facebook page. Right now it&rsquo;s not being leveraged.</div></div>
               </div>
             </div>
           </div>
@@ -965,170 +853,186 @@ body {
             <div class="panel-box">
               <div class="panel-title bad">&#10007; What&rsquo;s Costing Leads</div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Duplicate pages split growth.</div><div class="ai-sub">Two pages = two audiences that will never combine. Fix this before anything else.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">Duplicate pages split growth</div><div class="ai-sub">Two pages = two audiences that will never combine. Fix this before anything else.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">Instagram content cross-posted verbatim.</div><div class="ai-sub">Facebook actively suppresses Instagram cross-posts. Native Facebook content gets 3&ndash;5&times; more reach.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">Instagram content cross-posted</div><div class="ai-sub">Facebook suppresses Instagram cross-posts. Native content gets 3&ndash;5&times; more reach.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">No use of Facebook&rsquo;s lead tools.</div><div class="ai-sub">Facebook Lead Ads, Events, Groups, and Reviews are all zero &mdash; the platform&rsquo;s highest-converting formats for local service businesses.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">No use of Facebook lead tools</div><div class="ai-sub">Lead Ads, Events, Groups &mdash; all unused. These are the highest-converting formats for local businesses.</div></div>
               </div>
               <div class="audit-item">
-                <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-                <div class="ai-text-cell"><div class="ai-title">73 followers = near-zero reach.</div><div class="ai-sub">Facebook shows posts to ~2&ndash;5% of followers. At 73 followers, that&rsquo;s 1&ndash;4 people per post.</div></div>
+                <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+                <div class="ai-tx"><div class="ai-title">73 followers = near-zero reach</div><div class="ai-sub">Facebook shows posts to ~2&ndash;5% of followers. At 73, that&rsquo;s 1&ndash;4 people per post.</div></div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="lead-gap no-break">
+        <div class="lead-gap">
           <h3>The Lead Generation Gap on Facebook</h3>
-          <p>Facebook&rsquo;s highest-value use case for a local med spa in 2026 is not organic feed posts &mdash; it&rsquo;s a combination of native video content, community presence in local groups, and Facebook Lead Ads targeting the Fredericksburg area. At 73 followers, iLamai is essentially invisible. But because Facebook&rsquo;s paid advertising system is so precise for local intent, even a small monthly ad spend ($300&ndash;500/month in local lead ads for Weight Loss or Hormone Therapy) can produce qualified consultation requests within days. That tool is sitting completely unused.</p>
+          <p>Facebook&rsquo;s highest-value use case for a local med spa is not organic feed posts &mdash; it&rsquo;s Facebook Lead Ads targeting local women by age and interest. Even a small spend ($300&ndash;500/month targeting Fredericksburg women 35&ndash;60 interested in weight loss or hormone therapy) can produce qualified consultation requests within days. That tool is sitting completely unused while the organic page generates almost no reach.</p>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ══════════ YOUTUBE SECTION -->
-  <div class="page-break"></div>
-
-  <div class="platform-section">
-    <div class="sec-header no-break">
-      <div class="sec-icon"><div class="sec-icon-inner icon-yt" style="font-size:16px; font-weight:bold; font-family:Arial;">&#9654;</div></div>
-      <div class="sec-title-wrap">
-        <div class="sec-title">YouTube Overview &mdash; &ldquo;Tea Time with Dr. Uma&rdquo;</div>
-        <div class="sec-sub">Channel exists &middot; Minimal indexed content &middot; Enormous untapped potential</div>
+<!-- ═══════════════════════════════════════════════
+     PAGE 4 — YOUTUBE
+═══════════════════════════════════════════════ -->
+<div class="inner-page page-break">
+  <div class="page-topbar">
+    <div class="ptb-row">
+      <div class="ptb-left">
+        <div class="ptb-brand">iLamai Med Spa</div>
+        <div class="ptb-tag">Social Media Audit</div>
       </div>
+      <div class="ptb-right"><div class="ptb-label">Page 4 of 5</div></div>
     </div>
+    <div class="ptb-gold-line"></div>
+  </div>
 
-    <div class="yt-table no-break">
-      <div class="yt-cell" style="padding-right: 14px;">
+  <div class="plat-header">
+    <div class="ph-icon-cell"><div class="ph-icon icon-yt" style="font-size:14px; font-weight:bold; font-family:Arial;">&#9654;</div></div>
+    <div class="ph-text-cell">
+      <div class="ph-title">YouTube Overview &mdash; &ldquo;Tea Time with Dr. Uma&rdquo;</div>
+      <div class="ph-sub">Channel exists &middot; Minimal indexed content &middot; Enormous untapped potential</div>
+    </div>
+    <div class="ph-stat-cell">
+      <div class="ph-stat-num" style="color:var(--red);">~0</div>
+      <div class="ph-stat-lbl">Indexed Videos</div>
+    </div>
+  </div>
+
+  <div class="pbody">
+    <div class="yt-panels">
+      <div class="yt-cell" style="padding-right:10px;">
         <div class="panel-box">
           <div class="panel-title bad">&#10007; Current State</div>
           <div class="audit-item">
-            <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-            <div class="ai-text-cell"><div class="ai-title">Only one video publicly indexed</div><div class="ai-sub">The grand opening celebration video. The &ldquo;Tea Time with Dr. Uma&rdquo; concept is referenced but has minimal searchable content built around it.</div></div>
+            <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+            <div class="ai-tx"><div class="ai-title">Only one video publicly indexed</div><div class="ai-sub">The grand opening video. &ldquo;Tea Time with Dr. Uma&rdquo; concept is referenced but has minimal searchable content.</div></div>
           </div>
           <div class="audit-item">
-            <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-            <div class="ai-text-cell"><div class="ai-title">No SEO-targeted content</div><div class="ai-sub">YouTube is the #2 search engine. A local patient searching &ldquo;Morpheus8 Fredericksburg&rdquo; will find a competitor&rsquo;s video before iLamai.</div></div>
+            <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+            <div class="ai-tx"><div class="ai-title">No SEO-targeted content</div><div class="ai-sub">YouTube is the #2 search engine. A patient searching &ldquo;Morpheus8 Fredericksburg&rdquo; finds a competitor&rsquo;s video before iLamai&rsquo;s.</div></div>
           </div>
           <div class="audit-item">
-            <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-            <div class="ai-text-cell"><div class="ai-title">Channel brand identity unestablished</div><div class="ai-sub">Without consistent thumbnails and a clear topic focus, YouTube will not recommend the channel to new viewers.</div></div>
+            <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+            <div class="ai-tx"><div class="ai-title">No channel brand identity</div><div class="ai-sub">Without consistent thumbnails and a clear topic focus, YouTube won&rsquo;t recommend the channel to new viewers.</div></div>
           </div>
           <div class="audit-item">
-            <div class="ai-icon-cell"><div class="ai-icon ai-bad">&#10007;</div></div>
-            <div class="ai-text-cell"><div class="ai-title">No YouTube Shorts published</div><div class="ai-sub">Short-form is the fastest path to organic reach. No Shorts have been indexed from the channel.</div></div>
+            <div class="ai-ic"><div class="ai-dot ai-bad">&#10007;</div></div>
+            <div class="ai-tx"><div class="ai-title">No YouTube Shorts published</div><div class="ai-sub">Short-form is the fastest path to organic reach. Zero Shorts indexed from the channel.</div></div>
           </div>
         </div>
       </div>
-      <div class="yt-cell" style="padding-left: 14px;">
-        <div class="panel-box">
+      <div class="yt-cell" style="padding-left:10px;">
+        <div class="panel-box" style="margin-bottom:12px;">
           <div class="panel-title ok">&#10003; What&rsquo;s There to Build On</div>
           <div class="audit-item">
-            <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-            <div class="ai-text-cell"><div class="ai-title">&ldquo;Tea Time with Dr. Uma&rdquo; is the right concept</div><div class="ai-sub">Personal, physician-hosted, approachable. That format builds the trust that turns a curious viewer into a booked patient.</div></div>
+            <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+            <div class="ai-tx"><div class="ai-title">&ldquo;Tea Time with Dr. Uma&rdquo; is the right concept</div><div class="ai-sub">Personal, physician-hosted, approachable &mdash; exactly what turns a curious viewer into a booked patient.</div></div>
           </div>
           <div class="audit-item">
-            <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-            <div class="ai-text-cell"><div class="ai-title">Dr. Uma&rsquo;s credentials are the differentiator</div><div class="ai-sub">Triple board-certified in Aesthetic Medicine, Functional Medicine, and Anesthesiology. That depth of expertise on camera is a conversion tool no local competitor has.</div></div>
+            <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+            <div class="ai-tx"><div class="ai-title">Dr. Uma&rsquo;s credentials are the differentiator</div><div class="ai-sub">Triple board-certified in Aesthetic, Functional, and Anesthesiology medicine. That depth on camera is a conversion tool no local competitor has.</div></div>
           </div>
           <div class="audit-item">
-            <div class="ai-icon-cell"><div class="ai-icon ai-ok">&#10003;</div></div>
-            <div class="ai-text-cell"><div class="ai-title">Services lend to high-value content</div><div class="ai-sub">BHRT, Medical Weight Loss, Ketamine Infusions, and Emsculpt Neo are all high-search, high-fear topics where a physician&rsquo;s voice carries enormous weight.</div></div>
+            <div class="ai-ic"><div class="ai-dot ai-ok">&#10003;</div></div>
+            <div class="ai-tx"><div class="ai-title">Services lend to high-value content</div><div class="ai-sub">BHRT, Medical Weight Loss, Ketamine, and Emsculpt are all high-search, high-fear topics where a physician&rsquo;s voice carries enormous weight.</div></div>
           </div>
         </div>
-        <div class="spacer-sm"></div>
-        <div class="lead-gap" style="margin-bottom:0;">
-          <h3>Why YouTube Matters More Than Facebook Right Now</h3>
-          <p>YouTube content from a triple board-certified physician has a shelf life of years. A video Dr. Uma records today explaining what Medical Weight Loss actually involves will still be ranking locally in 2028. Instagram posts have a 24-hour half-life. YouTube is the only platform where the effort compounds.</p>
+        <div class="yt-why">
+          <h3>Why YouTube Beats Facebook Right Now</h3>
+          <p>YouTube content from a physician has a shelf life of years. A video Dr. Uma records today explaining Medical Weight Loss will still rank locally in 2028. Instagram posts have a 24-hour half-life. YouTube is the only platform where the effort compounds &mdash; and no local competitor is using it.</p>
         </div>
       </div>
     </div>
 
-    <div class="spacer-md"></div>
-    <div class="cap-label" style="margin-bottom:12px;">What a YouTube strategy for iLamai would actually look like</div>
-    <div class="yt-table no-break" style="margin-bottom:0;">
-      <div class="yt-cell" style="padding-right:10px;">
+    <div class="sec-label">What a YouTube Strategy for iLamai Would Actually Look Like</div>
+    <div class="vid-cards">
+      <div class="vid-cell" style="padding-right:8px;">
         <div class="video-card">
           <div class="vc-label">Video Topic 01</div>
           <div class="vc-title">&ldquo;What Does Medical Weight Loss Actually Look Like?&rdquo; &mdash; Tea Time with Dr. Uma</div>
           <div class="vc-sub">Targets: &ldquo;medical weight loss Fredericksburg VA&rdquo; &middot; 8&ndash;12 min &middot; Drives consultation DMs</div>
         </div>
       </div>
-      <div class="yt-cell" style="padding: 0 10px;">
+      <div class="vid-cell" style="padding: 0 8px;">
         <div class="video-card">
           <div class="vc-label">Video Topic 02</div>
           <div class="vc-title">&ldquo;The Truth About BHRT After 40 &mdash; What They Don&rsquo;t Tell You&rdquo;</div>
           <div class="vc-sub">Targets BHRT searchers post-FDA label change &middot; Highest-converting topic for the 40&ndash;55 demo</div>
         </div>
       </div>
-      <div class="yt-cell" style="padding-left:10px;">
+      <div class="vid-cell" style="padding-left:8px;">
         <div class="video-card">
           <div class="vc-label">Video Topic 03</div>
-          <div class="vc-title">&ldquo;Morpheus8 vs Microneedling &mdash; What&rsquo;s the Actual Difference?&rdquo;</div>
-          <div class="vc-sub">High search volume comparison query &middot; Positions Dr. Uma as the honest expert</div>
+          <div class="vc-title">&ldquo;Morpheus8 vs. Microneedling &mdash; What&rsquo;s the Actual Difference?&rdquo;</div>
+          <div class="vc-sub">High search volume comparison query &middot; Positions Dr. Uma as the trusted, honest expert</div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ══════════ PRIORITY ACTIONS -->
-  <div class="page-break"></div>
+<!-- ═══════════════════════════════════════════════
+     PAGE 5 — PRIORITY ACTIONS
+═══════════════════════════════════════════════ -->
+<div class="priority-page page-break">
+  <div class="prio-gold-top"></div>
+  <div class="prio-body">
+    <div class="prio-eyebrow">Action Plan</div>
+    <div class="prio-title">Priority Actions &mdash; In Order</div>
+    <div class="prio-intro">Sequenced by impact. Top items remove active damage; later items build compounding growth.</div>
 
-  <div class="priority-section no-break">
-    <h2>Priority Actions &mdash; In Order</h2>
-    <div class="priority-intro">These are sequenced by impact. The top items remove active damage; the later items build compounding growth.</div>
-
-    <div class="priority-item">
-      <div class="pi-num-cell"><div class="pi-num">1</div></div>
-      <div class="pi-content">
+    <div class="prio-item">
+      <div class="pi-nc"><div class="pi-num">1</div></div>
+      <div class="pi-c">
         <div class="pi-title">Merge or delete the duplicate Facebook page</div>
-        <div class="pi-body">Two pages mean no page effectively grows. This is the only Facebook action that matters before anything else. Merge into the primary page (ID: 61566798147499) and redirect all traffic there.</div>
+        <div class="pi-body">Two pages mean no page effectively grows. Merge into the primary page (ID: 61566798147499) and redirect all traffic there. This is the only Facebook action that matters before anything else.</div>
       </div>
     </div>
-    <div class="priority-item">
-      <div class="pi-num-cell"><div class="pi-num">2</div></div>
-      <div class="pi-content">
-        <div class="pi-title">Add a hook and a CTA to every Instagram post going forward</div>
-        <div class="pi-body">The first line of every caption should earn the tap to &ldquo;more.&rdquo; The last line should give the reader a specific next step. This alone will begin converting existing followers into consultations.</div>
+    <div class="prio-item">
+      <div class="pi-nc"><div class="pi-num">2</div></div>
+      <div class="pi-c">
+        <div class="pi-title">Add a hook and CTA to every Instagram post going forward</div>
+        <div class="pi-body">The first line of every caption should earn the tap to &ldquo;more.&rdquo; The last line should give a specific next step. This alone will begin converting existing followers into consultations.</div>
       </div>
     </div>
-    <div class="priority-item">
-      <div class="pi-num-cell"><div class="pi-num">3</div></div>
-      <div class="pi-content">
+    <div class="prio-item">
+      <div class="pi-nc"><div class="pi-num">3</div></div>
+      <div class="pi-c">
         <div class="pi-title">Replace Instagram-mirrored Facebook posts with Facebook-native content</div>
-        <div class="pi-body">Facebook rewards longer-form text, community questions, and shared knowledge. Reposting Instagram content actively suppresses reach. These need to be different posts.</div>
+        <div class="pi-body">Facebook rewards longer-form text, community questions, and shared knowledge. Reposting Instagram content actively suppresses reach. These need to be different posts entirely.</div>
       </div>
     </div>
-    <div class="priority-item">
-      <div class="pi-num-cell"><div class="pi-num">4</div></div>
-      <div class="pi-content">
+    <div class="prio-item">
+      <div class="pi-nc"><div class="pi-num">4</div></div>
+      <div class="pi-c">
         <div class="pi-title">Build out the &ldquo;Tea Time with Dr. Uma&rdquo; YouTube series with SEO intent</div>
         <div class="pi-body">Three to four videos on the highest-search, highest-fear topics will begin ranking locally within 60&ndash;90 days and convert viewers at a far higher rate than any social post.</div>
       </div>
     </div>
-    <div class="priority-item" style="margin-bottom:0;">
-      <div class="pi-num-cell"><div class="pi-num">5</div></div>
-      <div class="pi-content">
+    <div class="prio-item" style="margin-bottom:0;">
+      <div class="pi-nc"><div class="pi-num">5</div></div>
+      <div class="pi-c">
         <div class="pi-title">Run one Facebook Lead Ad targeting local Weight Loss or BHRT intent</div>
         <div class="pi-body">A $300 Facebook Lead Ad campaign targeting Fredericksburg-area women aged 35&ndash;60 will produce qualified consultation leads that organic content at 73 followers simply cannot.</div>
       </div>
     </div>
+
+    <div class="prio-footer">
+      <div class="pf-l">iLamai Med Spa &mdash; Social Media Audit</div>
+      <div class="pf-r">Prepared for Dr. Uma Rangarajan, MD &middot; iLamai Med Spa, Fredericksburg VA &middot; Confidential &middot; June 2025</div>
+    </div>
   </div>
-
-  <div class="spacer-lg"></div>
-
-  <!-- Footer -->
-  <div class="doc-footer">
-    <div class="footer-left">iLamai Med Spa &mdash; Social Media Audit &middot; June 2026</div>
-    <div class="footer-right">Prepared for Dr. Uma Rangarajan, MD &middot; iLamai Med Spa, Fredericksburg VA &middot; Confidential</div>
-  </div>
-
 </div>
+
 </body>
 </html>
