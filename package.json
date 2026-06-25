@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
-    "dev":   "node build.js && npx serve ."
+    "dev": "node build.js && npx serve ."
   },
   "dependencies": {
     "marked": "^12.0.0"
