@@ -1,0 +1,32 @@
+[build]
+  command   = "npm install && node build.js"
+  publish   = "."
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Cache busting headers for built HTML pages
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Long-cache for static assets
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options       = "SAMEORIGIN"
+    X-XSS-Protection      = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy       = "strict-origin-when-cross-origin"
+
+# Redirect bare /admin to /admin/ for Decap CMS
+[[redirects]]
+  from   = "/admin"
+  to     = "/admin/"
+  status = 301

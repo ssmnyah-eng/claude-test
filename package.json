@@ -1,0 +1,13 @@
+{
+  "name": "vyv-website",
+  "version": "1.0.0",
+  "description": "VYV — Validate Your Vision | Moving & Organizing | Fredericksburg, VA",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "dev":   "node build.js && npx serve ."
+  },
+  "dependencies": {
+    "marked": "^12.0.0"
+  }
+}
