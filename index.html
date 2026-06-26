@@ -111,7 +111,7 @@
     .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lv);background:rgba(139,91,199,.12);border:1px solid rgba(139,91,199,.3);border-radius:100px;padding:7px 18px;margin-bottom:28px}
     .edot{width:6px;height:6px;border-radius:50%;background:var(--lv);animation:edot 2.5s ease-in-out infinite;flex-shrink:0}
     @keyframes edot{0%,100%{box-shadow:0 0 0 0 rgba(139,91,199,.6)}50%{box-shadow:0 0 0 8px rgba(139,91,199,0)}}
-    .hero-h1{font-family:var(--fd);font-weight:900;font-size:clamp(2.8rem,6.5vw,5.2rem);line-height:1.02;letter-spacing:-.03em;color:var(--tw);margin-bottom:24px}
+    .hero-h1{font-family:var(--fd);font-weight:900;font-size:clamp(2.2rem,6.5vw,5.2rem);line-height:1.06;letter-spacing:-.03em;color:var(--tw);margin-bottom:24px}
     .hero-h1 em{font-style:normal;color:var(--lv)}
     .hero-sub{font-size:clamp(1rem,2vw,1.18rem);color:var(--tm);line-height:1.8;max-width:580px;margin-bottom:44px}
     .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
@@ -144,7 +144,8 @@
     .sbullet-icon{width:36px;height:36px;border-radius:10px;background:var(--lbg2);border:1px solid rgba(139,91,199,.2);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;margin-top:2px}
     .sbullet-text strong{display:block;font-size:.95rem;font-weight:700;color:var(--ltxt);margin-bottom:2px}
     .sbullet-text span{font-size:.85rem;color:var(--lmuted);line-height:1.6}
-    @media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:48px}}
+    @media(max-width:860px){.story-grid{gap:48px}}
+    @media(max-width:700px){.story-grid{grid-template-columns:1fr}}
 
     /* ── TRUCK DIVIDER ───────────────────────────── */
     .truck-divider{background:var(--mp);padding:0;overflow:hidden;position:relative;height:90px}
@@ -214,7 +215,8 @@
     .rev-body{font-size:.97rem;line-height:1.82;color:var(--tm);font-style:italic;flex:1}
     .rev-author{font-weight:700;font-size:.92rem;color:var(--tw);border-top:1px solid rgba(139,91,199,.15);padding-top:18px}
     .rev-author span{display:block;font-weight:400;font-size:.78rem;color:var(--lv);margin-top:3px}
-    @media(max-width:860px){.rev-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+    @media(max-width:860px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
 
     /* ── WHY CHOOSE US ───────────────────────────── */
     #why{background:var(--ap);padding:80px 0}
@@ -234,7 +236,8 @@
     .story2-img{border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 32px 80px rgba(25,14,42,.18)}
     .story2-img img{width:100%;height:100%;object-fit:cover}
     .story2-img .img-bg-fallback{background:linear-gradient(160deg,#8B5BC7,#210D46)}
-    @media(max-width:860px){.story2-inner{grid-template-columns:1fr;gap:48px}.story2-img{aspect-ratio:16/9}}
+    @media(max-width:860px){.story2-inner{gap:48px}}
+    @media(max-width:700px){.story2-inner{grid-template-columns:1fr}.story2-img{aspect-ratio:16/9}}
 
     /* ── CTA ─────────────────────────────────────── */
     #cta{background:var(--dp);padding:130px 0;text-align:center;position:relative;overflow:hidden}
@@ -270,6 +273,72 @@
     .flinks a:hover{color:var(--lv)}
     @media(max-width:760px){.footer-g{grid-template-columns:1fr;gap:36px}.fbot{justify-content:center;text-align:center}.flinks{justify-content:center}}
     @media(max-width:600px){.hero-btns{flex-direction:column;align-items:flex-start}}
+
+    /* ── TABLET & PHONE OVERRIDES ────────────────── */
+    /* Tighten container on very small phones */
+    @media(max-width:480px){.container{padding:0 16px}}
+
+    /* Hide image badge on tablet/phone where columns are narrow */
+    @media(max-width:860px){.img-badge{display:none}}
+
+    /* Scale down section vertical padding on phone */
+    @media(max-width:600px){
+      #story1,#story2{padding:64px 0}
+      #process{padding:72px 0}
+      .proc-header{margin-bottom:40px}
+      #services{padding:64px 0}
+      .svc-header{margin-bottom:44px}
+      #gallery{padding:52px 0}
+      .gallery-header{margin-bottom:36px}
+      #reviews{padding:64px 0}
+      .rev-header{margin-bottom:44px}
+      #why{padding:52px 0}
+      .why-header{margin-bottom:36px}
+      #cta{padding:80px 0}
+      .cta-inner p{margin-bottom:36px}
+    }
+
+    /* Hero on phone: tighter vertical padding, slightly smaller headline */
+    @media(max-width:600px){
+      .hero-content{padding:28px 0 48px}
+      .hero-sub{font-size:.98rem}
+      .hero-btns .btn{font-size:.92rem;padding:13px 28px}
+    }
+
+    /* CTA button: reduce horizontal padding on phone */
+    @media(max-width:480px){
+      .cta-ring-wrap .btn{padding:15px 28px;font-size:.95rem}
+      .cta-ring{inset:-10px}
+    }
+
+    /* Trust strip: smaller gaps on phone */
+    @media(max-width:480px){
+      .trust-row{gap:8px 20px}
+      .trust-item{font-size:.82rem}
+    }
+
+    /* Proc card padding smaller on phone */
+    @media(max-width:480px){
+      .proc-card{padding:28px 20px}
+      .proc-num{font-size:2.6rem}
+    }
+
+    /* Service card padding on phone */
+    @media(max-width:480px){
+      .svc-card{padding:28px 24px}
+    }
+
+    /* Story text font sizes on phone */
+    @media(max-width:480px){
+      .story-text p{font-size:1rem}
+      .story2-text p{font-size:1rem}
+    }
+
+    /* Footer bottom row stacks on phone */
+    @media(max-width:480px){
+      .flinks{flex-direction:column;gap:8px}
+      .fbot{gap:16px}
+    }
   </style>
 </head>
 <body>
