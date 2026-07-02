@@ -3,345 +3,318 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nyah Washington — Social Media Strategist</title>
+<title>Nyah Washington — Resume</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'Inter', sans-serif;
-    background: #d8d8d8;
-    color: #1a1a1a;
+    background: #ccc;
+    color: #111;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   .page {
     background: #fff;
-    max-width: 820px;
-    margin: 36px auto;
-    box-shadow: 0 12px 60px rgba(0,0,0,0.18);
+    max-width: 850px;
+    margin: 32px auto;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
   }
 
   /* ── HEADER ── */
-  .r-header {
+  .r-head {
     background: #111;
-    padding: 40px 48px 32px;
-    position: relative;
-  }
-  .r-header-bar {
-    height: 3px;
-    background: linear-gradient(90deg, #FF5500, #00B4FF);
-    margin-bottom: 28px;
+    padding: 30px 40px 24px;
+    border-bottom: 3px solid #FF5500;
+    text-align: center;
   }
   .r-name {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 900;
     color: #fff;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+    margin-bottom: 3px;
   }
   .r-title {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #FF5500;
-    margin-bottom: 22px;
+    margin-bottom: 10px;
   }
   .r-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 24px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
   }
-  .r-contact a, .r-contact span {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.55);
-    text-decoration: none;
-  }
-  .r-contact a { color: rgba(255,255,255,0.55); }
-  .r-contact span.sep { color: #FF5500; }
+  .r-contact a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .r-contact .dot { color: #FF5500; margin: 0 6px; }
 
-  /* ── BODY ── */
+  /* ── BODY: two columns ── */
   .r-body {
     display: grid;
-    grid-template-columns: 1fr 230px;
+    grid-template-columns: 1fr 210px;
   }
 
-  .r-main { padding: 36px 40px 40px 48px; border-right: 1px solid #ececec; }
-  .r-side { padding: 36px 32px 40px; background: #f8f8f8; }
+  /* ── MAIN ── */
+  .r-main {
+    padding: 26px 32px 32px 40px;
+    border-right: 1px solid #e8e8e8;
+  }
 
-  /* ── Section ── */
-  .r-section { margin-bottom: 30px; }
-  .r-section:last-child { margin-bottom: 0; }
+  /* ── SIDE ── */
+  .r-side {
+    padding: 26px 28px 32px;
+    background: #f6f6f6;
+  }
 
-  .r-label {
-    font-size: 0.58rem;
+  /* ── Section label ── */
+  .sec-label {
+    font-size: 0.6rem;
     font-weight: 900;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #FF5500;
     border-bottom: 1.5px solid #FF5500;
-    padding-bottom: 6px;
-    margin-bottom: 16px;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
     display: block;
   }
 
+  .r-section { margin-bottom: 20px; }
+  .r-section:last-child { margin-bottom: 0; }
+
   /* ── Summary ── */
   .r-summary {
-    font-size: 0.855rem;
-    line-height: 1.8;
+    font-size: 0.78rem;
+    line-height: 1.6;
     color: #444;
   }
 
-  /* ── Jobs ── */
-  .r-job { margin-bottom: 24px; }
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: #eee;
+    margin: 0 0 18px;
+  }
+
+  /* ── Job ── */
+  .r-job { margin-bottom: 16px; }
   .r-job:last-child { margin-bottom: 0; }
 
-  .r-job-top {
+  .r-job-head {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 8px;
-    margin-bottom: 2px;
   }
   .r-job-title {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     font-weight: 800;
     color: #111;
   }
   .r-job-date {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 700;
     color: #FF5500;
     white-space: nowrap;
     flex-shrink: 0;
   }
   .r-job-co {
-    font-size: 0.73rem;
+    font-size: 0.7rem;
     color: #888;
     font-weight: 500;
-    margin-bottom: 9px;
+    font-style: italic;
+    margin-bottom: 5px;
   }
   .r-job ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
+    padding: 0;
   }
   .r-job li {
-    font-size: 0.8rem;
-    line-height: 1.65;
+    font-size: 0.75rem;
+    line-height: 1.55;
     color: #444;
-    padding-left: 14px;
+    padding-left: 12px;
     position: relative;
   }
   .r-job li::before {
     content: '';
     position: absolute;
-    left: 0; top: 7px;
+    left: 0; top: 6px;
     width: 4px; height: 4px;
     background: #FF5500;
     border-radius: 50%;
   }
 
-  /* ── Stats (sidebar) ── */
-  .r-stats { display: flex; flex-direction: column; gap: 10px; }
+  /* ── SIDEBAR ── */
+  .r-stats { display: flex; flex-direction: column; gap: 7px; }
   .r-stat {
     border-left: 3px solid #FF5500;
-    padding: 8px 12px;
+    padding: 6px 10px;
     background: #fff;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 3px 3px 0;
   }
   .r-stat-num {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 900;
     color: #FF5500;
     line-height: 1;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
   }
   .r-stat-lbl {
-    font-size: 0.64rem;
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
     color: #888;
+    line-height: 1.3;
   }
 
-  /* ── Skills (sidebar) ── */
   .r-skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 4px;
   }
   .r-skill {
-    font-size: 0.68rem;
+    font-size: 0.63rem;
     font-weight: 600;
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 3px;
-    padding: 3px 8px;
+    border-radius: 2px;
+    padding: 2px 7px;
     color: #333;
   }
 
-  /* ── Platforms (sidebar) ── */
-  .r-platforms { display: flex; flex-direction: column; gap: 7px; }
-  .r-platform {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .r-platform-name {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #333;
-  }
-  .r-platform-bar-wrap {
-    width: 80px;
-    height: 4px;
-    background: #e5e5e5;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .r-platform-bar {
-    height: 100%;
-    background: #FF5500;
-    border-radius: 2px;
-  }
+  .r-platforms { display: flex; flex-direction: column; gap: 5px; }
+  .r-platform { display: flex; justify-content: space-between; align-items: center; }
+  .r-platform-name { font-size: 0.7rem; font-weight: 600; color: #333; }
+  .r-bar-wrap { width: 70px; height: 3px; background: #ddd; border-radius: 2px; overflow: hidden; }
+  .r-bar { height: 100%; background: #FF5500; border-radius: 2px; }
 
-  /* ── Industries sidebar ── */
-  .r-industries {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .r-industry {
-    font-size: 0.66rem;
+  .r-industries { display: flex; flex-wrap: wrap; gap: 4px; }
+  .r-ind {
+    font-size: 0.62rem;
     font-weight: 600;
     background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 3px;
-    padding: 3px 7px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 2px 6px;
     color: #444;
   }
 
-  /* ── Footer ── */
+  /* ── FOOTER ── */
   .r-footer {
     background: #111;
-    padding: 12px 48px;
+    border-top: 3px solid #FF5500;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .r-footer span {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.4);
-  }
-  .r-footer a {
-    font-size: 0.72rem;
-    color: #FF5500;
-    text-decoration: none;
-    font-weight: 700;
-  }
+  .r-footer span { font-size: 0.68rem; color: rgba(255,255,255,0.35); }
+  .r-footer a { font-size: 0.68rem; color: #FF5500; text-decoration: none; font-weight: 700; }
 
   @media print {
     body { background: #fff; }
     .page { margin: 0; box-shadow: none; max-width: 100%; }
     .no-print { display: none !important; }
   }
-
   .no-print {
-    text-align: center;
-    padding: 12px;
-    background: #111;
-    color: rgba(255,255,255,0.5);
-    font-size: 0.75rem;
-    cursor: pointer;
+    text-align: center; padding: 10px;
+    background: #111; color: rgba(255,255,255,0.4);
+    font-size: 0.7rem; cursor: pointer;
     font-family: 'Inter', sans-serif;
-    border: none;
-    width: 100%;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    border: none; width: 100%;
+    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
   }
   .no-print:hover { background: #FF5500; color: #fff; }
 </style>
 </head>
 <body>
-
 <div class="page">
 
-  <div class="r-header">
-    <div class="r-header-bar"></div>
+  <!-- HEADER -->
+  <div class="r-head">
     <div class="r-name">Nyah Washington</div>
     <div class="r-title">Social Media Strategist &amp; Content Director</div>
     <div class="r-contact">
-      <span>Fredericksburg, VA</span>
-      <span class="sep">·</span>
+      Fredericksburg, VA
+      <span class="dot">·</span>
       <a href="tel:5406215948">540-621-5948</a>
-      <span class="sep">·</span>
+      <span class="dot">·</span>
       <a href="mailto:ssmnyah@gmail.com">ssmnyah@gmail.com</a>
-      <span class="sep">·</span>
+      <span class="dot">·</span>
       <a href="https://www.linkedin.com/in/nyahwashington">linkedin.com/in/nyahwashington</a>
-      <span class="sep">·</span>
+      <span class="dot">·</span>
       <a href="https://www.instagram.com/strategistnyah">@strategistnyah</a>
     </div>
   </div>
 
+  <!-- BODY -->
   <div class="r-body">
 
     <!-- MAIN -->
     <div class="r-main">
 
       <div class="r-section">
-        <span class="r-label">Profile</span>
-        <p class="r-summary">Social media strategist with <strong>6+ years of agency-level experience</strong> building content systems that turn service businesses into recognizable, revenue-generating brands online. Spent six years leading social media strategy for an entire advertising agency client roster — roofing, landscaping, real estate, travel, and more — across every major platform. Known for building done-for-you systems that take social media completely off the business owner's plate while driving consistent, compounding growth.</p>
+        <span class="sec-label">Profile</span>
+        <p class="r-summary">Social media strategist with <strong>6+ years of agency-level experience</strong> building content systems that turn service businesses into recognizable, revenue-generating brands. Spent six years leading strategy for an entire advertising agency client roster — roofing, landscaping, real estate, travel, and more — across every major platform. Now running my own agency delivering fully done-for-you social media management with real, measurable results.</p>
       </div>
 
       <div class="r-section">
-        <span class="r-label">Experience</span>
+        <span class="sec-label">Experience</span>
 
         <div class="r-job">
-          <div class="r-job-top">
+          <div class="r-job-head">
             <div class="r-job-title">Founder &amp; Social Media Strategist</div>
             <div class="r-job-date">2024 — Present</div>
           </div>
-          <div class="r-job-co">Social Strategist Nyah · Remote</div>
+          <div class="r-job-co">Social Strategist Nyah &nbsp;·&nbsp; Remote</div>
           <ul>
-            <li>Founded and operate a boutique social media management agency serving service-based businesses across roofing, landscaping, travel, dental, real estate, and more.</li>
-            <li>Manage end-to-end content creation for active clients — strategy, scripting, video editing, graphic design, posting, comment and DM management.</li>
-            <li>Generated $200,000+ in organic sales for a single roofing client within one year through consistent social media content strategy.</li>
-            <li>Accumulated 4.5M+ total views across client accounts with no paid advertising on the content side.</li>
-            <li>Delivered weekly performance reports, monthly strategy calls, and ongoing platform research to maximize results for each client.</li>
-            <li>Offer three service tiers: Strategy ($1,000/mo), Presence ($1,500/mo), and Growth ($2,500/mo).</li>
+            <li>Founded boutique social media management agency serving service-based businesses across roofing, landscaping, travel, dental, real estate, and more.</li>
+            <li>Manage end-to-end content — strategy, scripting, video editing, graphic design, posting, comment and DM management.</li>
+            <li>Generated $200,000+ in organic sales for a roofing client within one year through content strategy alone.</li>
+            <li>Accumulated 4.5M+ total views and 32K+ followers gained across active client accounts.</li>
+            <li>Deliver weekly performance reports, monthly strategy calls, and ongoing platform research for each client.</li>
           </ul>
         </div>
 
+        <div class="divider"></div>
+
         <div class="r-job">
-          <div class="r-job-top">
+          <div class="r-job-head">
             <div class="r-job-title">Head of Social Media Strategy</div>
             <div class="r-job-date">2019 — 2024</div>
           </div>
-          <div class="r-job-co">Premier Advertising Agency (NDA) · Remote</div>
+          <div class="r-job-co">Premier Advertising Agency (NDA) &nbsp;·&nbsp; Remote</div>
           <ul>
-            <li>Led social media strategy for the agency's entire client portfolio spanning roofing, landscaping, real estate, home services, travel, and professional services.</li>
+            <li>Led social media strategy for the agency's full client portfolio — roofing, landscaping, real estate, home services, travel, and professional services.</li>
             <li>Managed content planning, scripting, production direction, and performance tracking across TikTok, Instagram, Facebook, and LinkedIn.</li>
-            <li>Studied platform algorithms across all major channels to drive consistent, compounding organic growth for clients in competitive local markets.</li>
-            <li>Developed scalable content systems that reduced client time investment to 1–2 filming days per month while maintaining a high output of quality content.</li>
-            <li>Collaborated directly with agency ownership and client stakeholders on brand voice, visual identity, and campaign direction.</li>
+            <li>Studied platform algorithms across all major channels to drive consistent, compounding organic growth in competitive local markets.</li>
+            <li>Built scalable content systems that reduced client filming time to 1–2 days per month with no drop in content quality or volume.</li>
+            <li>Worked directly with agency ownership and client stakeholders on brand voice, visual identity, and campaign direction.</li>
           </ul>
         </div>
 
+        <div class="divider"></div>
+
         <div class="r-job">
-          <div class="r-job-top">
+          <div class="r-job-head">
             <div class="r-job-title">Live Chat Specialist</div>
             <div class="r-job-date">2019 — Present</div>
           </div>
-          <div class="r-job-co">Flite Center · Remote</div>
+          <div class="r-job-co">Flite Center &nbsp;·&nbsp; Remote</div>
           <ul>
-            <li>Maintained a 98% customer satisfaction rate through responsive, solution-focused live chat support.</li>
-            <li>Reduced customer complaints 20% year-over-year through proactive issue identification and resolution.</li>
+            <li>Maintained 98% customer satisfaction rate through responsive, solution-focused live chat support.</li>
+            <li>Reduced customer complaints 20% year-over-year through proactive issue resolution and CRM tracking.</li>
           </ul>
         </div>
 
@@ -353,7 +326,7 @@
     <div class="r-side">
 
       <div class="r-section">
-        <span class="r-label">Results</span>
+        <span class="sec-label">Key Results</span>
         <div class="r-stats">
           <div class="r-stat">
             <div class="r-stat-num">4.5M+</div>
@@ -361,11 +334,11 @@
           </div>
           <div class="r-stat">
             <div class="r-stat-num">$200K+</div>
-            <div class="r-stat-lbl">Organic Sales · 1 Client · 1 Year</div>
+            <div class="r-stat-lbl">Organic Sales · 1 Client · 1 Yr</div>
           </div>
           <div class="r-stat">
             <div class="r-stat-num">32K+</div>
-            <div class="r-stat-lbl">Followers Gained · Single Account</div>
+            <div class="r-stat-lbl">Followers Gained</div>
           </div>
           <div class="r-stat">
             <div class="r-stat-num">6 yrs</div>
@@ -373,69 +346,69 @@
           </div>
           <div class="r-stat">
             <div class="r-stat-num">100%</div>
-            <div class="r-stat-lbl">Done-For-You Execution</div>
+            <div class="r-stat-lbl">Done-For-You</div>
           </div>
         </div>
       </div>
 
       <div class="r-section">
-        <span class="r-label">Platforms</span>
+        <span class="sec-label">Platforms</span>
         <div class="r-platforms">
           <div class="r-platform">
             <span class="r-platform-name">TikTok</span>
-            <div class="r-platform-bar-wrap"><div class="r-platform-bar" style="width:95%"></div></div>
+            <div class="r-bar-wrap"><div class="r-bar" style="width:95%"></div></div>
           </div>
           <div class="r-platform">
             <span class="r-platform-name">Instagram</span>
-            <div class="r-platform-bar-wrap"><div class="r-platform-bar" style="width:95%"></div></div>
+            <div class="r-bar-wrap"><div class="r-bar" style="width:95%"></div></div>
           </div>
           <div class="r-platform">
             <span class="r-platform-name">Facebook</span>
-            <div class="r-platform-bar-wrap"><div class="r-platform-bar" style="width:90%"></div></div>
+            <div class="r-bar-wrap"><div class="r-bar" style="width:90%"></div></div>
           </div>
           <div class="r-platform">
             <span class="r-platform-name">LinkedIn</span>
-            <div class="r-platform-bar-wrap"><div class="r-platform-bar" style="width:80%"></div></div>
+            <div class="r-bar-wrap"><div class="r-bar" style="width:78%"></div></div>
           </div>
         </div>
       </div>
 
       <div class="r-section">
-        <span class="r-label">Skills</span>
+        <span class="sec-label">Skills</span>
         <div class="r-skills">
           <span class="r-skill">Content Strategy</span>
           <span class="r-skill">Script Writing</span>
           <span class="r-skill">Video Editing</span>
           <span class="r-skill">Graphic Design</span>
           <span class="r-skill">Brand Voice</span>
+          <span class="r-skill">Analytics</span>
           <span class="r-skill">Algorithm Research</span>
-          <span class="r-skill">Analytics & Reporting</span>
           <span class="r-skill">Content Planning</span>
           <span class="r-skill">DM Management</span>
-          <span class="r-skill">Done-For-You Systems</span>
           <span class="r-skill">Client Communication</span>
         </div>
       </div>
 
       <div class="r-section">
-        <span class="r-label">Industries Served</span>
+        <span class="sec-label">Industries</span>
         <div class="r-industries">
-          <span class="r-industry">Roofing</span>
-          <span class="r-industry">Landscaping</span>
-          <span class="r-industry">Real Estate</span>
-          <span class="r-industry">Travel</span>
-          <span class="r-industry">Home Services</span>
-          <span class="r-industry">HVAC</span>
-          <span class="r-industry">Dental</span>
-          <span class="r-industry">Med Spa</span>
-          <span class="r-industry">Veterinary</span>
-          <span class="r-industry">Coaching</span>
+          <span class="r-ind">Roofing</span>
+          <span class="r-ind">Landscaping</span>
+          <span class="r-ind">Real Estate</span>
+          <span class="r-ind">Travel</span>
+          <span class="r-ind">Home Services</span>
+          <span class="r-ind">HVAC</span>
+          <span class="r-ind">Dental</span>
+          <span class="r-ind">Med Spa</span>
+          <span class="r-ind">Veterinary</span>
+          <span class="r-ind">Coaching</span>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- FOOTER -->
   <div class="r-footer">
     <span>For more information</span>
     <a href="https://www.linkedin.com/in/nyahwashington">linkedin.com/in/nyahwashington</a>
@@ -444,6 +417,5 @@
   <button class="no-print" onclick="window.print()">Save as PDF — File → Print → Save as PDF</button>
 
 </div>
-
 </body>
 </html>
