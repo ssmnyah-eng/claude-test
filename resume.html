@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nyah Washington — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --orange: #FF5500;
+    --green: #1A6B3C;
+    --blue: #00B4FF;
+    --black: #111111;
+    --white: #FFFFFF;
+    --gray: #f5f5f5;
+    --text: #222;
+    --muted: #666;
+    --font-cursive: 'Dancing Script', cursive;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    background: #eee;
+    color: var(--text);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    background: #fff;
+    max-width: 860px;
+    margin: 40px auto;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.13);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  .resume-header {
+    background: var(--black);
+    padding: 44px 52px 36px;
+    position: relative;
+  }
+  .resume-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--blue));
+  }
+  .header-name {
+    font-family: var(--font-sans);
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .header-name em {
+    font-family: var(--font-cursive);
+    font-style: normal;
+    color: var(--orange);
+    font-size: 1.1em;
+  }
+  .header-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 20px;
+  }
+  .header-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-top: 18px;
+  }
+  .header-contact a,
+  .header-contact span {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .header-contact a:hover { color: var(--orange); }
+  .contact-dot {
+    width: 5px; height: 5px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* ── Body ── */
+  .resume-body {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    min-height: 600px;
+  }
+
+  .col-main { padding: 40px 44px 40px 52px; border-right: 1px solid #ebebeb; }
+  .col-side { padding: 40px 36px 40px 32px; background: var(--gray); }
+
+  /* ── Section labels ── */
+  .section-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--orange);
+    display: inline-block;
+  }
+
+  section { margin-bottom: 36px; }
+  section:last-child { margin-bottom: 0; }
+
+  /* ── Summary ── */
+  .summary p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #444;
+  }
+  .summary strong { color: var(--black); }
+
+  /* ── Experience ── */
+  .job { margin-bottom: 28px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 3px;
+  }
+  .job-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--black);
+  }
+  .job-date {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--orange);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .job-company {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .job ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .job ul li {
+    font-size: 0.83rem;
+    line-height: 1.65;
+    color: #444;
+    padding-left: 16px;
+    position: relative;
+  }
+  .job ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+
+  /* ── Side: Skills ── */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .skill-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: var(--black);
+    line-height: 1;
+  }
+
+  /* ── Side: Education ── */
+  .edu-item { margin-bottom: 20px; }
+  .edu-name {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 2px;
+  }
+  .edu-sub {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .edu-detail {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* ── Side: Stats ── */
+  .stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .stat-item {
+    background: #fff;
+    border-left: 3px solid var(--orange);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+  }
+  .stat-num {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .stat-desc {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; border-radius: 0; max-width: 100%; }
+    .print-btn { display: none; }
+  }
+
+  .print-btn {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    background: var(--black);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-family: var(--font-sans);
+  }
+  .print-btn:hover { background: var(--orange); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="resume-header">
+    <div class="header-name">Nyah <em>Washington</em></div>
+    <div class="header-title">Social Media Strategist &amp; Content Director</div>
+    <div class="header-contact">
+      <span><span class="contact-dot"></span> Fredericksburg, VA</span>
+      <a href="tel:5406215948"><span class="contact-dot"></span> 540-621-5948</a>
+      <a href="mailto:nyahwood.va@gmail.com"><span class="contact-dot"></span> nyahwood.va@gmail.com</a>
+      <a href="https://linkedin.com/in/nyah-w-65b70a415/" target="_blank"><span class="contact-dot"></span> LinkedIn</a>
+      <a href="https://www.instagram.com/strategistnyah" target="_blank"><span class="contact-dot"></span> @strategistnyah</a>
+    </div>
+  </div>
+
+  <div class="resume-body">
+
+    <!-- Main Column -->
+    <div class="col-main">
+
+      <!-- Summary -->
+      <section class="summary">
+        <div class="section-label">Profile</div>
+        <p>Social media strategist with <strong>6+ years of experience</strong> driving brand growth across digital platforms. Backed by a career in agency-level social media management and a deep understanding of content strategy, platform algorithms, and audience engagement. Known for building systems that turn social media from an afterthought into a consistent, revenue-generating channel for service businesses.</p>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <div class="section-label">Experience</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Social Media Strategist</div>
+            <div class="job-date">2019 — Present</div>
+          </div>
+          <div class="job-company">Premier Advertising Agency (NDA) · Remote</div>
+          <ul>
+            <li>Led social media strategy for an entire agency client roster spanning roofing, landscaping, real estate, travel, and more.</li>
+            <li>Managed content creation, scheduling, and performance tracking across all major platforms — TikTok, Instagram, Facebook, LinkedIn.</li>
+            <li>Studied platform algorithms to drive consistent, compounding growth — generating over 4.5M total views and $200K+ in organic sales for clients.</li>
+            <li>Developed content systems and scripts that reduced client time investment to 1–2 filming days per month.</li>
+            <li>Delivered weekly performance reports and monthly strategy calls to keep client goals on track.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Live Chat Specialist</div>
+            <div class="job-date">05/2019 — Present</div>
+          </div>
+          <div class="job-company">Flite Center · Remote</div>
+          <ul>
+            <li>Maintained a 98% customer satisfaction rate through timely, accurate support via live chat.</li>
+            <li>Reduced customer complaints by 20% year-over-year through proactive issue resolution.</li>
+            <li>Tracked customer interactions in CRM software to improve service delivery and inform strategy.</li>
+            <li>Identified upsell and cross-sell opportunities to enhance revenue for the business.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Customer Service Specialist</div>
+            <div class="job-date">02/2017 — 05/2019</div>
+          </div>
+          <div class="job-company">Connexus Resource Group · Remote</div>
+          <ul>
+            <li>Managed multi-channel customer communication via phone, email, and live chat with fast, effective resolutions.</li>
+            <li>Increased customer satisfaction by 15% through personalized, solutions-focused engagement.</li>
+            <li>Escalated complex cases to leadership with detailed reports to support decision-making.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Administrative Assistant</div>
+            <div class="job-date">04/2014 — 02/2017</div>
+          </div>
+          <div class="job-company">Sofa Outlet · Fredericksburg, VA</div>
+          <ul>
+            <li>Managed schedules, client communications, and high-priority requests for a fast-paced retail environment.</li>
+            <li>Increased team productivity by 40% through streamlined systems and workflow improvements.</li>
+            <li>Maintained 98% client satisfaction through consistent, professional service delivery.</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Side Column -->
+    <div class="col-side">
+
+      <!-- Key Results -->
+      <section>
+        <div class="section-label">Key Results</div>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num">4.5M+</div>
+            <div class="stat-desc">Total Views Generated</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">$200K+</div>
+            <div class="stat-desc">Organic Sales (1 Client, 1 Year)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98%</div>
+            <div class="stat-desc">Client Satisfaction Rate</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">6 yrs</div>
+            <div class="stat-desc">Agency-Level Experience</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section>
+        <div class="section-label">Skills</div>
+        <div class="skills-list">
+          <span class="skill-tag">Social Media Strategy</span>
+          <span class="skill-tag">Content Planning</span>
+          <span class="skill-tag">Script Writing</span>
+          <span class="skill-tag">Video Editing</span>
+          <span class="skill-tag">Graphic Design</span>
+          <span class="skill-tag">TikTok</span>
+          <span class="skill-tag">Instagram</span>
+          <span class="skill-tag">Facebook</span>
+          <span class="skill-tag">LinkedIn</span>
+          <span class="skill-tag">Analytics & Reporting</span>
+          <span class="skill-tag">CRM Software</span>
+          <span class="skill-tag">Algorithm Research</span>
+          <span class="skill-tag">Client Communication</span>
+          <span class="skill-tag">Brand Voice</span>
+          <span class="skill-tag">Done-For-You Systems</span>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <div class="section-label">Education</div>
+        <div class="edu-item">
+          <div class="edu-name">Google IT Support Professional Certificate</div>
+          <div class="edu-sub">Merit America · Virtual · 2022</div>
+          <div class="edu-detail">Covers troubleshooting, networking, systems administration, and security — comparable to CompTIA A+.</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-name">Additional Coursework</div>
+          <div class="edu-sub">Microsoft 365, Windows 10, Spiceworks, Cloud Fundamentals</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">⬇ Save as PDF — File → Print → Save as PDF</button>
+
+</div>
+
+</body>
+</html>
