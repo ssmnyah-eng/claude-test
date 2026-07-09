@@ -1640,6 +1640,56 @@
       .faq-question { padding: 18px 20px; font-size: 0.92rem; }
       .faq-answer.open { padding: 0 20px 20px; }
     }
+
+    /* ── Mobile fixes ── */
+    @media (max-width: 760px) {
+      /* Hero */
+      .hero-shapes { display: none; }
+      #hero { min-height: auto; padding: 100px 20px 60px; }
+      .hero-headline { font-size: clamp(1.6rem, 7vw, 2.4rem) !important; }
+      .hero-sub { font-size: 0.95rem; }
+      .hero-cta-group { flex-direction: column; align-items: stretch; gap: 12px; }
+      .hero-cta-group .btn { text-align: center; }
+
+      /* Stats row */
+      .stats-row { grid-template-columns: repeat(2,1fr) !important; }
+
+      /* Packages - stack to 1 col on small screens */
+      .packages-grid { grid-template-columns: 1fr !important; max-width: 420px !important; }
+
+      /* Meet section */
+      .meet-grid { grid-template-columns: 1fr !important; }
+      .meet-photo-frame { max-width: 280px; margin: 0 auto; }
+
+      /* Testimonials */
+      .testi-grid { grid-template-columns: 1fr !important; }
+
+      /* Results grid */
+      .results-grid { grid-template-columns: 1fr !important; max-width: 420px !important; }
+
+      /* Process grid */
+      .process-grid { grid-template-columns: 1fr !important; }
+      .flip-card { height: auto; min-height: 140px; }
+
+      /* Industry grid items */
+      .industry-item { width: 100px !important; }
+
+      /* CTA section */
+      #cta .container { padding: 60px 24px !important; }
+
+      /* General font sizes */
+      h2 { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; }
+      .section-tag { font-size: 0.6rem; }
+
+      /* Videos */
+      .video-strip { gap: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: repeat(2,1fr) !important; }
+      .packages-grid { grid-template-columns: 1fr !important; }
+      nav .nav-inner { padding: 0 16px; }
+    }
   </style>
 </head>
 <body>
@@ -2277,7 +2327,7 @@
     <h2 class="reveal">Social Media Management Services</h2>
     <p class="sub reveal">Three tiers. One question: how much do you want off your plate? Start where you are. Scale when you're ready.</p>
 
-    <div class="packages-grid" style="grid-template-columns:repeat(3,1fr);max-width:1100px;margin:0 auto;">
+    <div class="packages-grid" style="max-width:1100px;margin:0 auto;">
 
       <!-- Strategy -->
       <div class="pkg-card reveal">
