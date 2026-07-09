@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nyah Washington — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ccc;
+    color: #111;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    background: #fff;
+    max-width: 850px;
+    margin: 32px auto;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* ── HEADER ── */
+  .r-head {
+    background: #111;
+    padding: 28px 40px 22px;
+    border-bottom: 3px solid #FF5500;
+    text-align: center;
+  }
+  .r-name { font-size: 1.85rem; font-weight: 900; color: #fff; letter-spacing: -0.02em; margin-bottom: 3px; }
+  .r-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #FF5500; margin-bottom: 10px; }
+  .r-contact { font-size: 0.72rem; color: rgba(255,255,255,0.5); }
+  .r-contact a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .r-contact .dot { color: #FF5500; margin: 0 6px; }
+
+  /* ── BODY ── */
+  .r-body { display: grid; grid-template-columns: 1fr 205px; }
+  .r-main { padding: 22px 28px 28px 40px; border-right: 1px solid #e8e8e8; }
+  .r-side { padding: 22px 24px 28px; background: #f6f6f6; }
+
+  /* ── Labels ── */
+  .sec-label {
+    font-size: 0.58rem; font-weight: 900; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #FF5500;
+    border-bottom: 1.5px solid #FF5500;
+    padding-bottom: 4px; margin-bottom: 9px; display: block;
+  }
+  .r-section { margin-bottom: 18px; }
+  .r-section:last-child { margin-bottom: 0; }
+
+  /* ── Summary ── */
+  .r-summary { font-size: 0.76rem; line-height: 1.6; color: #444; }
+
+  /* ── Divider ── */
+  .divider { height: 1px; background: #eee; margin: 0 0 14px; }
+
+  /* ── Jobs ── */
+  .r-job { margin-bottom: 14px; }
+  .r-job:last-child { margin-bottom: 0; }
+  .r-job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .r-job-title { font-size: 0.8rem; font-weight: 800; color: #111; }
+  .r-job-date { font-size: 0.63rem; font-weight: 700; color: #FF5500; white-space: nowrap; flex-shrink: 0; }
+  .r-job-co { font-size: 0.68rem; color: #888; font-weight: 500; font-style: italic; margin-bottom: 5px; }
+  .r-job ul { list-style: none; display: flex; flex-direction: column; gap: 3px; padding: 0; }
+  .r-job li { font-size: 0.73rem; line-height: 1.5; color: #444; padding-left: 11px; position: relative; }
+  .r-job li::before { content: ''; position: absolute; left: 0; top: 6px; width: 4px; height: 4px; background: #FF5500; border-radius: 50%; }
+
+  /* ── Sidebar stats ── */
+  .r-stats { display: flex; flex-direction: column; gap: 6px; }
+  .r-stat { border-left: 3px solid #FF5500; padding: 5px 9px; background: #fff; border-radius: 0 3px 3px 0; }
+  .r-stat-num { font-size: 1rem; font-weight: 900; color: #FF5500; line-height: 1; margin-bottom: 1px; }
+  .r-stat-lbl { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #888; line-height: 1.3; }
+
+  /* ── Sidebar skills ── */
+  .r-skills { display: flex; flex-wrap: wrap; gap: 4px; }
+  .r-skill { font-size: 0.61rem; font-weight: 600; background: #fff; border: 1px solid #ddd; border-radius: 2px; padding: 2px 6px; color: #333; }
+
+  /* ── Platforms ── */
+  .r-platforms { display: flex; flex-direction: column; gap: 5px; }
+  .r-platform { display: flex; justify-content: space-between; align-items: center; }
+  .r-platform-name { font-size: 0.68rem; font-weight: 600; color: #333; }
+  .r-bar-wrap { width: 65px; height: 3px; background: #ddd; border-radius: 2px; overflow: hidden; }
+  .r-bar { height: 100%; background: #FF5500; border-radius: 2px; }
+
+  /* ── Certifications ── */
+  .r-certs { display: flex; flex-direction: column; gap: 6px; }
+  .r-cert-name { font-size: 0.68rem; font-weight: 700; color: #111; line-height: 1.3; }
+  .r-cert-sub { font-size: 0.6rem; color: #888; }
+
+  /* ── Footer ── */
+  .r-footer { background: #111; border-top: 3px solid #FF5500; padding: 9px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .r-footer span { font-size: 0.65rem; color: rgba(255,255,255,0.35); }
+  .r-footer a { font-size: 0.65rem; color: #FF5500; text-decoration: none; font-weight: 700; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; max-width: 100%; }
+    .no-print { display: none !important; }
+  }
+  .no-print {
+    text-align: center; padding: 10px; background: #111; color: rgba(255,255,255,0.4);
+    font-size: 0.7rem; cursor: pointer; font-family: 'Inter', sans-serif;
+    border: none; width: 100%; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .no-print:hover { background: #FF5500; color: #fff; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="r-head">
+    <div class="r-name">Nyah Washington</div>
+    <div class="r-title">Social Media Strategist &amp; Content Director</div>
+    <div class="r-contact">
+      Fredericksburg, VA
+      <span class="dot">·</span><a href="tel:5404197311">540-419-7311</a>
+      <span class="dot">·</span><a href="mailto:ssmnyah@gmail.com">ssmnyah@gmail.com</a>
+      <span class="dot">·</span><a href="https://www.linkedin.com/in/nyahwashington">linkedin.com/in/nyahwashington</a>
+      <span class="dot">·</span><a href="https://www.instagram.com/strategistnyah">@strategistnyah</a>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="r-body">
+
+    <!-- MAIN -->
+    <div class="r-main">
+
+      <div class="r-section">
+        <span class="sec-label">Profile</span>
+        <p class="r-summary">I don't guess with social media. I study it. Social media strategist with <strong>8+ years of experience</strong> at a full-service advertising agency, growing from assistant to Head of Social Media and managing strategy across an entire client roster. Deep expertise in platform algorithms, content systems, KPI tracking, and managing multiple brand voices across TikTok, Instagram, Facebook, and LinkedIn — simultaneously, under real deadlines.</p>
+      </div>
+
+      <div class="r-section">
+        <span class="sec-label">Experience</span>
+
+        <div class="r-job">
+          <div class="r-job-head">
+            <div class="r-job-title">Social Media Strategist &amp; Contractor</div>
+            <div class="r-job-date">Jan 2024 — Present</div>
+          </div>
+          <div class="r-job-co">The Alpha Agency LLC &nbsp;·&nbsp; Contract &nbsp;·&nbsp; Fredericksburg, VA</div>
+          <ul>
+            <li>Continue supporting The Alpha Agency's client accounts on a contract basis following transition from full-time Head of Social role.</li>
+            <li>Manage multi-platform content strategy, production, and performance reporting for active client roster across service-based industries.</li>
+            <li>Generated $200,000+ in organic sales for a roofing client within one year through targeted content strategy.</li>
+            <li>Grew client accounts to 4.5M+ total views and 32K+ new followers with zero paid content spend.</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="r-job">
+          <div class="r-job-head">
+            <div class="r-job-title">Head of Social Media</div>
+            <div class="r-job-date">Jan 2020 — Jan 2024</div>
+          </div>
+          <div class="r-job-co">The Alpha Agency LLC &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; Fredericksburg, VA</div>
+          <ul>
+            <li>Led all social media operations for The Alpha Agency and its full client roster across roofing, landscaping, real estate, travel, and more.</li>
+            <li>Built and executed content strategies for multiple clients simultaneously — scripting, production direction, editing, posting, and community management.</li>
+            <li>Tracked KPIs, delivered weekly performance reports, and conducted ongoing platform algorithm research to optimize results.</li>
+            <li>Managed multiple brand voices at once, adapting strategy and tone to fit each client's industry and audience.</li>
+            <li>Developed scalable content systems that reduced client involvement to 1–2 filming days per month.</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="r-job">
+          <div class="r-job-head">
+            <div class="r-job-title">Social Media Manager</div>
+            <div class="r-job-date">Jan 2019 — Jan 2020</div>
+          </div>
+          <div class="r-job-co">The Alpha Agency LLC &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; Fredericksburg, VA</div>
+          <ul>
+            <li>Managed social media strategy and content creation for multiple client accounts across platforms.</li>
+            <li>Supported B2B marketing initiatives and paid social media advertising campaigns for agency clients.</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="r-job">
+          <div class="r-job-head">
+            <div class="r-job-title">Social Media Assistant</div>
+            <div class="r-job-date">Jan 2018 — Jan 2019</div>
+          </div>
+          <div class="r-job-co">The Alpha Agency LLC &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; Fredericksburg, VA</div>
+          <ul>
+            <li>Joined The Alpha Agency as an entry-level Social Media Assistant, supporting the team with content scheduling, community management, and platform monitoring.</li>
+            <li>Built foundational knowledge of multi-platform social media strategy across client accounts.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="r-side">
+
+      <div class="r-section">
+        <span class="sec-label">Key Results</span>
+        <div class="r-stats">
+          <div class="r-stat">
+            <div class="r-stat-num">4.5M+</div>
+            <div class="r-stat-lbl">Total Views Across Clients</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">$200K+</div>
+            <div class="r-stat-lbl">Organic Sales · 1 Client · 1 Yr</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">32K+</div>
+            <div class="r-stat-lbl">Followers Gained</div>
+          </div>
+          <div class="r-stat">
+            <div class="r-stat-num">8+ yrs</div>
+            <div class="r-stat-lbl">Agency Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-section">
+        <span class="sec-label">Platforms</span>
+        <div class="r-platforms">
+          <div class="r-platform"><span class="r-platform-name">TikTok</span><div class="r-bar-wrap"><div class="r-bar" style="width:95%"></div></div></div>
+          <div class="r-platform"><span class="r-platform-name">Instagram</span><div class="r-bar-wrap"><div class="r-bar" style="width:95%"></div></div></div>
+          <div class="r-platform"><span class="r-platform-name">Facebook</span><div class="r-bar-wrap"><div class="r-bar" style="width:90%"></div></div></div>
+          <div class="r-platform"><span class="r-platform-name">LinkedIn</span><div class="r-bar-wrap"><div class="r-bar" style="width:78%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="r-section">
+        <span class="sec-label">Core Skills</span>
+        <div class="r-skills">
+          <span class="r-skill">Content Strategy</span>
+          <span class="r-skill">Algorithm Research</span>
+          <span class="r-skill">KPI Tracking</span>
+          <span class="r-skill">Script Writing</span>
+          <span class="r-skill">Video Editing</span>
+          <span class="r-skill">Graphic Design</span>
+          <span class="r-skill">B2B Marketing</span>
+          <span class="r-skill">Paid Social Ads</span>
+          <span class="r-skill">Brand Voice</span>
+          <span class="r-skill">Community Mgmt</span>
+          <span class="r-skill">Performance Reporting</span>
+          <span class="r-skill">Multi-Client Mgmt</span>
+        </div>
+      </div>
+
+      <div class="r-section">
+        <span class="sec-label">Certifications</span>
+        <div class="r-certs">
+          <div>
+            <div class="r-cert-name">Google IT Support Specialization</div>
+            <div class="r-cert-sub">Coursera · Jan 2023</div>
+          </div>
+          <div>
+            <div class="r-cert-name">IT Security: Defense Against the Digital Dark Arts</div>
+            <div class="r-cert-sub">Coursera · Jan 2023</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="r-footer">
+    <span>For more information</span>
+    <a href="https://www.linkedin.com/in/nyahwashington">linkedin.com/in/nyahwashington</a>
+  </div>
+
+  <button class="no-print" onclick="window.print()">Save as PDF — File → Print → Save as PDF</button>
+
+</div>
+</body>
+</html>
